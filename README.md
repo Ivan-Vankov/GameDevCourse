@@ -2,4 +2,4 @@
 
 | # | Slides                                                                                                           | Date       |
 |---| ---------------------------------------------------------------------------------------------------------------- |:----------:|
-| 1 | [Intro](https://ivan-vankov.github.io/TestSlide.html) | 27.02.2020 |
+| 1 | [Intro to Unity](https://ivan-vankov.github.io/Intro to Unity.html) | 27.02.2020 |
