@@ -4,4 +4,4 @@ Slides inspired by the [Game Engine Architecture](https://nikoladimitroff.github
 
 | # | Slides                                                                                                           | Date       |
 |---| ---------------------------------------------------------------------------------------------------------------- |:----------:|
-| 1 | [Intro to Unity](https://ivan-vankov.github.io/Intro%20to%20Unity.html) | 27.02.2020 |
+| 1 | [Intro to Unity](https://ivan-vankov.github.io/GameDevCourse/Slides/Intro%20to%20Unity.html) | 27.02.2020 |
