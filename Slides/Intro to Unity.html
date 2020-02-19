@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Intro to Unity</title>
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="RevealJS/css/reset.css">
+		<link rel="stylesheet" href="RevealJS/css/reveal.css">
+		<link rel="stylesheet" href="RevealJS/css/custom.css">
+		<link rel="stylesheet" href="RevealJS/css/theme/black.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="RevealJS/lib/css/monokai.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'RevealJS/css/print/pdf.css' : 'RevealJS/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="RevealJS/lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<div class="slides">
+				<section>
+					<h2 id="slides-title">Intro to Unity</h2>
+					<img width="200" height="200" data-src="images/Unity Logo.png" alt="Unity Logo">
+				</section>
+
+				<section>
+					<h2 id="slides-title">Are we recording?</h2>
+					<img width="300" height="300" data-src="images/Cat Cam.png" alt="Meow Cam">
+				</section>
+
+				<section>
+					<h3>First, what is a Game Engine?</h3>
+
+					<p>Software that handles:</p>
+					<ul>
+						<li>Realtime rendering</li>
+						<li>Audio</li>
+						<li>Networking</li>
+						<li>Physics</li>
+						<li>GUI</li>
+						<li>Scripting</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Why use Unity?</h3>
+
+					<ul>
+						<li class="fragment">Huge community</li>
+						<li class="fragment">Easy to use</li>
+						<li class="fragment">2D and 3D support</li>
+						<li class="fragment">Universal creation tool</li>
+						<li class="fragment">Cross-platform</li>
+						<li class="fragment">It's free*</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Games made with Unity</h3>
+
+					<ul>
+						<li>Hearthstone</li>
+						<li>Subnautica</li>
+						<li>Ori and the Blind Forest</li>
+						<li>Hollow Knight</li>
+						<li>Cuphead</li>
+						<li>...</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>System Requirements</h3>
+					
+					<ul>
+						<li>OS:
+							<ul>
+								<li>Windows 7, 8, 10 64-bit versions only</li>
+								<li>Mac OS X 10.12+</li>
+								<li>Ubuntu 16.04, 18.04 or CentOS 7</li>
+							</ul>
+						</li>
+						<li>CPU: X64 with SSE2 support</li>
+						<li>GPU: DX10, DX11, and DX12-capable</li>
+					</ul>
+
+					<p>Further details <a href="https://docs.unity3d.com/Manual/system-requirements.html">here</a></p>
+				</section>
+
+				<section>
+					<h3>Unity Hub</h3>
+
+					<ul>
+						<li>Get it <a href="https://unity3d.com/get-unity/download">here</a></li>
+						<li>Manage your Unity versions</li>
+						<li>Modify build targets outside of the Editor</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Select your license</h3>
+
+					<p>If you have made:</p>
+					<ul>
+						<li>&lt; $100K in the last 12 months with Unity then you can choose Unity Personal (It's free)</li>
+						<li>&gt; $100K in the last 12 months with Unity then you probably don't need this course :D</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Download Unity</h3>
+
+					<ol>
+						<li>Go to Unity Hub/Installs</li>
+						<li>Get the latest version of Unity</li>
+					</ol>
+				</section>
+
+				<section>
+					<h3>IDE</h3>
+
+					<ul>
+						<li>Visual Studio for PC and Mac</li>
+						<li>JetBrains Rider for Linux</li>
+					</ul>
+
+					<p>Make sure to get the Unity Tools plugin for your IDE</p>
+				</section>
+
+				<section>
+					<h3>Making your first Unity project</h3>
+
+					<ol>
+						<li>Go to Unity Hub/Projects</li>
+						<li>Click NEW</li>
+						<li>Select the 3D template</li>
+						<li>Name your project</li>
+						<li>Click CREATE</li>
+					</ol>
+				</section>
+
+				<section>
+					<h3>Editor Elements</h3>
+
+					<ul>
+						<li>Project View</li>
+						<li>Scene View</li>
+						<li>Scene Hierarchy</li>
+						<li>Game View</li>
+						<li>Inspector</li>
+						<li>Asset Store</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Modifying the Editor</h3>
+
+					<ul>
+						<li>Making tabs larger/smaller</li>
+						<li>Docking tabs</li>
+						<li>Can always revert to the Default Layout</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Navigating the Scene View</h3>
+
+					<ul>
+						<li>Scene Gizmo
+							<ul>
+								<li>Align Scene View Camera to the different axes</li>
+								<li>Perspective/Ortographic Mode</li>
+							</ul>
+						</li>
+						<li>Hand Tool + Left Click to move</li>
+						<li>Reft Click to orbit</li>
+						<li>Scroll Wheel to zoom</li>
+						<li>Right Click + QWASDE for Flythrough Mode
+							<ul>
+								<li>Shift to go faster</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Essential Shortcuts</h3>
+
+					<ul>
+						<li>Right Click in Project window/Scene view to add item</li>
+						<li>QWERTY for the different tools</li>
+						<li>Ctrl/Cmd + Z to undo</li>
+						<li>Ctrl + Y to redo on Windows</li>
+						<li>Cmd + Shift + Z to redo on Mac</li>
+						<li>F to focus on object</li>
+						<li>Ctrl/Cmd + Shift + F to align object with view</li>
+						<li>Shift + Space to maximize window</li>
+					</ul>
+
+					<p><a href="images/Unity Shortcuts Cheat Sheet.bmp">Cheat Sheet</a> from <a href="https://www.patreon.com/posts/unity-shortcuts-18598482">Brackeys</a></p>
+				</section>
+
+				<section>
+					<h3>Game Objects</h3>
+
+					<p>Every object in the scene is a Game Object</p>
+
+					<p>Game Objects also:</p>
+					<ul> 
+						<li>Have a Name</li>
+						<li>Have a Tag</li>
+						<li>Have a Layer</li>
+						<li>Can be parented</li>
+						<li>Can be active/disabled</li>
+						<li>Require components to become "functional"</li>
+						<li>Always have a Transform Component</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Components</h3>
+
+					<p>They provide Game Objects with logic</p>
+
+					<p>Let's explore the ever present Transform Component</p>
+					<p>Click on GameObject/3D Object/Cube to make a cube</p>
+					<p>Its Transform has:</p>
+					<ul>
+						<li>Position</li>
+						<li>Rotation</li>
+						<li>Scale</li>
+					</ul>
+
+					<p>They can be modified using the Move, Rotate and Scale tools</p>
+				</section>
+
+				<!-- Play Mode -->
+
+				<section>
+					<h3>Important!</h3>
+
+					<p>Changes during Play Mode don't stay after exiting it</p>
+				</section>
+
+				<section>
+					<h3>Questions?</h3>
+
+					<img data-src="images/Question Cat.png" alt="Question Cat">
+				</section>
+			</div>
+
+		</div>
+
+		<div id="slides-title-div">
+			<p id="slides-title-meta"></p>
+			<script>
+				var title = document.getElementById("slides-title").innerHTML;
+				document.getElementById("slides-title-meta").innerHTML = title;
+			</script>
+		</div>
+
+		<script src="RevealJS/js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				center: true,
+				hash: true,
+				mouseWheel: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'RevealJS/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'RevealJS/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'RevealJS/plugin/highlight/highlight.js' },
+					{ src: 'RevealJS/plugin/search/search.js', async: true },
+					{ src: 'RevealJS/plugin/zoom-js/zoom.js', async: true },
+					{ src: 'RevealJS/plugin/notes/notes.js', async: true },
+					{ src: 'RevealJS/plugin/menu/menu.js' }
+				]
+			});
+
+			Reveal.configure({ slideNumber: 'c/t' });
+
+			// Set theme to Blood
+			document.getElementById('theme').setAttribute('href','RevealJS/css/theme/blood.css'); 
+		</script>
+
+	</body>
+</html>

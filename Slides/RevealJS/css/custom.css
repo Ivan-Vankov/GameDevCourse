@@ -1,0 +1,15 @@
+#slides-title-div {
+    position: fixed;
+    font-size: 2.25em;
+    z-index: 30;
+    right: 120px;
+    bottom: 32px;
+    text-align: right;
+}
+
+#slides-title-meta {
+    text-align: right;
+    font-size: 28px;
+    color: #b6b6b6;
+    font-family: Ubuntu, "sans-serif";
+}
