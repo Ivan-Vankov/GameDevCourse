@@ -40,12 +40,12 @@
 			<div class="slides">
 				<section>
 					<h2 id="slides-title">Intro to Unity</h2>
-					<img width="200" height="200" data-src="images/Unity Logo.png" alt="Unity Logo">
+					<img width="200" height="200" data-src="Images/Unity Logo.png" alt="Unity Logo">
 				</section>
 
 				<section>
 					<h2 id="slides-title">Are we recording?</h2>
-					<img width="300" height="300" data-src="images/Cat Cam.png" alt="Meow Cam">
+					<img width="300" height="300" data-src="Images/Cat Cam.png" alt="Meow Cam">
 				</section>
 
 				<section>
@@ -65,13 +65,19 @@
 				<section>
 					<h3>Why use Unity?</h3>
 
+					<p>Pros:</p>
 					<ul>
-						<li class="fragment">Huge community</li>
-						<li class="fragment">Easy to use</li>
-						<li class="fragment">2D and 3D support</li>
-						<li class="fragment">Universal creation tool</li>
-						<li class="fragment">Cross-platform</li>
-						<li class="fragment">It's free*</li>
+						<li>Huge community</li>
+						<li>Easy to use</li>
+						<li>2D and 3D support</li>
+						<li>Universal creation tool</li>
+						<li>Cross-platform</li>
+						<li>It's free*</li>
+					</ul>
+
+					<p>Cons:</p>
+					<ul>
+						<li>Closed Source&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
 					</ul>
 				</section>
 
@@ -89,6 +95,14 @@
 				</section>
 
 				<section>
+					<h3>Unity is HUGE</h3>
+
+					<p>Don't try to learn it all at once!</p>
+
+					<img data-src="Images/Huge Cat.jpg" alt="Huge Cat">
+				</section>
+
+				<section>
 					<h3>System Requirements</h3>
 					
 					<ul>
@@ -100,7 +114,7 @@
 							</ul>
 						</li>
 						<li>CPU: X64 with SSE2 support</li>
-						<li>GPU: DX10, DX11, and DX12-capable</li>
+						<li>GPU: DX10, DX11 and DX12 capable</li>
 					</ul>
 
 					<p>Further details <a href="https://docs.unity3d.com/Manual/system-requirements.html">here</a></p>
@@ -136,7 +150,7 @@
 				</section>
 
 				<section>
-					<h3>IDE</h3>
+					<h3>IDE Support</h3>
 
 					<ul>
 						<li>Visual Studio for PC and Mac</li>
@@ -175,8 +189,9 @@
 					<h3>Modifying the Editor</h3>
 
 					<ul>
-						<li>Making tabs larger/smaller</li>
-						<li>Docking tabs</li>
+						<li>Resizing windows</li>
+						<li>Docking windows</li>
+						<li>Adding more windows</li>
 						<li>Can always revert to the Default Layout</li>
 					</ul>
 				</section>
@@ -216,7 +231,11 @@
 						<li>Shift + Space to maximize window</li>
 					</ul>
 
-					<p><a href="images/Unity Shortcuts Cheat Sheet.bmp">Cheat Sheet</a> from <a href="https://www.patreon.com/posts/unity-shortcuts-18598482">Brackeys</a></p>
+					<p>
+						<a href="Images/Unity Shortcuts Cheat Sheet.bmp">Cheat Sheet</a> 
+						from 
+						<a href="https://www.patreon.com/posts/unity-shortcuts-18598482">Brackeys</a>
+					</p>
 				</section>
 
 				<section>
@@ -236,15 +255,15 @@
 					</ul>
 				</section>
 
-				<section>
-					<h3>Components</h3>
+				<section style="text-align: left;">
+					<h3 style="text-align: center;">Components</h3>
 
 					<p>They provide Game Objects with logic</p>
 
-					<p>Let's explore the ever present Transform Component</p>
+					<p>Let's explore the ever-present Transform Component</p>
 					<p>Click on GameObject/3D Object/Cube to make a cube</p>
-					<p>Its Transform has:</p>
-					<ul>
+					<p>Its Transform Component has:</p>
+					<ul style="padding-left: 2rem;">
 						<li>Position</li>
 						<li>Rotation</li>
 						<li>Scale</li>
@@ -253,18 +272,58 @@
 					<p>They can be modified using the Move, Rotate and Scale tools</p>
 				</section>
 
-				<!-- Play Mode -->
+				<section>
+					<h3>Hello World Script</h3>
+
+					<pre>
+						<code class="language-cs hljs">
+	public class HelloWorldScript : MonoBehaviour {
+		void Start() {
+			print("Hello World");
+		}
+	}
+						</code>
+					</pre>
+				</section>
+
+				<section>
+					<h3>Using the Hello World Script</h3>
+
+					<ul>
+						<li>Compile it</li>
+						<li>Attach it to a Game Object</li>
+						<li>Click Play to enter Play Mode</li>
+						<li>????</li>
+						<li>PROFIT!</li>
+					</ul>
+
+					<br>
+					<img data-src="Images/Hello World.png" alt="Hello World">
+				</section>
 
 				<section>
 					<h3>Important!</h3>
 
-					<p>Changes during Play Mode don't stay after exiting it</p>
+					<p>Changes made during Play Mode don't stay after exiting it</p>
+				</section>
+
+				<section>
+					<h3>Extra Resources</h3>
+
+					<ul>
+						<li><a href="https://docs.unity3d.com/Manual/UnityOverview.html">Manual</a></li>
+						<li><a href="https://forum.unity.com/">Forum</a></li>
+						<li><a href="https://www.youtube.com/channel/UCYbK_tjZ2OrIZFBvU6CCMiA">Brackeys</a></li>
+						<li><a href="https://www.youtube.com/user/Cercopithecan">Sebastian Lague</a></li>
+						<li><a href="https://www.youtube.com/channel/UC9Z1XWw1kmnvOOFsj6Bzy2g">Blackthornprod</a></li>
+						<li><a href="https://www.youtube.com/channel/UCLyVUwlB_Hahir_VsKkGPIA">Mix and Jam</a></li>
+					</ul>
 				</section>
 
 				<section>
 					<h3>Questions?</h3>
 
-					<img data-src="images/Question Cat.png" alt="Question Cat">
+					<img data-src="Images/Question Cat.png" alt="Question Cat">
 				</section>
 			</div>
 
