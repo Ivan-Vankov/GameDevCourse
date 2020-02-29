@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title id="page-title">Game Dev Presentation</title>
+		<link rel="icon" href="images/Unity%20Icon.png">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="RevealJS/css/reset.css">
+		<link rel="stylesheet" href="RevealJS/css/reveal.css">
+		<link rel="stylesheet" href="RevealJS/css/custom.css">
+		<link rel="stylesheet" href="RevealJS/css/theme/black.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="RevealJS/lib/css/monokai.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'RevealJS/css/print/pdf.css' : 'RevealJS/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="RevealJS/lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<div class="slides">
+				<section>
+					<h2 id="slides-title">Unity Basics</h2>
+					<img width="200" height="200" data-src="images/Unity-Logo.png" alt="Unity Logo">
+				</section>
+
+				<section>
+					<h2>Are we recording?</h2>
+					<img width="300" height="300" data-src="images/Cat-Cam.png" alt="Meow Cam">
+				</section>
+
+				<section>
+					<h3>Review</h3>
+
+					<p>What is a GameObject?</p>
+					<ul>
+						<li class="fragment">A collection of components</li>
+                 				<li class="fragment">Has a name, tag and layer</li>
+						<li class="fragment">Can be parented</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Review</h3>
+
+					<p>Name any 3 elements of the Unity Editor</p>
+					<ul>
+						<li class="fragment">Scene View</li>
+						<li class="fragment">Game View</li>
+						<li class="fragment">Project Window</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>GameObject parenting</h3>
+
+					<ul>
+						<li>Global Space - relative to the world center</li>
+						<li>Local Space - relative to the parent</li>
+						<li>Object Space - relative to the object</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Prefabs</h3>
+
+					<p>Make complex GameObject hierarchies reusable</p>
+					<ul>
+						<li>Regular Prefabs</li>
+						<li>Prefab Mode</li>
+						<li>Prefab Variants</li>
+						<li>Nested Prefabs</li>
+						<li>Referenced as GameObjects</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Coding Convention</h3>
+					
+					<ul>
+						<li><b>camelCase</b> for variables</li>
+						<li><b>PascalCase</b> for methods and classes</li>
+						<li><s>Open braces on a new line</s></li>
+					</ul>
+
+					<p>Further details <a href="https://wiki.unity3d.com/index.php/Csharp_Coding_Guidelines">here</a></p>
+				</section>
+
+				<section style="text-align: left;">
+					<h3 style="text-align: center;">MonoBehaviour</h3>
+
+					<p>
+						Base class for all Unity scripts. 
+						Determines what parts of the event loop the component will be in.
+					</p>
+
+					<p>Most important methods/properties are:</p>
+					<ul style="padding-left: 2rem;">
+						<li>Start() - called on object instantiation</li>
+						<li>Update() - called once per frame</li>
+						<li>gameObject - the GameObject this component is attached to</li>
+						<li>transform - the Transform attached to this GameObject</li>
+					</ul>
+
+					<p>Further details <a href="https://docs.unity3d.com/Manual/ExecutionOrder.html">here</a></p>
+				</section>
+
+				<section>
+					<h3>Modifying Components Through Script</h3>
+
+					<p>Let's modify the transform component</p>
+					<ul>
+						<li>position</li>
+						<li>rotation
+							<ul>
+								<li>Quaternions</li>
+								<li>Euler angles</li>
+								<li><a href="https://www.youtube.com/watch?v=zc8b2Jo7mno">Gimbal lock</a></li>
+							</ul>
+						</li>
+						<li>scale</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Exposing member variables to the Editor</h3>
+
+					<p>Can be done by:</p>
+					<ul>
+						<li>Making the member variable public</li>
+						<li>Adding the SeralizeField attribute</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Finding GameObjects through script</h3>
+
+					<pre>
+						<code class="language-cs hljs">
+	GameObject.Find("SomeName");
+	GameObject.FindObjectWithTag("SomeTag");
+	Object.FindObjectOfType(typeof(SomeType));
+						</code>
+					</pre>
+				</section>
+
+				<section>
+					<h3>Finding Components through script</h3>
+
+					<pre>
+						<code class="language-cs hljs">
+	GetComponent&lt;ComponentType&gt;();
+	GetComponentInChildren&lt;ComponentType&gt;();
+	GetComponentInParent&lt;ComponentType&gt;();
+						</code>
+					</pre>
+				</section>
+
+				<section>
+					<h3>GameObject Lifecycle</h3>
+
+					<pre>
+						<code class="language-cs hljs">
+Instantiate(Object original, Vector3 position, Quaternion rotation);
+//...
+myGameObject.AddComponent&lt;ComponentType&gt;();
+//...
+Destroy(myGameObject);
+						</code>
+					</pre>
+				</section>
+
+				<section>
+					<h3>Questions?</h3>
+
+					<img width="300" height="300" data-src="images/Question-Cat-2.png" alt="Question Cat">
+				</section>
+			</div>
+
+		</div>
+
+		<div id="slides-title-div">
+			<p id="slides-title-meta"></p>
+			<script>
+				var slides_title = document.getElementById("slides-title").innerHTML;
+				document.getElementById("slides-title-meta").innerHTML = slides_title;
+				document.getElementById("page-title").innerHTML = slides_title;
+			</script>
+		</div>
+
+		<script src="RevealJS/js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				center: true,
+				hash: true,
+				mouseWheel: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'RevealJS/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'RevealJS/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'RevealJS/plugin/highlight/highlight.js' },
+					{ src: 'RevealJS/plugin/search/search.js', async: true },
+					{ src: 'RevealJS/plugin/zoom-js/zoom.js', async: true },
+					{ src: 'RevealJS/plugin/notes/notes.js', async: true },
+					{ src: 'RevealJS/plugin/menu/menu.js', async: true }
+				]
+			});
+
+			Reveal.configure({ slideNumber: 'c/t' });
+
+			// Set the theme to a combination of blood and black
+			document.getElementById('theme').setAttribute('href','RevealJS/css/theme/custom_theme.css'); 
+		</script>
+
+	</body>
+</html>

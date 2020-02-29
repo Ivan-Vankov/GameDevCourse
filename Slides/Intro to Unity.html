@@ -385,14 +385,14 @@
 					{ src: 'RevealJS/plugin/search/search.js', async: true },
 					{ src: 'RevealJS/plugin/zoom-js/zoom.js', async: true },
 					{ src: 'RevealJS/plugin/notes/notes.js', async: true },
-					{ src: 'RevealJS/plugin/menu/menu.js' }
+					{ src: 'RevealJS/plugin/menu/menu.js', async: true }
 				]
 			});
 
 			Reveal.configure({ slideNumber: 'c/t' });
 
-			// Set theme to Blood
-			document.getElementById('theme').setAttribute('href','RevealJS/css/theme/blood.css'); 
+			// Set the theme to a combination of blood and black
+			document.getElementById('theme').setAttribute('href','RevealJS/css/theme/custom_theme.css'); 
 		</script>
 
 	</body>
