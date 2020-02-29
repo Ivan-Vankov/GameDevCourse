@@ -133,7 +133,7 @@
 				<section>
 					<h3>Exposing member variables to the Editor</h3>
 
-					<p>Allows for much faster and easier</p>
+					<p>Allows for much faster and easier parameter tweaking</p>
 
 					<p>Can be done by:</p>
 					<ul>
@@ -214,15 +214,18 @@
 				</section>
 
 				<section>
-					<h3>Input</h3>
+					<h3>Keyboard Input</h3>
 
-
-					<p>For keyboard keys:</p>
 					<pre>
 						<code class="language-cs hljs">
-	Input.GetKey(KeyCode.SomeKey);
-	Input.GetKeyDown(KeyCode.SomeKey);
-	Input.GetKeyUp(KeyCode.SomeKey);
+	// true if the key is pressed
+	Input.GetKey(KeyCode.SomeKey); 
+
+	// true the first frame the key is pressed
+	Input.GetKeyDown(KeyCode.SomeKey); 
+
+	// true the first frame the key is released
+	Input.GetKeyUp(KeyCode.SomeKey); 
 						</code>
 					</pre>
 				</section>
@@ -246,16 +249,17 @@
 					<p>Configurable in Edit/Project Settings/Input Manager</p>
 					<pre>
 						<code class="language-cs hljs">
-Vector3 moveDirection = 
-	new Vector3(Input.GetAxis("Horizontal"), 
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0, 
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Input.GetAxis("Vertical")) 
-	* Time.deltaTime 
-	* moveSpeed;
-Vector3 pointToLookAt = transform.position + moveDirection * 100;
+	Vector3 moveDirection = 
+		new Vector3(Input.GetAxis("Horizontal"), 
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0, 
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Input.GetAxis("Vertical")) 
+		* Time.deltaTime 
+		* moveSpeed;
+	Vector3 pointToLookAt = transform.position 
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ moveDirection * 100;
 
-transform.position += moveDirection;
-transform.LookAt(pointToLookAt);
+	transform.position += moveDirection;
+	transform.LookAt(pointToLookAt);
 						</code>
 					</pre>
 				</section>
