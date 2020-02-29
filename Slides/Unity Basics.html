@@ -234,8 +234,8 @@
 					<pre>
 						<code class="language-cs hljs">
 	Input.GetButtonXXX("ButtonName");
-	Input.GetAxis("AxisName");
-	Input.GetAxisRaw("AxisName");
+	Input.GetAxis("AxisName"); // Smoothed input
+	Input.GetAxisRaw("AxisName"); // Raw input
 						</code>
 					</pre>
 				</section>
@@ -246,9 +246,16 @@
 					<p>Configurable in Edit/Project Settings/Input Manager</p>
 					<pre>
 						<code class="language-cs hljs">
-	Input.GetButtonXXX("ButtonName");
-	Input.GetAxis("AxisName"); // Smoothed input
-	Input.GetAxisRaw("AxisName"); // Raw input
+Vector3 moveDirection = 
+	new Vector3(Input.GetAxis("Horizontal"), 
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0, 
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Input.GetAxis("Vertical")) 
+	* Time.deltaTime 
+	* moveSpeed;
+Vector3 pointToLookAt = transform.position + moveDirection * 100;
+
+transform.position += moveDirection;
+transform.LookAt(pointToLookAt);
 						</code>
 					</pre>
 				</section>
