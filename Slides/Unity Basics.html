@@ -106,12 +106,19 @@
 					<p>Further details <a href="https://wiki.unity3d.com/index.php/Csharp_Coding_Guidelines">here</a></p>
 				</section>
 
+				<section>
+					<h3>The Event Loop</h3>
+					
+					<p>A set of functions executed over a scripts lifetime in a predetermined order by the engine</p>
+					<p>Further details for its Unity implementation <a href="https://docs.unity3d.com/Manual/ExecutionOrder.html">here</a></p>
+				</section>
+				
 				<section style="text-align: left;">
 					<h3 style="text-align: center;">MonoBehaviour</h3>
 
 					<p>
 						Base class for all Unity scripts. 
-						Determines what parts of the event loop the component will be in.
+						Determines what parts of the event loop the script will be in.
 					</p>
 
 					<p>Most important methods/properties are:</p>
@@ -121,8 +128,24 @@
 						<li>gameObject - the GameObject this component is attached to</li>
 						<li>transform - the Transform attached to this GameObject</li>
 					</ul>
+				</section>
 
-					<p>Further details <a href="https://docs.unity3d.com/Manual/ExecutionOrder.html">here</a></p>
+				<section>
+					<h3>Exposing member variables to the Editor</h3>
+
+					<p>Allows for much faster and easier</p>
+
+					<p>Can be done by:</p>
+					<ul>
+						<li>Making the member variable public</li>
+						<li>Adding the SeralizeField attribute</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Important!</h3>
+					
+					<p>Values in the editor take precedence over values in the script</p>
 				</section>
 
 				<section>
@@ -130,7 +153,11 @@
 
 					<p>Let's modify the transform component</p>
 					<ul>
-						<li>position</li>
+						<li>position
+							<ul>
+								<li>Delta time</li>
+							</ul>
+						</li>
 						<li>rotation
 							<ul>
 								<li>Quaternions</li>
@@ -143,23 +170,15 @@
 				</section>
 
 				<section>
-					<h3>Exposing member variables to the Editor</h3>
-
-					<p>Can be done by:</p>
-					<ul>
-						<li>Making the member variable public</li>
-						<li>Adding the SeralizeField attribute</li>
-					</ul>
-				</section>
-
-				<section>
 					<h3>Finding GameObjects through script</h3>
 
 					<pre>
 						<code class="language-cs hljs">
 	GameObject.Find("SomeName");
 	GameObject.FindObjectWithTag("SomeTag");
-	Object.FindObjectOfType(typeof(SomeType));
+	transform.parent;
+	transform.GetChild(int clildIndex);
+	//And dragging and dropping from the editor
 						</code>
 					</pre>
 				</section>
@@ -172,6 +191,8 @@
 	GetComponent&lt;ComponentType&gt;();
 	GetComponentInChildren&lt;ComponentType&gt;();
 	GetComponentInParent&lt;ComponentType&gt;();
+	(SomeType) FindObjectOfType(typeof(SomeType));
+	//Again dragging and dropping from the editor
 						</code>
 					</pre>
 				</section>
@@ -181,13 +202,71 @@
 
 					<pre>
 						<code class="language-cs hljs">
-Instantiate(Object original, Vector3 position, Quaternion rotation);
-//...
-myGameObject.AddComponent&lt;ComponentType&gt;();
-//...
-Destroy(myGameObject);
+	myGameObject = Instantiate(Object original, 
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vector3 position, 
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Quaternion rotation);
+	//...
+	myGameObject.AddComponent&lt;ComponentType&gt;();
+	//...
+	Destroy(myGameObject);
 						</code>
 					</pre>
+				</section>
+
+				<section>
+					<h3>Input</h3>
+
+
+					<p>For keyboard keys:</p>
+					<pre>
+						<code class="language-cs hljs">
+	Input.GetKey(KeyCode.SomeKey);
+	Input.GetKeyDown(KeyCode.SomeKey);
+	Input.GetKeyUp(KeyCode.SomeKey);
+						</code>
+					</pre>
+				</section>
+
+				<section>
+					<h3>Button and Axis Input</h3>
+
+					<p>Configurable in Edit/Project Settings/Input Manager</p>
+					<pre>
+						<code class="language-cs hljs">
+	Input.GetButtonXXX("ButtonName");
+	Input.GetAxis("AxisName");
+	Input.GetAxisRaw("AxisName");
+						</code>
+					</pre>
+				</section>
+
+				<section>
+					<h3>Lets make a moving cube</h3>
+
+					<p>Configurable in Edit/Project Settings/Input Manager</p>
+					<pre>
+						<code class="language-cs hljs">
+	Input.GetButtonXXX("ButtonName");
+	Input.GetAxis("AxisName"); // Smoothed input
+	Input.GetAxisRaw("AxisName"); // Raw input
+						</code>
+					</pre>
+				</section>
+
+				<section>
+					<h3>Building the Game</h3>
+
+					<ul>
+						<li>Go to File/Build Settings
+							<ul>
+								<li>Ctrl/Cmd + Shift + B</li>
+							</ul>
+						</li>
+						<li>Add your scenes</li>
+						<li>Select your target platform</li>
+						<li>Fiddle around with Player Settings</li>
+						<li>Click Build</li>
+					</ul>
 				</section>
 
 				<section>
