@@ -266,6 +266,7 @@ Destroy(myGameObject);
 		new Vector3(Input.GetAxis("Horizontal"), 
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0, 
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Input.GetAxis("Vertical")) 
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.normalized 
 		* Time.deltaTime 
 		* moveSpeed;
 	Vector3 pointToLookAt = transform.position 
