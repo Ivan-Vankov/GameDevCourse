@@ -161,8 +161,11 @@
 						<li>rotation
 							<ul>
 								<li>Quaternions</li>
-								<li>Euler angles</li>
-								<li><a href="https://www.youtube.com/watch?v=zc8b2Jo7mno">Gimbal lock</a></li>
+								<li>Euler angles
+									<ul>
+										<li><a href="https://www.youtube.com/watch?v=zc8b2Jo7mno">Gimbal lock</a></li>
+									</ul>
+								</li>
 							</ul>
 						</li>
 						<li>scale</li>
@@ -170,29 +173,29 @@
 				</section>
 
 				<section>
-					<h3>Finding GameObjects through script</h3>
+					<h3>Finding Components through script</h3>
 
 					<pre>
 						<code class="language-cs hljs">
-	GameObject.Find("SomeName");
-	GameObject.FindObjectWithTag("SomeTag");
-	transform.parent;
-	transform.GetChild(int clildIndex);
-	//And dragging and dropping from the editor
+	//Again dragging and dropping from the editor
+	GetComponent&lt;ComponentType&gt;();
+	GetComponentInChildren&lt;ComponentType&gt;();
+	GetComponentInParent&lt;ComponentType&gt;();
+	FindObjectOfType&lt;SomeType&gt;();
 						</code>
 					</pre>
 				</section>
 
 				<section>
-					<h3>Finding Components through script</h3>
+					<h3>Finding GameObjects through script</h3>
 
 					<pre>
 						<code class="language-cs hljs">
-	GetComponent&lt;ComponentType&gt;();
-	GetComponentInChildren&lt;ComponentType&gt;();
-	GetComponentInParent&lt;ComponentType&gt;();
-	(SomeType) FindObjectOfType(typeof(SomeType));
-	//Again dragging and dropping from the editor
+	//Dragging and dropping from the editor
+	GameObject.Find("SomeName");
+	GameObject.FindObjectWithTag("SomeTag");
+	transform.parent;
+	transform.GetChild(int clildIndex);
 						</code>
 					</pre>
 				</section>
@@ -202,13 +205,15 @@
 
 					<pre>
 						<code class="language-cs hljs">
-	myGameObject = Instantiate(Object original, 
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vector3 position, 
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Quaternion rotation);
-	//...
-	myGameObject.AddComponent&lt;ComponentType&gt;();
-	//...
-	Destroy(myGameObject);
+myGameObject = Instantiate(Object original, 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vector3 position, 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Quaternion rotation);
+//...
+var component1 = myGameObject.GetComponent&lt;ComponentType&gt;();
+//...
+var component2 = myGameObject.AddComponent&lt;ComponentType&gt;();
+//...
+Destroy(myGameObject);
 						</code>
 					</pre>
 				</section>
