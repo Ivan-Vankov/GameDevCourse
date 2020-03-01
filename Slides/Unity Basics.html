@@ -236,9 +236,17 @@
 					<p>Configurable in Edit/Project Settings/Input Manager</p>
 					<pre>
 						<code class="language-cs hljs">
+	// "ButtonName" = "Fire1" for left mouse button
 	Input.GetButtonXXX("ButtonName");
-	Input.GetAxis("AxisName"); // Smoothed input
-	Input.GetAxisRaw("AxisName"); // Raw input
+
+	// Smoothed input
+	Input.GetAxis("AxisName");
+
+	// Raw input
+	Input.GetAxisRaw("AxisName");
+
+	// "AxisName" = "Horizontal" for A/D
+	// "AxisName" = "Vertical"   for W/S
 						</code>
 					</pre>
 				</section>
