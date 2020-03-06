@@ -13,3 +13,17 @@
     color: #b6b6b6;
     font-family: Ubuntu, "sans-serif";
 }
+
+.err {
+    display: inline-block;
+    position:relative;
+    background: url(../../images/Squigly.png) bottom repeat-x;
+}
+
+.keyword {
+    color: rgb(86,156,214);
+}
+
+.attribute {
+    color: rgb(78,201,176);
+}

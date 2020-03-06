@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title id="page-title">Game Dev Presentation</title>
+		<link rel="icon" href="images/Unity-Icon.png">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="RevealJS/css/reset.css">
+		<link rel="stylesheet" href="RevealJS/css/reveal.css">
+		<link rel="stylesheet" href="RevealJS/css/custom.css">
+		<link rel="stylesheet" href="RevealJS/css/theme/black.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="RevealJS/lib/css/vs2015.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'RevealJS/css/print/pdf.css' : 'RevealJS/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="RevealJS/lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<div class="slides">
+				<section>
+					<h2 id="slides-title">C# Basics</h2>
+					<img width="200" height="200" data-src="images/Unity-Logo.png" alt="Unity Logo">
+				</section>
+
+				<section>
+					<h2>Are we recording?</h2>
+					<img width="300" height="300" data-src="images/Cat-Cam.png" alt="Meow Cam">
+				</section>
+
+				<section>
+					<h3>Review</h3>
+
+					<p>What is a prefab?</p>
+					<ul>
+						<li class="fragment">A reusable asset that contains a GameObject with all its children, components and properties</li>
+						<li class="fragment">Can be referenced from a script as a GameObject</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Review</h3>
+
+					<p>What is the Event Loop?</p>
+					<ul>
+						<li class="fragment">A set of functions executed over a scripts lifetime in a predetermined order by the engine</li>
+                 		<li class="fragment">The most important functions from it are Start and Update</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Review</h3>
+
+					<p>How do we expose member variables to the Editor?</p>
+					<ul>
+						<li class="fragment">Making them public</li>
+						<li class="fragment">With the SerializeField attribute</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Reference and Value types</h3>
+					
+					<ul>
+						<li>A variable of a value type(structs) contains an instance of the type</li>
+						<li>A variable of a reference type(class) contains a refernece to an instance of the type</li>
+						<li><span class="err">transform.position.x = 5;</span></li>
+						<li>... <a href="https://docs.microsoft.com/en-us/dotnet/csharp/tutorials/inheritance">Add more from here</a></li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Built-in types</h3>
+
+					<ul>
+						<li>Value types
+							<ul>
+								<li><span class="keyword">bool</span></li>
+								<li><span class="keyword">char</span> (16 bit UTF-16)</li>
+								<li><span class="keyword">byte</span>/<span class="keyword">sbyte</span></li>
+								<li><span class="keyword">short</span>/<span class="keyword">ushort</span></li>
+								<li><span class="keyword">int</span>/<span class="keyword">uint</span></li>
+								<li><span class="keyword">long</span>/<span class="keyword">ulong</span></li>
+								<li><span class="keyword">decimal</span>/<span class="keyword">double</span>/<span class="keyword">float</span></li>
+							</ul>
+						</li>
+						<li>Reference types
+							<ul>
+								<li><span class="keyword">object</span></li>
+								<li><span class="keyword">string</span></li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Assembly</h3>
+
+					<ul>
+						<li>The compiled output of your code, typically a .dll, but an .exe is also an assembly.</li>
+						<li>A single unit of deployment.</li>
+						<li>... <a href="https://stackoverflow.com/a/1362269">Add more from here</a></li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Inheritance</h3>
+
+					<ul>
+						<li>Can inherit from multiple interfaces</li>
+						<li>Can inherit from only one class</li>
+						<li>... <a href="https://docs.microsoft.com/en-us/dotnet/csharp/tutorials/inheritance">Add more from here</a></li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Access modifiers</h3>
+					
+					<ul>
+						<li><span class="keyword">public</span>
+							<ul>
+								<li>default for interface and enum members</li>
+							</ul>
+						</li>
+						<li><span class="keyword">private</span>
+							<ul>
+								<li>default for methods and class members</li>
+							</ul>
+						</li>
+						<li><span class="keyword">protected</span></li>
+						<li><span class="keyword">internal</span>
+							<ul>
+								<li>default for classes</li>
+								<li>can be accessed by any code in the same assembly, but not from another assembly</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Properties</h3>
+					
+					<p>Provide convenient encapsulation</p>
+
+					<pre>
+						<code class="language-cs hljs">
+	class MyClass {
+		private string myField;        // field
+
+		public string myProperty {     // property 
+			get { return myField;  }
+			set { myField = value; }
+		}
+
+		public string myAutoProperty { // property
+			get; 
+			private set; 
+		}
+	}
+						</code>
+					</pre>
+				</section>
+
+				<section>
+					<h3>Namespaces</h3>
+
+					<p>TODO</p>
+
+					<ul>
+						<li>using</li>
+						<li>using static</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>var</h3>
+
+					<p>TODO</p>
+				</section>
+
+				<section>
+					<h3>Enchanced for loop</h3>
+
+					<p>TODO</p>
+				</section>
+
+				<section>
+					<h3>Generics</h3>
+					
+					<p>TODO</p>
+				</section>
+
+				<section>
+					<h3>Where</h3>
+					
+					<p>TODO</p>
+				</section>
+
+				<section>
+					<h3>Extension methods</h3>
+					
+					<p>TODO</p>
+				</section>
+
+				<section>
+					<h3>String interpolation</h3>
+					
+					<pre>
+						<code class="language-cs hljs">
+	int a = 1, b = 2;
+	// Instead of this
+	print("a = " + a + "; b = " + b + ";");
+	// You can do this
+	print($"a = {a}; b = {b};");
+						</code>
+					</pre>
+				</section>
+
+				<section>
+					<h3>Reflection</h3>
+					
+					<p>
+						Reflection provides type info for everything in the language. 
+						It can, for example, be used to invoke private methods.
+					</p>
+					
+					<pre>
+						<code class="language-cs hljs">
+	using System.Reflection;
+	//...
+	var updateMethod = typeof(Test)
+		.GetMethod("Update", 
+		 BindingFlags.NonPublic | BindingFlags.Instance);
+
+	if (updateMethod != null) {
+		updateMethod.Invoke(this, null);
+	}
+						</code>
+					</pre>
+				</section>
+
+				<section>
+					<h3>Attributes</h3>
+					
+					<p>Provide metadata for code</p>
+					
+					<pre>
+						<code class="language-cs hljs">
+[SerializeField]
+private float speed = 5;
+//...
+var speedField = typeof(Test)
+	.GetField("speed", 
+		BindingFlags.NonPublic | BindingFlags.Instance);
+if (speedField.GetCustomAttribute&lt;SerializeField&gt;() != null) {
+	speedField.SetValue(this, 6);
+	print($"The new values for speed is {speed}");
+}
+						</code>
+					</pre>
+				</section>
+
+				<section>
+					<h3>Most Useful Attributes</h3>
+
+					<ul>
+						<li>[System.<span class="attribute">Serializable</span>]
+							<ul>
+								<li>Displays the whole objects in the inspector</li>
+							</ul>
+						</li>
+						<li>[<span class="attribute">SerializeField</span>]
+							<ul>
+								<li>Exposes a field to the inspector</li>
+							</ul>
+						</li>
+						<li>[<span class="attribute">RequireComponent</span>(<span class="keyword">typeof</span>(<span class="attribute">SomeComponent</span>))]
+							<ul>
+								<li>Requires the gameObject to have that component</li>
+							</ul>
+						</li>
+						<li>[<span class="attribute">Range</span>(<span class="keyword">float</span> min, <span class="keyword">float</span> max)]
+							<ul>
+								<li>Clamps a float between 2 values in the inspector</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Delegates</h3>
+
+					<ul>
+						<li>TODO</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Events</h3>
+
+					<ul>
+						<li>TODO</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Coroutines</h3>
+
+					<ul>
+						<li>TODO</li>
+						<li>IEnumerator/IEnumerable</li>
+						<li>yield return null;</li>
+						<li>yield return new WaitForSeconds(1);</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Questions?</h3>
+
+					<img height="200" data-src="images/Question-Cat-3.png" alt="Question Cat">
+				</section>
+			</div>
+
+		</div>
+
+		<div id="slides-title-div">
+			<p id="slides-title-meta"></p>
+			<script>
+				var slides_title = document.getElementById("slides-title").innerHTML;
+				document.getElementById("slides-title-meta").innerHTML = slides_title;
+				document.getElementById("page-title").innerHTML = slides_title;
+			</script>
+		</div>
+
+		<script src="RevealJS/js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				center: true,
+				hash: true,
+				mouseWheel: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'RevealJS/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'RevealJS/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'RevealJS/plugin/highlight/highlight.js' },
+					{ src: 'RevealJS/plugin/search/search.js', async: true },
+					{ src: 'RevealJS/plugin/zoom-js/zoom.js', async: true },
+					{ src: 'RevealJS/plugin/notes/notes.js', async: true },
+					{ src: 'RevealJS/plugin/menu/menu.js', async: true }
+				]
+			});
+
+			Reveal.configure({ slideNumber: 'c/t' });
+
+			// Set the theme to a combination of blood and black
+			document.getElementById('theme').setAttribute('href','RevealJS/css/theme/custom_theme.css'); 
+		</script>
+
+	</body>
+</html>
