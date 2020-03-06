@@ -13,7 +13,8 @@ public class TestSerializable : MonoBehaviour {
     private int testInt;
 
     void Start() {
-
+        Test test = new Test();
+        test.Stats.hasHealthPotion = false;
     }
 
     // Update is called once per frame
