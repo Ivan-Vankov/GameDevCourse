@@ -27,3 +27,11 @@
 .attribute {
     color: rgb(78,201,176);
 }
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.lowercase {
+    text-transform: lowercase;
+}

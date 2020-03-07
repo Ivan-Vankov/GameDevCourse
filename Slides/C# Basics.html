@@ -83,10 +83,8 @@
 					<h3>Reference and Value types</h3>
 					
 					<ul>
-						<li>A variable of a value type(structs) contains an instance of the type</li>
-						<li>A variable of a reference type(class) contains a refernece to an instance of the type</li>
-						<li><span class="err">transform.position.x = 5;</span></li>
-						<li>... <a href="https://docs.microsoft.com/en-us/dotnet/csharp/tutorials/inheritance">Add more from here</a></li>
+						<li>A variable of a value type(struct) contains an instance of the type</li>
+						<li>A variable of a reference type(class) contains a reference to an instance of the type</li>
 					</ul>
 				</section>
 
@@ -116,18 +114,51 @@
 						<li>Reference types
 							<ul>
 								<li><span class="keyword">object</span></li>
-								<li><span class="keyword">string</span></li>
+								<li><span class="keyword">string</span> (immutable)</li>
 							</ul>
 						</li>
 					</ul>
 				</section>
 
 				<section>
-					<h3>ref and out </h3>
+					<h3><span class="keyword lowercase">ref</span> and <span class="keyword lowercase">out</span></h3>
 
 					<ul>
-						<li>TODO</li>
+						<li>By default C# uses pass by value semantics
+							<ul>
+								<li><span class="err">transform.position.x = 5;</span></li>
+							</ul>
+						</li>
+						<li><span class="keyword">ref</span> and <span class="keyword">out</span> provide pass by reference semantics
+							<ul>
+								<li><span class="keyword">ref</span> <b>requires</b> the passed variable to be initialized</li>
+								<li><span class="keyword">out</span> does <b>NOT</b> require the passed variable to be initialized</li>								
+								<li><span class="keyword">out</span> <b>requires</b> the passed variable to be assigned in the methods scope</li>
+							</ul>
+						</li>
 					</ul>
+				</section>
+
+				<section>
+					<h3>Using <span class="keyword" style="text-transform: lowercase;">ref</span> and <span class="keyword" style="text-transform: lowercase;">out</span></h3>
+
+					<pre>
+						<code class="language-cs hljs">
+	private void Foo(ref int a, out float b) {
+		b = a;
+	}
+	//...
+	void Start() {
+		int a = 10;
+
+		// This
+		float b;
+		Foo(ref a, out b);
+		// Is the same as
+		Foo(ref a, out float c);
+	}
+						</code>
+					</pre>
 				</section>
 
 				<section>
