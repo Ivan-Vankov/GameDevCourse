@@ -172,10 +172,35 @@ List<int> l = new List<int> { 0, 1, 2};</code></pre>
 					<h3>Assembly</h3>
 
 					<ul>
-						<li>The compiled output of your code, typically a .dll, but an .exe is also an assembly.</li>
-						<li>A single unit of deployment.</li>
-						<li>... <a href="https://stackoverflow.com/a/1362269">Add more from here</a></li>
+						<li>The compiled output of your code, typically a .dll, but an .exe is also an assembly</li>
+						<li>Typically contains MSIL(Microsoft Intermediate Language) code</li>
+						<li>Will be JIT(Just-In-Time) compiled to native code the first time it is executed</li>
+						<li>In Unity compiled scripts by default go to "Project Name"\Temp\bin\Debug\Assembly-CSharp.dll</li>
 					</ul>
+				</section>
+
+				<section>
+					<h3>Interfaces</h3>
+
+					<p>Provides a contract. Any implementing class or struct must adhere to the contract.</p>
+
+					<pre>
+						<code class="language-cs hljs">
+	interface ISomeInterface {
+		void ImplementMe();
+	}
+	//...
+	class Implementer : ISomeInterface {
+		void ImplementMe() 
+			// Method implementation
+		}
+		static void Main() {
+			ISomeInterface foo = new Implementer();
+			foo.ImplementMe();
+		}
+	}
+						</code>
+					</pre>
 				</section>
 
 				<section>
@@ -292,10 +317,53 @@ List<int> l = new List<int> { 0, 1, 2};</code></pre>
 				</section>
 
 				<section>
+					<h3>Data Structures</h3>
+
+					<table style="font-size: 2rem;">
+						<tr>
+							<th></th>
+							<th>C#</th>
+							<th>C++</th>
+							<th>Java</th>
+						</tr>
+						<tr>
+							<td>Dynamic Array</td>
+							<td>List&lt;&gt;</td>
+							<td>vector&lt;&gt;</td>
+							<td>ArrayList&lt;&gt;</td>
+						</tr>
+						<tr>
+							<td>Linked List</td>
+							<td>LinkedList&lt;&gt;</td>
+							<td>list&lt;&gt;</td>
+							<td>LinkedList&lt;&gt;</td>
+						</tr>
+						<tr>
+							<td>Hash Set</td>
+							<td>HashSet&lt;&gt;</td>
+							<td>unordered_set&lt;&gt;</td>
+							<td>HashSet&lt;&gt;</td>
+						</tr>
+						<tr>
+							<td>Hash Map</td>
+							<td>Dictionaty&lt;&gt;</td>
+							<td>unordered_map&lt;&gt;</td>
+							<td>HashMap&lt;&gt;</td>
+						</tr>
+						<tr>
+							<td>Tree</td>
+							<td>SortedSet&lt;&gt;</td>
+							<td>set&lt;&gt;</td>
+							<td>TreeSet&lt;&gt;</td>
+						</tr>
+					  </table> 
+				</section>
+
+				<section>
 					<h3>Reflection</h3>
 					
 					<p>
-						Reflection provides type info for everything in the language. 
+						Reflection provides type info objects for everything in the language. 
 						It can, for example, be used to invoke private methods.
 					</p>
 					
