@@ -132,7 +132,7 @@
 				</section>
 
 				<section>
-					<h3>Using <span class="keyword" style="text-transform: lowercase;">ref</span> and <span class="keyword" style="text-transform: lowercase;">out</span></h3>
+					<h3>Using <span class="keyword lowercase">ref</span> and <span class="keyword lowercase">out</span></h3>
 
 					<pre>
 						<code class="language-cs hljs">
@@ -249,24 +249,27 @@
 				<section>
 					<h3>Namespaces</h3>
 
-					<p>TODO</p>
-
-					<ul>
-						<li>using</li>
-						<li>using static</li>
-					</ul>
+					<p>
+						A namespace provides a way to keep one set of names separate from another. 
+						The class names declared in one namespace do not conflict with the same class names declared in another.
+					</p>
 				</section>
 
 				<section>
-					<h3>var</h3>
+					<h3><span class="keyword lowercase">using</span></h3>
 
-					<p>TODO</p>
-				</section>
+					<pre>
+						<code class="language-cs hljs">
+	// Include namespaces
+	using System;
 
-				<section>
-					<h3>Enchanced for loop</h3>
+	// Use static methods without a type name
+	using static UnityEngine.Mathf;
 
-					<p>TODO</p>
+	// Type aliasing
+	using MyType = Some.Other.Type;	
+						</code>
+					</pre>
 				</section>
 
 				<section>
@@ -351,11 +354,15 @@
 
 					<pre>
 						<code class="language-cs hljs">
-	Class obj = new Class(arg, ...) { 
-		memberVar = data, ... 
-	};
-	// Anonymous type
-	Class obj = new { memberVar = data, ... };
+		Class obj = new Class(arg, ...) { 
+			memberVar = data, 
+			... 
+		};
+		// Anonymous type
+		Class obj = new { 
+			memberVar = data, 
+			... 
+		};
 						</code>
 					</pre>
 				</section>
@@ -368,7 +375,41 @@
 					<pre>
 						<code class="language-cs hljs">
 	//Has to implement IEnumerable and an Add function
-	List&lt;int&gt; l = new List&lt;int&gt; { 0, 1, 2 };
+	List&lt;int&gt; list = new List&lt;int&gt; { 0, 1, 2 };
+						</code>
+					</pre>
+				</section>
+
+				<section>
+					<h3><span class="keyword lowercase">var</span></h3>
+
+					<p>Lets the compiler determine the type for you</p>
+
+					<pre>
+						<code class="language-cs hljs">
+	// Explicit typing
+	Dictionary&lt;int, int&gt; dict = new Dictionary&lt;int,int>();
+	// Implicit typing
+	var dict = new Dictionary&lt;int, int&gt;();
+						</code>
+					</pre>
+				</section>
+
+				<section>
+					<h3><span class="keyword lowercase">foreach</span></h3>
+     
+					<pre>
+						<code class="language-cs hljs">
+	int[] arr = new int[] { 3, 14, 15, 92, 6 };
+
+	// This
+	for (int i = 0; i &lt; arr.Length; ++i) {
+		print(arr[i]);
+	}
+	// Is the same as
+	foreach (var number in arr) {
+		print(number);
+	}
 						</code>
 					</pre>
 				</section>
@@ -446,18 +487,116 @@ if (speedField.GetCustomAttribute&lt;SerializeField&gt;() != null) {
 
 				<section>
 					<h3>Delegates</h3>
+					
+					<ul>
+						<li>Similar to a function pointer in C/C++</li>
+						<li>Reference type variable that can hold a reference to several methods</li>
+						<li>Primary used for communication between scripts</li>
+						<li>Syntax: 
+							<ul>
+								<li><span class="keyword">delegate</span> &lt;returnType&gt; &lt;name&gt; (&lt;parameters&gt;);</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Built-in delegates</h3>
+					
+					<pre>
+						<code class="language-cs hljs">
+		using System;
+		//...
+		Func&lt;in argument, ..., out result&gt;;
+
+		// For void methods
+		Action&lt;in argument, ...&gt;;
+						</code>
+					</pre>
+				</section>
+
+				<section>
+					<h3>Script Communication Problem</h3>
 
 					<ul>
-						<li>TODO</li>
+						<li>Say you have the following situation:
+							<ul>
+								<li>You have a player script with health</li>
+								<li>A UI script that controlls the healthbar</li>
+								<li>An AI script that will agro when the player is on low health</li>
+							</ul>
+						</li>
 					</ul>
+				</section>
+
+				<section>
+					<h3>Naive Solution</h3>
+
+					<pre>
+						<code class="language-cs hljs">
+		// In the Player script
+		void ReceiveDamage(int damage) {
+			health = Max(health - damage, 0);
+			uiScript.ScaleHealthbar(health);
+			aiScript.TestAgro(health)
+		}
+						</code>
+					</pre>
+				</section>
+
+				<section>
+					<h3>Multicast Delegate Solution</h3>
+
+					<pre>
+						<code class="language-cs hljs">
+	// In the Player script
+	public static Action&lt;int&gt; OnTakeDamage;
+	if (OnTakeDamage != null) {
+		OnTakeDamage();
+	}
+
+	// In the UI script
+	private void ScaleHealthbar(int health) {...}
+	Player.OnTakeDamage += ScaleHealthbar;
+
+	// In the AI script
+	private void TestAgro(int playerHealth) {...}
+	Player.OnTakeDamage += TestAgro;
+						</code>
+					</pre>
+				</section>
+
+				<section>
+					<h3>Important!</h3>
+
+					<pre>
+						<code class="language-cs hljs">
+	// Always unsubscribe from the delegate when disabled
+	// This will prevent memory leaks
+	private void OnEnable() {
+		Player.OnTakeDamage += ScaleHealthbar;
+	}
+
+	private void OnDisable() {
+		Player.OnTakeDamage -= ScaleHealthbar;
+	}
+						</code>
+					</pre>
 				</section>
 
 				<section>
 					<h3>Events</h3>
 
-					<ul>
-						<li>TODO</li>
-					</ul>
+					<p>
+						Multicast delegates that restrict outside classes to only be 
+						able to subscribe and unsubscribe from the delegate
+					</p>	
+					<pre>
+						<code class="language-cs hljs">
+	// Syntax
+	public static event Action&lt;int&gt; OnTakeDamage;
+						</code>
+					</pre>
 				</section>
 
 				<section>
