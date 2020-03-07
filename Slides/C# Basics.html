@@ -89,21 +89,6 @@
 				</section>
 
 				<section>
-					<h3>Object and Collection Initializers</h3>
-					<p>Assign fields of object after instantiation</p>
-					<ul>
-						<li>Object Initializers</li>
-							<pre><code class="language-cs hljs">Class obj = new Class(arg,..){memberVar=data,..};
-//Anonymous type
-Class obj = new {memberVar=data,..};</code></pre>
-						<li>Collection initializers</li>
-								<pre><code class="language-cs hljs">//Has to be IEnumerable with Add function
-List&lt;int&gt; l = new List&lt;int&gt; { 0, 1, 2};</code></pre>
-							<a href="https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/object-and-collection-initializers">More info here</a>
-					</ul>
-				</section>
-
-				<section>
 					<h3>Built-in types</h3>
 
 					<ul>
@@ -357,6 +342,35 @@ List&lt;int&gt; l = new List&lt;int&gt; { 0, 1, 2};</code></pre>
 							<td>TreeSet&lt;&gt;</td>
 						</tr>
 					  </table> 
+				</section>
+				
+				<section>
+					<h3>Object Initializers</h3>
+
+					<p>Instantiate an object and perform member assignments in a single statement</p>
+
+					<pre>
+						<code class="language-cs hljs">
+	Class obj = new Class(arg, ...) { 
+		memberVar = data, ... 
+	};
+	// Anonymous type
+	Class obj = new { memberVar = data, ... };
+						</code>
+					</pre>
+				</section>
+
+				<section>
+					<h3>Collection Initializers</h3>
+
+					<p>Like object initializers but for collections</p>
+
+					<pre>
+						<code class="language-cs hljs">
+	//Has to implement IEnumerable and an Add function
+	List&lt;int&gt; l = new List&lt;int&gt; { 0, 1, 2 };
+						</code>
+					</pre>
 				</section>
 
 				<section>
