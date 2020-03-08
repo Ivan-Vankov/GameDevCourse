@@ -1,3 +1,17 @@
+#home {
+    position: fixed;
+    font-size: 2.25em;
+    z-index: 30;
+    right: 120px;
+    bottom: 64px;
+    text-align: right;
+    color: #42affa;
+}
+
+#home:hover {
+    color: #93c8eb;
+}
+
 #slides-title-div {
     position: fixed;
     font-size: 2.25em;
