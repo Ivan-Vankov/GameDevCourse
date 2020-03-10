@@ -165,9 +165,21 @@
 				</section>
 
 				<section>
+					<h3>Inheritance</h3>
+
+					<p>Inherit or override funtionality from a specified base class.</p>
+					<p>In C# you can:</p>
+
+					<ul>
+						<li>Inherit from multiple interfaces</li>
+						<li>Inherit from only one class</li>
+					</ul>
+				</section>
+
+				<section>
 					<h3>Interfaces</h3>
 
-					<p>Provides a contract. Any implementing class or struct must adhere to the contract.</p>
+					<p>Provide a contract. Any implementing class or struct must adhere to the contract.</p>
 
 					<pre>
 						<code class="language-cs hljs">
@@ -186,15 +198,6 @@
 	}
 						</code>
 					</pre>
-				</section>
-
-				<section>
-					<h3>Inheritance</h3>
-
-					<ul>
-						<li>Can inherit from multiple interfaces</li>
-						<li>Can inherit from only one class</li>
-					</ul>
 				</section>
 
 				<section>
@@ -274,19 +277,60 @@
 				<section>
 					<h3>Generics</h3>
 					
-					<p>TODO</p>
+					<p>
+						"Code templates" that allows developers to define type-safe classes and methods
+						 without committing to an actual data type.
+					</p>
+
+					<pre>
+						<code class="language-cs hljs">
+	class MyClass&lt;T&gt; {
+		private T mymember;
+		//...
+		public void Foo&lt;U&gt;(T classGenericType, 
+		                   U methodGenericType) {
+			//...
+		}
+	}
+						</code>
+					</pre>
 				</section>
 
 				<section>
-					<h3>Where</h3>
+					<h3><span class="keyword lowercase">where</span></h3>
 					
-					<p>TODO</p>
+					<p>Add constraints on generic type parameters</p>
+					
+					<pre>
+						<code class="language-cs hljs">
+	class MyClass&lt;T&gt; where T : class, 
+	                           IComparable&lt;T&gt;, 
+	                           new() {
+		// Not possible without the new() constraint
+		T item = new T();
+	}
+						</code>
+					</pre>
 				</section>
 
 				<section>
 					<h3>Extension methods</h3>
 					
-					<p>TODO</p>
+					<p>
+						Add methods to existing types without creating a new derived type, 
+						recompiling, or otherwise modifying the original type.
+						Useful when you don't have the source code for the type.
+					</p>
+
+					<pre>
+						<code class="language-cs hljs">
+public static class Extender {
+	public static void Reset(this Transform transform) {
+		transform.position = Vector3.zero;
+	}
+}
+						</code>
+					</pre>	
 				</section>
 
 				<section>
@@ -347,6 +391,21 @@
 				</section>
 				
 				<section>
+					<h3><span class="keyword lowercase">var</span></h3>
+
+					<p>Lets the compiler determine the type for you</p>
+
+					<pre>
+						<code class="language-cs hljs">
+	// Explicit typing
+	Dictionary&lt;int, int&gt; dict = new Dictionary&lt;int,int>();
+	// Implicit typing
+	var dict = new Dictionary&lt;int, int&gt;();
+						</code>
+					</pre>
+				</section>
+
+				<section>
 					<h3>Object Initializers</h3>
 
 					<p>Instantiate an object and perform member assignments in a single statement</p>
@@ -358,7 +417,7 @@
 			... 
 		};
 		// Anonymous type
-		Class obj = new { 
+		var obj = new { 
 			memberVar = data, 
 			... 
 		};
@@ -375,21 +434,6 @@
 						<code class="language-cs hljs">
 	//Has to implement IEnumerable and an Add function
 	List&lt;int&gt; list = new List&lt;int&gt; { 0, 1, 2 };
-						</code>
-					</pre>
-				</section>
-
-				<section>
-					<h3><span class="keyword lowercase">var</span></h3>
-
-					<p>Lets the compiler determine the type for you</p>
-
-					<pre>
-						<code class="language-cs hljs">
-	// Explicit typing
-	Dictionary&lt;int, int&gt; dict = new Dictionary&lt;int,int>();
-	// Implicit typing
-	var dict = new Dictionary&lt;int, int&gt;();
 						</code>
 					</pre>
 				</section>
@@ -425,7 +469,7 @@
 						<code class="language-cs hljs">
 	using System.Reflection;
 	//...
-	var updateMethod = typeof(Test)
+	MethodInfo updateMethod = typeof(Test)
 		.GetMethod("Update", 
 		 BindingFlags.NonPublic | BindingFlags.Instance);
 
@@ -446,9 +490,9 @@
 [SerializeField]
 private float speed = 5;
 //...
-var speedField = typeof(Test)
+FieldInfo speedField = typeof(Test)
 	.GetField("speed", 
-		BindingFlags.NonPublic | BindingFlags.Instance);
+	 BindingFlags.NonPublic | BindingFlags.Instance);
 if (speedField.GetCustomAttribute&lt;SerializeField&gt;() != null) {
 	speedField.SetValue(this, 6);
 	print($"The new values for speed is {speed}");
@@ -599,6 +643,30 @@ if (speedField.GetCustomAttribute&lt;SerializeField&gt;() != null) {
 				</section>
 
 				<section>
+					<h3><span class="keyword lowercase">yield</span></h3>
+
+					<p>Execute your functions in parts by wraping them in an iterator</p>
+
+					<pre>
+						<code class="language-cs hljs">
+	IEnumerable&lt;int&gt; GetCollection() {
+		List&lt;int&gt; collection = new List&lt;int&gt;();
+		for (int i = 0; i &lt; 10; ++i) {
+			collection.Add(i);
+		}
+		return collection;
+	}
+	// Omits the collection declaration
+	IEnumerable&lt;int&gt; GetFancyCollection() {
+		for (int i = 0; i &lt; 10; ++i) {
+			yield return i;
+		}
+	}
+						</code>
+					</pre>
+				</section>
+
+				<section>
 					<h3>Coroutines</h3>
 
 					<p>
@@ -606,12 +674,34 @@ if (speedField.GetCustomAttribute&lt;SerializeField&gt;() != null) {
 						Coroutines are special functions that can execute over several frames.
 					</p>
 
-					<ul>
-						<li>TODO</li>
-						<li>IEnumerator/IEnumerable</li>
-						<li>yield return null;</li>
-						<li>yield return new WaitForSeconds(1);</li>
-					</ul>
+					<pre>
+						<code class="language-cs hljs">
+	void Start() {
+		StartCoroutine(MyCoroutine());
+	}
+
+	IEnumerator MyCoroutine() {
+		while (true) {
+			//...
+			yield return new WaitForSeconds(3);
+		}
+	}
+						</code>
+					</pre>
+				</section>
+
+				<section>
+					<h3>Main Coroutine Functions/Keywords</h3>
+
+					<pre>
+						<code class="language-cs hljs">
+Coroutine c = StartCoroutine(...); // Starts the coroutine
+StopCoroutine(c); // Stops the coroutine
+yield return null; // Pauses until next frame
+yield return new WaitForSeconds(x) // Pauses for x seconds
+yield break; // Exits the coroutine
+						</code>
+					</pre>
 				</section>
 
 				<section>
