@@ -412,7 +412,7 @@ public static class Extender {
 
 					<pre>
 						<code class="language-cs hljs">
-		Class obj = new Class(arg, ...) { 
+		MyClass obj = new MyClass(arg, ...) { 
 			memberVar = data, 
 			... 
 		};
@@ -469,7 +469,7 @@ public static class Extender {
 						<code class="language-cs hljs">
 	using System.Reflection;
 	//...
-	MethodInfo updateMethod = typeof(Test)
+	MethodInfo updateMethod = typeof(MyClass)
 		.GetMethod("Update", 
 		 BindingFlags.NonPublic | BindingFlags.Instance);
 
@@ -490,7 +490,7 @@ public static class Extender {
 [SerializeField]
 private float speed = 5;
 //...
-FieldInfo speedField = typeof(Test)
+FieldInfo speedField = typeof(MyClass)
 	.GetField("speed", 
 	 BindingFlags.NonPublic | BindingFlags.Instance);
 if (speedField.GetCustomAttribute&lt;SerializeField&gt;() != null) {
