@@ -91,25 +91,63 @@
 				<section>
 					<h3>Triggers</h3>
 
-					<p>TODO</p>
+					<p>Check for entering inside the space of a collider but don't apply any forces.</p>
+					<ul>
+						<li>
+						Doesn't behave like a solid object allows others to pass through it
+						</li>
+						<li>
+						Created with a Collider with isTrigger checkbox checked
+						</li>
+						<li>
+						OnTriggerEnter function is called inside scripts
+						</li>
+					</ul>
 				</section>
 
 				<section>
 					<h3>Physics Layers</h3>
 
-					<p>TODO</p>
+					<p>Allow better customization for collisions</p>
+					<ul>
+						<li>
+							Every GameObject belongs to a Physics Layer
+						</li>
+						<li>
+							We can customize which layer with which other layer will collider:
+							Edit > Project Settings, then select the Physics
+						</li>
+					</ul>
 				</section>
 
 				<section>
 					<h3>Colliders 3D</h3>
 
-					<p>TODO</p>
+					<p>Component that is invisible shape of the GameObject used for collisions</p>
+					<ul>	
+						<li>
+							Primitive colliders have better performance
+						</li>
+						<li>
+							GameObjects can have multiple collider components
+						</li>
+						<li>
+							Colliders can have Physics Material
+						</li>
+					</ul>
 				</section>
 
 				<section>
 					<h3>Colliders 2D</h3>
 
-					<p>TODO</p>
+					<ul>
+					<li>
+					Different Component from the 3D Colliders
+					</li>
+					<li>
+					Work in a separate 2D Physics Engine
+					</li>
+					</ul>
 				</section>
 
 				<section>
@@ -127,13 +165,48 @@
 						</li>
 					</ul>
 				</section>
-
+				
 				<section>
 					<h3>RigidBody2D</h3>
 
-					<p>TODO</p>
+					<ul>
+					<li>
+					Different Component from RigidBody
+					</li>
+					<li>
+					Works in a separate 2D Physics Engine
+					</li>
+					</ul>
 				</section>
-
+				
+				<section>
+					<h3>Static Colliders</h3>
+					<p>When the GameObject doesn't have a RigidBody</p>
+					<ul>
+						<li>
+						Static Colliders should be used for immovable objects. Don't change their transform position because that could cause errors in the physics engine!
+						</li>
+						<li>
+						Example usage: 
+						Ground Terrain, Buildings, immovable objects...
+						</li>
+					</ul>
+				</section>
+				
+				<section>
+					<h3>Kinematic Rigidbody Collider</h3>
+					<p>When the GameObject has a RigidBody with "is Kinematic" checked</p>
+					<ul>
+						<li>
+						Use Colliders with Kinematic RigidBody to make objects which you don't want to react to physics but still move them through scripts or something.
+						</li>
+						<li>
+						Example usage:
+						Sliding Doors, Traps...
+						</li>
+					</ul>
+				</section>
+				
 				<section>
 					<h3>Raycasting 3D</h3>
 
