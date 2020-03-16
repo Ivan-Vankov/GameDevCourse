@@ -54,7 +54,7 @@
 
 					<p>What are properties?</p>
 					<ul>
-						<li>TODO</li>
+						<li>A convenient way of providing encapsulation for your fields</li>
 					</ul>
 				</section>
 
@@ -63,7 +63,7 @@
 
 					<p>What is a delegate?</p>
 					<ul>
-						<li>TODO</li>
+						<li>A reference type variable that can hold a reference to one or more methods</li>
 					</ul>
 				</section>
 
@@ -72,67 +72,73 @@
 
 					<p>What is a coroutine?</p>
 					<ul>
-						<li>TODO</li>
+						<li>Special methods that can be executed over several frames by the engine</li>
 					</ul>
-				</section>
-
-				<section>
-					<h3>Bounding Volumes</h3>
-
-					<p>TODO</p>
 				</section>
 
 				<section>
 					<h3>Collision vs Physics</h3>
 
-					<p>TODO</p>
-				</section>
-
-				<section>
-					<h3>Triggers</h3>
-
-					<p>Check for entering inside the space of a collider but don't apply any forces.</p>
 					<ul>
-						<li>
-						Doesn't behave like a solid object allows others to pass through it
-						</li>
-						<li>
-						Created with a Collider with isTrigger checkbox checked
-						</li>
-						<li>
-						OnTriggerEnter function is called inside scripts
-						</li>
+						<li>Collision is whether two objects intersect</li>
+						<li>Physics for our purposes is collision + applied force</li>
 					</ul>
 				</section>
 
 				<section>
-					<h3>Physics Layers</h3>
+					<h3>Meshes</h3>
 
-					<p>Allow better customization for collisions</p>
-					<ul>
-						<li>
-							Every GameObject belongs to a Physics Layer
-						</li>
-						<li>
-							We can customize which layer with which other layer will collider:
-							Edit > Project Settings, then select the Physics
-						</li>
-					</ul>
+					<p>
+						They are the objects that we will be applying physics on. 
+						You can think of them as sets of vertices, edges and faces.
+					</p>
+
+					<img height="200" data-src="images/Monkey.png" alt="Suzanne">
+					
+					<p>Quick blender demo</p>
+
+				</section>
+
+				<section>
+					<h3>Bounding Volumes</h3>
+
+					<p>
+						Simple shapes that completely contain an object.
+						Used for optimizing collision detection.
+						The most popular bounding volumes are bounding boxes, spheres and capsules.
+					</p>
+
+					<div style="display: flex; justify-content: center">
+						<div><img height="250" data-src="images/Monkey-Box-Collider.png" alt="Boxed Suzanne"></div>
+						<div>  </div>
+						<div><img height="250" data-src="images/Monkey-Sphere-Collider.png" alt="Suzanne in a sphere"></div>
+					</div>
+				</section>
+
+				<section>
+					<h3>Bounding Volume Hierarchies</h3>
+
+					<p>
+						A tree structure of bounding volumes.
+						Can make the collision detection time complexity logarithmic in the number of objects.
+					</p>
+					
+					<img height="300" data-src="images/Monkey-Bounding-Volume-Hierarchy.png" alt="Suzanne Hierarchy">
 				</section>
 
 				<section>
 					<h3>Colliders 3D</h3>
 
-					<p>Component that is invisible shape of the GameObject used for collisions</p>
-					<ul>	
-						<li>
-							Primitive colliders have better performance
-						</li>
-						<li>
-							GameObjects can have multiple collider components
-						</li>
-						<li>
-							Colliders can have Physics Material
+					<ul>
+						<li>Unitys implementation of bouning volumes</li>
+						<li>Invisible in Game View</li>
+						<li>GameObjects can have multiple colliders</li>
+						<li>Examples:
+							<ul>
+								<li>Box Collider</li>
+								<li>Sphere Collider</li>
+								<li>Capsule Collider</li>
+							</ul>
 						</li>
 					</ul>
 				</section>
@@ -141,13 +147,36 @@
 					<h3>Colliders 2D</h3>
 
 					<ul>
-					<li>
-					Different Components from the 3D Colliders
-					</li>
-					<li>
-					Works in a separate 2D Physics Engine
-					</li>
+						<li>Are incompatible with 3D colliders</li>
+						<li>Work in a separate 2D Physics Engine</li>
+						<li>Examples:
+							<ul>
+								<li>Box Collider 2D</li>
+								<li>Circle Collider 2D</li>
+								<li>Capsule Collider 2D</li>
+								<li>Polygon Collider 2D</li>
+							</ul>
+						</li>
 					</ul>
+				</section>
+
+				<section>
+					<h3>Mesh Colliders</h3>
+
+					<ul>
+						<li>Convex</li>
+						<li>TODO</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Triggers</h3>
+
+					<p>
+						By default colliders work for physics.
+						To make them work just for collision we have to make them triggers.
+						In scripts we work with them differently.
+					</p>
 				</section>
 
 				<section>
@@ -170,12 +199,12 @@
 					<h3>RigidBody2D</h3>
 
 					<ul>
-					<li>
-					Different Component from RigidBody
-					</li>
-					<li>
-					Works in a separate 2D Physics Engine
-					</li>
+						<li>
+							Different Component from RigidBody
+						</li>
+						<li>
+							Works in a separate 2D Physics Engine
+						</li>
 					</ul>
 				</section>
 				
@@ -184,11 +213,11 @@
 					<p>When the GameObject doesn't have a RigidBody</p>
 					<ul>
 						<li>
-						Static Colliders should be used for immovable objects. Don't change their transform position because that could cause errors in the physics engine!
+							Static Colliders should be used for immovable objects. Don't change their transform position because that could cause errors in the physics engine!
 						</li>
 						<li>
-						Example usage: 
-						Ground Terrain, Buildings, immovable objects...
+							Example usage: 
+							Ground Terrain, Buildings, immovable objects...
 						</li>
 					</ul>
 				</section>
@@ -198,11 +227,11 @@
 					<p>When the GameObject has a RigidBody with "is Kinematic" checked</p>
 					<ul>
 						<li>
-						Use Colliders with Kinematic RigidBody to make objects which you don't want to react to physics but still move them through scripts or something.
+							Use Colliders with Kinematic RigidBody to make objects which you don't want to react to physics but still move them through scripts or something.
 						</li>
 						<li>
-						Example usage:
-						Sliding Doors, Traps...
+							Example usage:
+							Sliding Doors, Traps...
 						</li>
 					</ul>
 				</section>
@@ -211,6 +240,23 @@
 					<h3>Raycasting 3D</h3>
 
 					<p>TODO</p>
+				</section>
+
+				<section>
+					<h3>Physics Layers</h3>
+
+					<p>Allow better customization for collisions</p>
+					<ul>
+						<li>
+							Every GameObject belongs to a Physics Layer
+						</li>
+						<li>
+							????
+							We can customize which layer with which other layer will collider:
+							Edit > Project Settings, then select the Physics
+							????
+						</li>
+					</ul>
 				</section>
 
 				<section>
@@ -238,26 +284,18 @@
 						<li>OnTriggerXXX[2D]</li>
 						<li>OnCollisionXXX[2D]</li>
 						<li>FixedUpdate</li>
+						<li>fixedDeltaTime</li>
 						<li>TODO</li>
 					</ul>
 				</section>
 
 				<section>
-					<h3>fixedDeltaTime</h3>
-
-					<p>TODO</p>
-				</section>
-
-				<section>
 					<h3>Physics Materials</h3>
 
-					<p>TODO</p>
-				</section>
-
-				<section>
-					<h3>Spacial Hashing</h3>
-
-					<p>TODO</p>
+					<ul>
+						<li>Can give additional properties to colliders like bounciness</li>
+						<li>TODO</li>
+					</ul>
 				</section>
 
 				<section>
