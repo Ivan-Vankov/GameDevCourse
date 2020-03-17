@@ -90,7 +90,8 @@
 
 					<p>
 						They are the objects that we will be applying physics on. 
-						You can think of them as sets of vertices, edges and faces.
+						You can think of them as sets of triangles (or vertices, edges and faces).
+						In unity we use meshes with the Mesh Filter and Mesh Renderer component.
 					</p>
 
 					<img height="200" data-src="images/Monkey.png" alt="Suzanne">
@@ -120,7 +121,7 @@
 
 					<p>
 						A tree structure of bounding volumes.
-						Can make the collision detection time complexity logarithmic in the number of objects.
+						Can make the time complexity of the collision detection algorithm logarithmic in the number of objects.
 					</p>
 					
 					<img height="300" data-src="images/Monkey-Bounding-Volume-Hierarchy.png" alt="Suzanne Hierarchy">
@@ -132,7 +133,7 @@
 					<ul>
 						<li>Unitys implementation of bouning volumes</li>
 						<li>Invisible in Game View</li>
-						<li>GameObjects can have multiple colliders</li>
+						<li>GameObjects can have multiple colliders (compound colliders)</li>
 						<li>Examples:
 							<ul>
 								<li>Box Collider</li>
@@ -163,10 +164,24 @@
 				<section>
 					<h3>Mesh Colliders</h3>
 
-					<ul>
-						<li>Convex</li>
-						<li>TODO</li>
-					</ul>
+					<p>
+						If even compound colliders don't offer enough precission then we can use 
+						Mesh Colliders to match the shape of the GameObject’s mesh exactly.
+					</p>
+
+					<img height="300" data-src="images/Monkey-Mesh-Collider.png" alt="Suzanne Mesh Collider">
+				</section>
+
+				<section>
+					<h3>Important!</h3>
+
+					<p>
+						Mesh Colliders don't collide with other mesh colliders.
+						For that to happen we need to make them into convex hulls.
+					</p>
+
+					<img height="300" data-src="images/Monkey-Convex-Hull.png" alt="Suzanne Convex Hull">
+					<img height="150" data-src="images/Click-Convex-Hull.gif" alt="Click Convex Hull">
 				</section>
 
 				<section>
@@ -175,49 +190,49 @@
 					<p>
 						By default colliders work for physics.
 						To make them work just for collision we have to make them triggers.
-						In scripts we work with them differently.
+						In scripts we work with triggers differently.
 					</p>
+					
+					<img height="150" data-src="images/Click-Is-Trigger.gif" alt="Click Is Trigger">
 				</section>
 
 				<section>
 					<h3>RigidBody(3D)</h3>
-					<p>Component that enables physical behaviour for a GameObject</p>
+
+					<p>Unitys implementation for 3D physics</p>
+
 					<ul>
-						<li>
-							It makes it move according to the collisions and its physical properties
-						</li>
-						<li>
-							Allows affection by gravity
-						</li>
-						<li>
-							Add properties like Mass and Drag
-						</li>
+						<li>Apply physical forces on a GameObject based on its colliders</li>
+						<li>Allows modification of gravity</li>
+						<li>Properties like Mass and Drag</li>
 					</ul>
 				</section>
 				
 				<section>
 					<h3>RigidBody2D</h3>
 
+					<p>Unitys implementation for 2D physics</p>
+
 					<ul>
-						<li>
-							Different Component from RigidBody
-						</li>
-						<li>
-							Works in a separate 2D Physics Engine
-						</li>
+						<li>Provides the same functionality in 2D that the Rigidbody component provides in 3D</li>
+						<li>Is incompatible with the regular Rigidbody</li>
+						<li>Works in a separate 2D Physics Engine</li>
 					</ul>
 				</section>
 				
 				<section>
 					<h3>Static Colliders</h3>
-					<p>When the GameObject doesn't have a RigidBody</p>
+					<p>When a GameObject has a collider but doesn't have a RigidBody</p>
 					<ul>
-						<li>
-							Static Colliders should be used for immovable objects. Don't change their transform position because that could cause errors in the physics engine!
-						</li>
+						<li>Used for motionless objects</li>
+						<li>Don't change their transform because that could cause errors in the physics engine!</li>
 						<li>
 							Example usage: 
-							Ground Terrain, Buildings, immovable objects...
+							<ul>
+								<li>Ground Terrain</li>
+								<li>Buildings</li>
+								<li>Walls</li>
+							</ul>
 						</li>
 					</ul>
 				</section>
