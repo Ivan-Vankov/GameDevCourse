@@ -338,24 +338,24 @@ void OnCollisionXXX(Collision collisionInfo) {
 
 					<pre>
 						<code class="language-cs hljs">
-// XXX is the same as for collisions:
-//   Enter
-//   Stay
-//   Exit
-// ----------------------------------
-// For 2D triggers:
-//   OnTriggerXXX2D(Collider2D collision) {...} 
-private void OnTriggerXXX(Collider other) {
-	if (other.CompareTag("MyTag")) {
-		Destroy(other.gameObject);
+	// XXX is the same as for collisions:
+	//   Enter
+	//   Stay
+	//   Exit
+	// ----------------------------------
+	// For 2D triggers:
+	//   OnTriggerXXX2D(Collider2D collision) {...} 
+	private void OnTriggerXXX(Collider other) {
+		if (other.CompareTag("MyTag")) {
+			Destroy(other.gameObject);
+		}
 	}
-}
 						</code>
 					</pre>
 				</section>
 
 				<section>
-					<h3>FixedUpdate</h3>
+					<h3><span class="unity-callback">F<span class="lowercase">ixed</span>U<span class="lowercase">pdate</span></span></h3>
 
 					<ul>
 						<li>The framerate independent version of Update</li>
