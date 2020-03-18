@@ -16,7 +16,7 @@ public class HighlightObjects : MonoBehaviour {
 
 	private void HighlightWithScreenPointToRay() {
 		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-		
+
 		if (!Physics.Raycast(ray, out RaycastHit hit)) {
 
 			if (hitObject != null) {
@@ -58,6 +58,22 @@ public class HighlightObjects : MonoBehaviour {
 			hitObjectMaterial = hitObject.GetComponent<MeshRenderer>().material;
 			originalColor = hitObjectMaterial.color;
 			hitObjectMaterial.color = highlightColor;
+		}
+	}
+
+	void Foo() {
+		int mask = LayerMask.GetMask("MyCustomLayer");
+		float rayLength = 200;
+		Vector3 origin = ...;
+		Vector3 direction = ...;
+		Ray ray = new Ray(origin, direction);
+
+		if (Physics.Raycast(ray, 
+		                    out RaycastHit hit, 
+							rayLength, 
+							mask, 
+							QueryTriggerInteraction.Collide)) {
+			//...
 		}
 	}
 }

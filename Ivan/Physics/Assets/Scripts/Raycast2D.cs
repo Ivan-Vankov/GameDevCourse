@@ -17,6 +17,5 @@ public class Raycast2D : MonoBehaviour {
 		else {
 			Debug.DrawLine(transform.position, transform.position + transform.right * 100, Color.green);
 		}
-
 	}
 }

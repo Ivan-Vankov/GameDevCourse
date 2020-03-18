@@ -247,6 +247,14 @@ bool Intersect(Vector3 aCenter, float aRadius,
 				</section>
 				
 				<section>
+					<h3>RigidBody Code</h3>
+
+					<ul>
+						<li>TODO</li>
+					</ul>
+				</section>
+
+				<section>
 					<h3>RigidBody2D</h3>
 
 					<ul>
@@ -301,63 +309,169 @@ bool Intersect(Vector3 aCenter, float aRadius,
 						<img height="150" data-src="images/Click-Is-Kinematic.gif" alt="Click Is Kinematic(╯°□°)╯︵ ┻━┻ ">
 					</div>
 				</section>
+
+				<section>
+					<h3>Physics Loop - Collisions</h3>
+
+					<pre>
+						<code class="language-cs hljs">
+// XXX can be:
+//   Enter - Called the first frame when this collider 
+//           touches another collider
+//   Stay  - Called once per frame for every collider 
+//           that is touching this collider
+//   Exit  - Called when this collider stops touching 
+//           other colliders
+// For 2D collisions:
+//   OnCollisionXXX2D(Collision2D collisionInfo) {...} 
+void OnCollisionXXX(Collision collisionInfo) {
+	if (collisionInfo.gameObject.CompareTag("Enemy")) {
+		Destroy(collisionInfo.gameObject);
+	}
+}
+						</code>
+					</pre>
+				</section>
 				
 				<section>
-					<h3>Physics Loop</h3>
+					<h3>Physics Loop - Triggers</h3>
 
-					<ul>
-						<li>OnTriggerXXX[2D]</li>
-						<li>OnCollisionXXX[2D]</li>
-						<li>XXX in the above methods can be:
-							<ul>
-								<li>Enter</li>
-								<li>Stay</li>
-								<li>Exit</li>
-							</ul>
-						</li>
-						<li>FixedUpdate</li>
-						<li>fixedDeltaTime</li>
-					</ul>
+					<pre>
+						<code class="language-cs hljs">
+// XXX is the same as for collisions:
+//   Enter
+//   Stay
+//   Exit
+// ----------------------------------
+// For 2D triggers:
+//   OnTriggerXXX2D(Collider2D collision) {...} 
+private void OnTriggerXXX(Collider other) {
+	if (other.CompareTag("MyTag")) {
+		Destroy(other.gameObject);
+	}
+}
+						</code>
+					</pre>
 				</section>
 
 				<section>
-					<h3>Raycasting 3D</h3>
+					<h3>FixedUpdate</h3>
 
-					<p>TODO</p>
+					<ul>
+						<li>The framerate independent version of Update</li>
+						<li>Called 50 times a second</li>
+						<li>Use fixedDeltaTime instead of deltaTime</li>
+						<li>Used fo physics calculations</li>
+					</ul>
 				</section>
 
 				<section>
 					<h3>Physics Layers</h3>
 
-					<p>Allow better customization for collisions</p>
 					<ul>
 						<li>Every GameObject belongs to a Physics Layer</li>
 						<li>We can define our own custom physics layers</li>
+						<li>Can be used in Raycast LayerMasks</li>
 						<li>
 							We can customize which layer can collide with which other layer:
 							<br>
 							Edit/Project Settings/Physics/Layer Collision Matrix
 						</li>
-						<li>Raycast LayerMasks</li>
 					</ul>
+
+					<div>
+						<img height="200" data-src="images/Layer-Collision-Matrix.gif" alt="Layer Collision Matrix">
+					</div>
+				</section>
+
+				<section>
+					<h3>Raycasting 3D</h3>
+
+					<p>
+						Cast a ray from some point in some direction 
+						and return information on what was hit
+					</p>
+
+					<pre>
+						<code class="language-cs hljs">
+void Foo() {
+	int mask = LayerMask.GetMask("MyCustomLayer", "Other");
+	float rayLength = 200;
+	Vector3 origin = ...;
+	Vector3 direction = ...;
+	if (Physics.Raycast(origin, 
+	                    direction
+	                    out RaycastHit hit, 
+	                    rayLength, 
+	                    mask, 
+	                    QueryTriggerInteraction.Collide)) {
+		//...
+	}
+}
+						</code>
+					</pre>
 				</section>
 
 				<section>
 					<h3>Raycasting 2D</h3>
 
-					<p>TODO</p>
+					<pre>
+						<code class="language-cs hljs">
+void Foo() {
+	int mask = LayerMask.GetMask("MyCustomLayer", "Other");
+	float rayLength = 200;
+	Vector3 origin = ...;
+	Vector3 direction = ...;
+	RaycastHit2D hitInfo = Physics2D.Raycast(origin, 
+	                                         direction, 
+	                                         rayLength, 
+	                                         mask);
+	if (hitInfo.collider != null) {
+		//...
+	}
+}
+						</code>
+					</pre>
 				</section>
 
 				<section>
-					<h3>Shape Raycasting 3D</h3>
+					<h3>Shape Casting 3D</h3>
 
-					<p>TODO</p>
+					<ul>
+						<li>Cast the shape along a ray with:
+							<ul>
+								<li><span class="clazz">Physics</span>.[Box|Sphere|Capsule]Cast</li>
+							</ul>
+						</li>
+						<li>Check all colliders touching or inside a shape with:
+							<ul>
+								<li><span class="clazz">Physics</span>.Overlap[Box|Sphere|Capsule]</li>
+							</ul>
+						</li>
+					</ul>
 				</section>
 
 				<section>
-					<h3>Shape Raycasting 2D</h3>
+					<h3>Shape Casting 2D</h3>
 
-					<p>TODO</p>
+					<ul>
+						<li>The 2D equivalent of shape casting:
+							<ul>
+								<li><span class="clazz">Physics</span>.Overlap[Box|Circle|Capsule]</li>
+								<li><span class="clazz">Physics</span>.[Box|Circle|Capsule]Cast</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>R<span class="lowercase">aycast</span>A<span class="lowercase">ll</span></h3>
+
+					<ul>
+						<li>All physics XXXCast methods have an XXXCastAll variant</li>
+						<li>A regular cast detects a collision with only the object hit</li>
+						<li>An all-cast detects all hit objects</li>
+					</ul>
 				</section>
 
 				<section>
