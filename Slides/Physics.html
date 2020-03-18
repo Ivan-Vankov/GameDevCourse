@@ -447,6 +447,20 @@ void Foo() {
 				</section>
 
 				<section>
+					<h3>Debugging Raycasts</h3>
+
+					<pre>
+						<code class="language-cs hljs">
+// Draw a line from start to start + dir in world coordinates
+Debug.DrawRay(Vector3 start, Vector3 dir);
+
+// Draw a line between specified start and end points
+Debug.DrawLine(Vector3 start, Vector3 end);
+						</code>
+					</pre>
+				</section>
+
+				<section>
 					<h3>Shape Casting 3D</h3>
 
 					<ul>
@@ -461,6 +475,12 @@ void Foo() {
 							</ul>
 						</li>
 					</ul>
+				</section>
+
+				<section>
+					<h3>Shape Casting vs Overlap</h3>
+
+					<img height="400" data-src="images/Overlap-vs-ShapeCast.png" alt="Overlap vs Shapecast">
 				</section>
 
 				<section>
