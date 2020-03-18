@@ -15,6 +15,7 @@ public class RaycastForward : MonoBehaviour {
 							100, 
 							mask, 
 							QueryTriggerInteraction.Ignore)) {
+
 			print(hitInfo.collider.gameObject.name);
 			Destroy(hitInfo.transform.gameObject);
 			Debug.DrawLine(ray.origin, hitInfo.point, Color.red);

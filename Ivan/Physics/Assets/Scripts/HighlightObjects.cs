@@ -16,8 +16,7 @@ public class HighlightObjects : MonoBehaviour {
 
 	private void HighlightWithScreenPointToRay() {
 		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-		print(ray);
+		
 		if (!Physics.Raycast(ray, out RaycastHit hit)) {
 
 			if (hitObject != null) {
