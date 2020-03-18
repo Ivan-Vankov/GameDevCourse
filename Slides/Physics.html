@@ -236,6 +236,17 @@ bool Intersect(Vector3 aCenter, float aRadius,
 				</section>
 
 				<section>
+					<h3><span class="unity-callback">F<span class="lowercase">ixed</span>U<span class="lowercase">pdate</span></span></h3>
+
+					<ul>
+						<li>The framerate independent version of Update</li>
+						<li>Called 50 times a second</li>
+						<li>Use <span class="clazz">Time</span>.fixedDeltaTime instead of <span class="clazz">Time</span>.deltaTime</li>
+						<li>Used for physics calculations</li>
+					</ul>
+				</section>
+
+				<section>
 					<h3>RigidBody(3D)</h3>
 
 					<ul>
@@ -251,16 +262,19 @@ bool Intersect(Vector3 aCenter, float aRadius,
 
 					<pre>
 						<code class="language-cs hljs">
-void AddForce(Vector3 force, ForceMode mode = ForceMode.Force);
-void AddTorque(Vector3 torque, ForceMode mode = ForceMode.Force);
+RigidBody body = GetComponent&lt;RigidBody&gt;();
+// All forces are applied for the period of fixedDeltaTime
+
+// Apply Force
+body.AddForce(Vector3 force, ForceMode mode = ForceMode.Force);
+
+// Apply Torque
+body.AddTorque(Vector3 torque, ForceMode mode = ForceMode.Force);
+
+// Move the RigidBody towards a position
+body.MovePosition(Vector3 position);
 						</code>
 					</pre>
-					
-					<ul>
-						<li>Apply Force</li>
-						<li>Apply Torque</li>
-						<li>All forces are applied for the period of fixedDeltaTime</li>
-					</ul>
 				</section>
 
 				<section>
@@ -361,17 +375,6 @@ void OnCollisionXXX(Collision collisionInfo) {
 	}
 						</code>
 					</pre>
-				</section>
-
-				<section>
-					<h3><span class="unity-callback">F<span class="lowercase">ixed</span>U<span class="lowercase">pdate</span></span></h3>
-
-					<ul>
-						<li>The framerate independent version of Update</li>
-						<li>Called 50 times a second</li>
-						<li>Use fixedDeltaTime instead of deltaTime</li>
-						<li>Used fo physics calculations</li>
-					</ul>
 				</section>
 
 				<section>
