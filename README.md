@@ -17,3 +17,10 @@
 | 2 | [Unity Basics](https://ivan-vankov.github.io/GameDevCourse/Slides/Unity%20Basics.html) | 05.03.2020 |
 | 3 | [C# Basics](https://ivan-vankov.github.io/GameDevCourse/Slides/C%23%20Basics.html) | 12.03.2020 |
 | 4 | [Physics](https://ivan-vankov.github.io/GameDevCourse/Slides/Physics.html) | 19.03.2020 |
+| 5 | Unity Test | 26.03.2020 |
+
+
+| # | Homework | Deadline |
+|---| ---------------------------------------------------------------------------------------------------------------- |:----------:|
+| 1 | [Camera Follow](https://ivan-vankov.github.io/GameDevCourse/Homework/Homework%201.md) | 29.03.2020 |
+| 2 | [Ground Detection](https://ivan-vankov.github.io/GameDevCourse/Homework/Homework%202.md) | 29.03.2020 |
