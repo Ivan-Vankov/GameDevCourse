@@ -2,6 +2,7 @@
 
 ## Slides inspired by the [Game Engine Architecture](https://nikoladimitroff.github.io/Game-Engine-Architecture/) course slides ❤️
 
+## Requirements for the course project can be found [***HERE***](https://docs.google.com/document/d/1PoW7QapPoW9VEZ275j7cL91NhomKQy7ICJC_PG5zSUY/edit?usp=sharing)
 
 | Socials for |  |  |  |
 |---|---|---|---|
@@ -24,5 +25,3 @@
 |---| ---------------------------------------------------------------------------------------------------------------- |:----------:|
 | 1 | [Camera Follow](https://github.com/Ivan-Vankov/GameDevCourse/blob/gh-pages/Homework/Homework%201.md) | 29.03.2020 |
 | 2 | [Ground Detection](https://github.com/Ivan-Vankov/GameDevCourse/blob/gh-pages/Homework/Homework%202.md) | 29.03.2020 |
-
-[**Course Project Requirements**](https://docs.google.com/document/d/1PoW7QapPoW9VEZ275j7cL91NhomKQy7ICJC_PG5zSUY/edit?usp=sharing)
