@@ -9,9 +9,9 @@ public class PlayerMovement : MonoBehaviour {
 
 	void Update() {
 		Vector3 moveDirection =
-				new Vector3(Input.GetAxis("Horizontal"),
-							0,
-							Input.GetAxis("Vertical"))
+				new Vector3(-Input.GetAxis("Vertical"),
+							+0,
+							+Input.GetAxis("Horizontal"))
 							.normalized
 				* Time.deltaTime
 				* speed;
