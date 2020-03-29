@@ -55,7 +55,7 @@
 					<p>What are bounding volumes?</p>
 					<ul>
 						<li class="fragment">Simple shapes containing a mesh or a sprite used for calculating collisions</li>
-						<li class="fragment">Offer better performance than using meshes for collisions because of their simple shape</li>
+						<li class="fragment">Offer better performance than using raw meshes for collisions</li>
 					</ul>
 				</section>
 
@@ -64,7 +64,7 @@
 
 					<p>What is a Rigidbody?</p>
 					<ul>
-						<li class="fragment">Component which allows Gameobject to be affected by physics</li>
+						<li class="fragment">Component which allows a Gameobject to be affected by physics</li>
 						<li class="fragment">Adds physical properties like mass and drag</li>
 					</ul>
 				</section>
@@ -74,63 +74,274 @@
 
 					<p>What is a Raycast?</p>
 					<ul>
-						<li class="fragment">A technique used to check for colliders intersecteed by a ray</li>
+						<li class="fragment">A technique used to check for colliders intersected by a ray</li>
 						<li class="fragment">Every ray has a starting point and a direction</li>
 					</ul>
 				</section>
 
 				<section>
-					<h3>3D Animation with bones</h3>
+					<h3>Types of animation</h3>
 
-					<p>TODO</p>
+					<ul>
+						<li>Skeletal Animation</li>
+						<li>Blend Shapes (Morph Targets)</li>
+						<li>Traditional (Sprite Sheet) Animation</li>
+					</ul>
 				</section>
 
 				<section>
-					<h3>3D Animation with blend shapes</h3>
+					<h3>Skeletal Animation</h3>
 
-					<p>TODO</p>
+					<p>The character is split into:</p>
+
+					<ul>
+						<li>A mesh/skin
+							<ul>
+								<li>Used to draw the character</li>
+							</ul>
+						</li>
+
+						<li>A set of bones and joints
+							<ul>
+								<li>Used to animate the character</li>
+							</ul>
+						</li>
+						
+						<li>The latter is also called a skeleton/rig/armature</li>
+					</ul>
+
+					<p>TODO image</p>
 				</section>
 
 				<section>
-					<h3>Sprite Sheet Animation</h3>
+					<h3>Bone Parenting</h3>
 
-					<p>TODO</p>
+					<p>
+						Bones can be parented.
+						Bones down the parenting heirarchy are affected by those above.
+						For example if the shoulder bone moves 
+							-> the hand bones will move as well.
+					</p>
+
+					<ul>
+						<li>TODO</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Bone Weights</h3>
+
+					<p>Each bone affects the vertices around it according to a specified weight</p>
+
+					<img height="400" src="images/Bone-With-Weight-Paint.gif">
+				</section>
+				
+				<section>
+					<h3>Keyframes</h3>
+
+					<p>
+						Snapshots of the skeleton in extreme positions.
+						Animation is done by interpolationg between keyframes.
+					</p>
+
+					<p>TODO image</p>
+				</section>
+				
+				<section>
+					<h3>Skeletal Animation Preview</h3>
+
+					<img height="300" src="images/Skeletal_Animation.gif">
+				</section>
+
+				<section>
+					<h3>Blend Shapes</h3>
+
+					<ul>
+						<li>Also a type of keyframe animation</li>
+						<li>Keyframes are not snapshots of a skeleton but deformations of the base mesh</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Blend Shapes Preview</h3>
+
+					<img height="300" src="images/Blend_Shapes_Preview.gif">
 				</section>
 
 				<section>
 					<h3>Sprites</h3>
 
-					<p>TODO</p>
+					<p style="text-align: left;">Before we talk about sprite sheet animation we need to talk about sprites.</p>
+					<p style="text-align: left;">Sprites in computer graphics are 2D images that are integrated into a larger scene.</p>
+					<p style="text-align: left;">In Unity they are implemented into with the Sprite Renderer component.</p>
 				</section>
 
 				<section>
-					<h3>Sprite Slicing</h3>
+					<h3>Sprites Sheets</h3>
 
-					<p>TODO</p>
+					<ul>
+						<li>Sprites that contains other smaller sprites</li>
+						<li>Improve performance</li>
+					</ul>
+
+					<img style="image-rendering: crisp-edges" height="300" src="images/Mario_Small_Sprite_Sheet.png">
 				</section>
 
 				<section>
-					<h3>Sorting Order</h3>
+					<h3>Image Import Settings</h3>
 
-					<p>TODO</p>
+					<ul>
+						<li>Texture Type: Default -> Sprite</li>
+						<li>Sprite Mode: Single -> Multiple
+							<ul>
+								<li>For Sprite Sheets</li>
+							</ul>
+						</li>
+						<li>Filter Mode: Bilinear -> Point
+							<ul>
+								<li>For Pixel Art</li>
+							</ul>
+						</li>
+					</ul>
 				</section>
 
 				<section>
-					<h3>2D Animation with bones</h3>
+					<h3>Sprite Editor</h3>
 
-					<p>TODO</p>
+					<ul>
+						<li>Breaks up the Sprite Sheet into individual Sprites</li>
+						<li>Individual sprites are defined by:
+							<ul>
+								<li>x and y offset</li>
+								<li>width and height</li>
+							</ul>
+						</li>
+						<li>Unity can slice the sprite sheet for you</li>
+					</ul>
 				</section>
 
 				<section>
-					<h3>Animator window</h3>
+					<h3>The Sprite Renderer Component</h3>
+					
+					<ul>
+						<li>Draws an image with Texture Type: Sprite</li>
+						<li>Allows for color tint</li>
+						<li>Sorting Layers allow for sprites to be properly drawn one over the other
+							<ul>
+								<li>Sprites in a higher Sorting Layer are drawn over Sprites in a lower Sorting Layer</li>
+								<li>Sprites with a higher Order in Layer are drawn over Sprites with a lower sorting layer</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
 
-					<p>Finite state automaton bla bla bla</p>
+				<section>
+					<h3>Z Sorting</h3>
+
+					<ul>
+						<li>An alternative to Sorting Layers</li>
+						<li>Utilizes that the engine is 3D</li>
+						<li>Sprites with a higher transform.z value are drawn over Sprites with a lower value</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Sprite Sheet Animation Preview</h3>
+
+					<ul>
+						<li>TODO</li>
+					</ul>
 				</section>
 				
 				<section>
-					<h3>Animation Transitions</h3>
+					<h3>Animation in Unity</h3>
 
-					<p>TODO</p>
+					<ul>
+						<li>Select the GameObject that you want to animate</li>
+						<li>Open the Animation window in <br>Window/Animation/Animation</li>
+						<li>Click "Create". This will:
+							<ul>
+								<li>Create an Animation Controller</li>
+								<li>Create an Animation Clip</li>
+								<li>Add the Animator Component to your GameObject</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				
+				<section>
+					<h3>Animation Clip</h3>
+
+					<ul>
+						<li>Collection of keyframes
+							<ul>
+								<li>Keyframes are snapshots of the properties of the GameObjects and its children</li>
+								<li>Controlled in the Dopesheet menu</li>
+							</ul>
+						</li>
+						<li>Collection of inteprolating curves(splines)
+							<ul>
+								<li>Controlled in the Curves menu</li>
+							</ul>
+						</li>
+						<li>Can have events happen on particular frames of the animation</li>
+					</ul>
+				</section>
+								
+				<section>
+					<h3>Animation Clip Live Demo</h3>
+
+					<ul>
+						<li>TODO add gif</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Animator</h3>
+
+					<ul>
+						<li>Finite state automaton that controlls the transition between animation clips</li>
+						<li>
+							Open by double clicking the created .controller file or go to 
+							<br>
+							Window/Animation/Animator
+						</li>
+					</ul>
+					
+					<p>TODO Add image</p>
+				</section>
+
+				<section>
+					<h3>Animator</h3>
+
+					<ul>
+						<li>Finite state automaton that controlls the transition between animation clips</li>
+						<li>
+							Open by double clicking the created .controller file or go to 
+							<br>
+							Window/Animation/Animator
+						</li>
+					</ul>
+
+					<p>TODO Add image</p>
+				</section>
+
+				<section>
+					<h3>Animator Parameters</h3>
+
+					<ul>
+						<li>Control the animation state</li>
+						<li>Can be bool, float, int, trigger</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Animation Transitions</h3>
+					<ul>
+						<li>Change the current animation clip based on some condition</li>
+						<li>Exit Time</li>
+						<li>Transiton Duration</li>
+					</ul>
 				</section>
 				
 				<section>
@@ -140,19 +351,47 @@
 				</section>
 
 				<section>
+					<h3>Animator Live Demo</h3>
+
+					<ul>
+						<li>Finite state</li>
+						<li>
+							Open by double clicking the created .controller file or go to 
+							<br>
+							Window/Animation/Animator
+						</li>
+						<li>Can have events happen on particular frames of the animation</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Why use Unity's internal animator?</h3>
+
+					<p>
+						Other animation tools can't know if the object being animated has, 
+						for example, a Rigidbody.<br>
+						Therefore they can't animate everything about a GameObject.
+					</p>
+				</section>
+
+				<section>
+					<h3>The 12 principles of animation</h3>
+
+					<p>TODO</p>
+				</section>
+
+				<section>
+					<h3>Important!</h3>
+
+					<p>
+						Update in scripts happens before the animator update.
+						This means that changes in the animator will override schanges in script.
+						To overcome this we should use proper GameObject heirarchies and animate the children. 
+					</p>
+				</section>
+
+				<section>
 					<h3>Animator components</h3>
-
-					<p>TODO</p>
-				</section>
-
-				<section>
-					<h3>Animation Clips</h3>
-
-					<p>TODO</p>
-				</section>
-				
-				<section>
-					<h3>Keyframes</h3>
 
 					<p>TODO</p>
 				</section>
@@ -165,12 +404,6 @@
 
 				<section>
 					<h3>Animator in Code</h3>
-
-					<p>TODO</p>
-				</section>
-
-				<section>
-					<h3>Sprite Sheet Animation Demo</h3>
 
 					<p>TODO</p>
 				</section>
