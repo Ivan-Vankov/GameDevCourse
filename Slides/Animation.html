@@ -178,6 +178,8 @@
 					<ul>
 						<li>Also a type of keyframe animation</li>
 						<li>Keyframes are not snapshots of a skeleton but deformations of the base mesh</li>
+						<li>More expensive than skeletal animation</li>
+						<li>Generally used for elements that require detailed animation like the human face</li>
 					</ul>
 				</section>
 
@@ -235,7 +237,7 @@
 								<li>width and height</li>
 							</ul>
 						</li>
-						<li>Unity can slice the sprite sheet for you</li>
+						<li>Unity can slice the sprite sheet for you automatically</li>
 					</ul>
 				</section>
 
@@ -267,9 +269,7 @@
 				<section>
 					<h3>Sprite Sheet Animation Example</h3>
 
-					<ul>
-						<li>TODO</li>
-					</ul>
+					<img height="400" src="images/Sprite_Sheet_Animation.gif">
 				</section>
 				
 				<section>
@@ -309,10 +309,6 @@
 								
 				<section>
 					<h3>Animation Clip Live Demo</h3>
-
-					<ul>
-						<li>TODO add gif</li>
-					</ul>
 				</section>
 
 				<section>
@@ -326,30 +322,17 @@
 							Window/Animation/Animator
 						</li>
 					</ul>
-					
-					<p>TODO Add image</p>
 				</section>
 
 				<section>
-					<h3>Animator</h3>
-
-					<ul>
-						<li>Finite state automaton that controlls the transition between animation clips</li>
-						<li>
-							Open by double clicking the created .controller file or go to 
-							<br>
-							Window/Animation/Animator
-						</li>
-					</ul>
-
-					<p>TODO Add image</p>
+					<img width="800" src="images/Animator.png">
 				</section>
 
 				<section>
 					<h3>Animator Parameters</h3>
 
 					<ul>
-						<li>Control the animation state</li>
+						<li>Help control the animation state</li>
 						<li>Can be bool, float, int, trigger</li>
 					</ul>
 				</section>
@@ -366,31 +349,13 @@
 				<section>
 					<h3>Blend Trees</h3>
 
-					<p>TODO</p>
+					<p>Blend between animations to get a new one</p>
+
+					<img height="400" src="images/Blend_Trees.gif">
 				</section>
 
 				<section>
 					<h3>Animator Live Demo</h3>
-
-					<ul>
-						<li>Finite state</li>
-						<li>
-							Open by double clicking the created .controller file or go to 
-							<br>
-							Window/Animation/Animator
-						</li>
-						<li>Can have events happen on particular frames of the animation</li>
-					</ul>
-				</section>
-
-				<section>
-					<h3>Why use Unity's internal animator?</h3>
-
-					<p>
-						Other animation tools can't know if the object being animated has, 
-						for example, a Rigidbody.<br>
-						Therefore they can't animate everything about a GameObject.
-					</p>
 				</section>
 
 				<section>
@@ -400,6 +365,20 @@
 				</section>
 
 				<section>
+					<h3>Animator in Code</h3>
+
+					<pre>
+						<code class="language-cs hljs">
+	Animator animator = GetComponent&lt;Animator&gt;();
+	animator.SetBool(   "ParameterName", true);
+	animator.SetFloat(  "ParameterName", 1f);
+	animator.SetInteger("ParameterName", 1);
+	animator.SetTrigger("ParameterName");
+						</code>
+					</pre>
+				</section>
+				
+				<section>
 					<h3>Important!</h3>
 
 					<p>
@@ -407,31 +386,6 @@
 						This means that changes in the animator will override schanges in script.
 						To overcome this we should use proper GameObject heirarchies and animate the children. 
 					</p>
-				</section>
-
-				<section>
-					<h3>Animator components</h3>
-
-					<p>TODO</p>
-				</section>
-				
-				<section>
-					<h3>Keyframe Interpolation</h3>
-
-					<p>TODO</p>
-				</section>
-
-				<section>
-					<h3>Animator in Code</h3>
-
-					<p>TODO</p>
-				</section>
-
-				<section>
-					<h3>2D Animation through Animator Demo</h3>
-
-					<a href="https://www.youtube.com/watch?v=ts24UWC0mY4">Inspiration here</a>
-					<p>TODO</p>
 				</section>
 
 				<section>

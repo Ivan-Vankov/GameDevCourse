@@ -1,0 +1,627 @@
+fileFormatVersion: 2
+guid: 145a45882987ee94ab568f80c34acd14
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2289801716555681118
+    second: Chinese Dragon_0
+  - first:
+      213: -8490832919042598061
+    second: Chinese Dragon_1
+  - first:
+      213: -5557038599931992711
+    second: Chinese Dragon_2
+  - first:
+      213: -8389474837454661478
+    second: Chinese Dragon_3
+  - first:
+      213: -7831932570633895076
+    second: Chinese Dragon_4
+  - first:
+      213: -8544642730522983103
+    second: Chinese Dragon_5
+  - first:
+      213: 2556123642597462650
+    second: Chinese Dragon_6
+  - first:
+      213: 84473474125666653
+    second: Chinese Dragon_7
+  - first:
+      213: 5012100858521571721
+    second: Chinese Dragon_8
+  - first:
+      213: 4652597228929520304
+    second: Chinese Dragon_9
+  - first:
+      213: 2757923664380043344
+    second: Chinese Dragon_10
+  - first:
+      213: 6649626372308777145
+    second: Chinese Dragon_11
+  - first:
+      213: -5186280430842652831
+    second: Chinese Dragon_12
+  - first:
+      213: 5291149129059652645
+    second: Chinese Dragon_13
+  - first:
+      213: -2557324439262460430
+    second: Chinese Dragon_14
+  - first:
+      213: -6159536142766296300
+    second: Chinese Dragon_15
+  - first:
+      213: 395002808890730742
+    second: Chinese Dragon_16
+  - first:
+      213: -2187704899410230054
+    second: Chinese Dragon_17
+  - first:
+      213: -3041160742471824867
+    second: Chinese Dragon_18
+  - first:
+      213: 970795891412717992
+    second: Chinese Dragon_19
+  - first:
+      213: 3509609707432330518
+    second: Chinese Dragon_20
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Chinese Dragon_0
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 423
+        width: 13
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c5694a68059e314c8cb2a7c82c0de4a
+      internalID: -2289801716555681118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chinese Dragon_1
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 421
+        width: 18
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21c536d070255784ba4d406ee792c7fb
+      internalID: -8490832919042598061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chinese Dragon_2
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 346
+        width: 160
+        height: 178
+      alignment: 9
+      pivot: {x: 0.5139948, y: 0.068104774}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 042eddbfa5b950a4eaef3c7eeb86ea28
+      internalID: -5557038599931992711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chinese Dragon_3
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 395
+        width: 38
+        height: 85
+      alignment: 9
+      pivot: {x: 0.2643007, y: 0.4648764}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b0ef330dd5d6a04c9d6bf6213cab08c
+      internalID: -8389474837454661478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chinese Dragon_4
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 370
+        width: 59
+        height: 18
+      alignment: 9
+      pivot: {x: 0.96807057, y: 0.70732963}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52cd1abfee0497f43a02be4d8abbd618
+      internalID: -7831932570633895076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chinese Dragon_5
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 301
+        width: 57
+        height: 72
+      alignment: 9
+      pivot: {x: 0.4869058, y: 0.5725653}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03d5df236c510f846b1cd845c7fa4095
+      internalID: -8544642730522983103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chinese Dragon_6
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 370
+        width: 68
+        height: 18
+      alignment: 9
+      pivot: {x: 0.049975675, y: 0.5414666}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f4295e71fc5e664b8abba8fff25a7a9
+      internalID: 2556123642597462650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chinese Dragon_7
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 310
+        width: 73
+        height: 42
+      alignment: 9
+      pivot: {x: 0.5511222, y: 0.25120616}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 075e29d8d7520e546a54443aaa1aca13
+      internalID: 84473474125666653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chinese Dragon_8
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 309
+        width: 53
+        height: 35
+      alignment: 9
+      pivot: {x: 0.55633086, y: 0.585301}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59618a531d957794399a543b090ac5a6
+      internalID: 5012100858521571721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chinese Dragon_9
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 247
+        width: 49
+        height: 39
+      alignment: 9
+      pivot: {x: 0.86557496, y: 0.21293014}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 581c4b862f8f0ce448a694e507ffdd0d
+      internalID: 4652597228929520304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chinese Dragon_10
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 220
+        width: 56
+        height: 43
+      alignment: 9
+      pivot: {x: 0.859863, y: 0.67357796}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aafa2a3c2d4208944b8c8d5560b1056b
+      internalID: 2757923664380043344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chinese Dragon_11
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 133
+        width: 118
+        height: 173
+      alignment: 9
+      pivot: {x: 0.54243237, y: 0.09480639}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef0c2092d203476439a2a48ead094d7f
+      internalID: 6649626372308777145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chinese Dragon_12
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 230
+        width: 81
+        height: 47
+      alignment: 9
+      pivot: {x: 0.057699323, y: 0.38883713}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea86447d846d2a143849ce208fa72bc7
+      internalID: -5186280430842652831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chinese Dragon_13
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 238
+        width: 23
+        height: 39
+      alignment: 9
+      pivot: {x: 0.4350984, y: 0.82534635}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a006cc5cc05e4bd49a2c8a811e32735e
+      internalID: 5291149129059652645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chinese Dragon_14
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 227
+        width: 50
+        height: 29
+      alignment: 9
+      pivot: {x: 0.5149286, y: 0.78311104}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2adae43857464e41bc98298e57f6d7a
+      internalID: -2557324439262460430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chinese Dragon_15
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 175
+        width: 56
+        height: 103
+      alignment: 9
+      pivot: {x: 0.38597435, y: 0.08896496}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0424e006c00f3f8448a43a48443231de
+      internalID: -6159536142766296300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chinese Dragon_16
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 206
+        width: 24
+        height: 40
+      alignment: 9
+      pivot: {x: 0.6554963, y: 0.1827877}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58c39a9fc449ebf44b23962cae67b65a
+      internalID: 395002808890730742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chinese Dragon_17
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 138
+        width: 91
+        height: 72
+      alignment: 9
+      pivot: {x: 0.07338405, y: 0.15551418}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f0617a38591c704d9e443410c802e1c
+      internalID: -2187704899410230054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chinese Dragon_18
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 14
+        width: 102
+        height: 90
+      alignment: 9
+      pivot: {x: 0.7634291, y: 0.8897776}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 032581c430c1c074d9ac3e2aa903bdc5
+      internalID: -3041160742471824867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chinese Dragon_19
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 0
+        width: 91
+        height: 115
+      alignment: 9
+      pivot: {x: 0.43438384, y: 0.9413392}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32038245619976c49888d3c9d7dab230
+      internalID: 970795891412717992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chinese Dragon_20
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 18
+        width: 108
+        height: 140
+      alignment: 9
+      pivot: {x: 0.14063093, y: 0.15346535}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc308ba902f2be64bbcca8c596dd1977
+      internalID: 3509609707432330518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 441dbda6e4092ac4ba85eed75e5dddeb
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
