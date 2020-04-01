@@ -4,14 +4,23 @@ using static UnityEngine.Mathf;
 [RequireComponent(typeof(Animator))]
 public class PlayerMovement : MonoBehaviour {
 
-	public float moveSpeed = 2;
+	[SerializeField]
+	[Range(0, 5)]
+	private float moveSpeed = 2;
+
+	[SerializeField]
+	[Range(0.1f, 2)]
 	public float gravity = 0.5f;
+
 	private bool isCrouching = false;
 	private bool isJumping = false;
 	private readonly float movementThreshold = 0.01f;
 	private Vector2 velocity = Vector2.zero;
 
+	[SerializeField]
 	private KeyCode jumpKey = KeyCode.W;
+
+	[SerializeField]
 	private KeyCode crouchKey = KeyCode.S;
 
 	private Animator animator;
@@ -34,7 +43,7 @@ public class PlayerMovement : MonoBehaviour {
 		velocity.x = Input.GetAxis("Horizontal");
 		animator.SetFloat("HorizontalMovement", Abs(velocity.x));
 
-		if (velocity.magnitude > movementThreshold) {
+		if (Abs(velocity.x) > movementThreshold) {
 			transform.localScale = new Vector3(Sign(velocity.x), 1, 1);
 		}
 

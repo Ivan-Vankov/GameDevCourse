@@ -26,3 +26,4 @@
 |---| ---------------------------------------------------------------------------------------------------------------- |:----------:|
 | 1 | [Camera Follow](https://github.com/Ivan-Vankov/GameDevCourse/blob/gh-pages/Homework/Homework%201.md) | 29.03.2020 |
 | 2 | [Ground Detection](https://github.com/Ivan-Vankov/GameDevCourse/blob/gh-pages/Homework/Homework%202.md) | 29.03.2020 |
+| 3 | [Power-up Animation](https://github.com/Ivan-Vankov/GameDevCourse/blob/gh-pages/Homework/Homework%203.md) | 10.04.2020 |
