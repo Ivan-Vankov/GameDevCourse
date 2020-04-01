@@ -19,6 +19,7 @@
 | 3 | [C# Basics](https://ivan-vankov.github.io/GameDevCourse/Slides/C%23%20Basics.html) | 12.03.2020 |
 | 4 | [Physics](https://ivan-vankov.github.io/GameDevCourse/Slides/Physics.html) | 19.03.2020 |
 | 5 | ***Unity Test*** | 26.03.2020 |
+| 6 | [Animation](https://ivan-vankov.github.io/GameDevCourse/Slides/Animation.html) | 02.04.2020 |
 
 
 | # | Homework | Deadline |
