@@ -54,7 +54,7 @@
 
 					<p>What are bounding volumes?</p>
 					<ul>
-						<li class="fragment">Simple shapes containing a mesh or a sprite used for calculating collisions</li>
+						<li class="fragment">Simple shapes containing a mesh or a 2D image used for calculating collisions</li>
 						<li class="fragment">Offer better performance than using raw meshes for collisions</li>
 					</ul>
 				</section>
@@ -64,7 +64,10 @@
 
 					<p>What is a Rigidbody?</p>
 					<ul>
-						<li class="fragment">Component which allows a Gameobject to be affected by physics</li>
+						<li class="fragment">
+							A component which allows a GameObject to be affected by physics
+							based on its colliders
+						</li>
 						<li class="fragment">Adds physical properties like mass and drag</li>
 					</ul>
 				</section>
@@ -74,8 +77,9 @@
 
 					<p>What is a Raycast?</p>
 					<ul>
-						<li class="fragment">A technique used to check for colliders intersected by a ray</li>
-						<li class="fragment">Every ray has a starting point and a direction</li>
+						<li class="fragment">A ray that is fired from an origin in some direction</li>
+						<li class="fragment">Gives information about the first collider it hits</li>
+						<li class="fragment">Incredibly useful (gun shots, AI, line of sight...)</li>
 					</ul>
 				</section>
 
@@ -107,19 +111,20 @@
 							</ul>
 						</li>
 						
-						<li>The latter is also called a skeleton/rig/armature</li>
+						<li>The latter is also called a skeleton/animation rig/armature</li>
 					</ul>
 				</section>
 				
 				<section>
-					<img height="500" src="images/Skeleton_Rig.png">
+					<h3>Skeleton Rig Example</h3>
+					<img height="500" src="images/Skeleton_Rig.png" alt="Skeleton Rig">
 				</section>
 
 				<section>
 					<h3>
 						Bone Parenting
-						<br>
-						(Forward Kinematics)
+						/ <br>
+						Forward Kinematics (FK)
 					</h3>
 
 					<p>
@@ -135,15 +140,15 @@
 
 					<p>Each bone affects the vertices around it according to a specified weight</p>
 
-					<img height="400" src="images/Bone-With-Weight-Paint.gif">
+					<img height="400" src="images/Bone-With-Weight-Paint.gif" alt="Bone with Weight Paint">
 				</section>
 		
 				<section>
-					<h3>Inverse Kinematics</h3>
+					<h3>Inverse Kinematics (IK)</h3>
 
 					<p>How much a bone down the chain affects bones up the chain.</p>
 
-					<img height="300" src="images/Inverse_Kinematics.gif">
+					<img height="280" src="images/Inverse_Kinematics.gif" alt="Inverse Kinematics">
 				</section>
 				
 				<section>
@@ -159,7 +164,7 @@
 				<section>
 					<h3>Skeletal Animation Example</h3>
 
-					<img height="300" src="images/Skeletal_Animation.gif">
+					<img height="300" src="images/Skeletal_Animation.gif" alt="Skeletal Animation">
 				</section>
 				
 				<section>
@@ -169,7 +174,7 @@
 						Actual Example
 					</h3>
 
-					<img height="300" src="images/Skeletal_Walk.gif">
+					<img height="300" src="images/Skeletal_Walk.gif" alt="Skeletal Walk">
 				</section>
 
 				<section>
@@ -186,7 +191,7 @@
 				<section>
 					<h3>Blend Shapes Example</h3>
 
-					<img height="300" src="images/Blend_Shapes_Preview.gif">
+					<img height="300" src="images/Blend_Shapes_Preview.gif" alt="Blend Shapes Preview">
 				</section>
 
 				<section>
@@ -194,7 +199,7 @@
 
 					<p style="text-align: left;">Before we talk about sprite sheet animation we need to talk about sprites.</p>
 					<p style="text-align: left;">Sprites in computer graphics are 2D images that are integrated into a larger scene.</p>
-					<p style="text-align: left;">In Unity they are implemented into with the Sprite Renderer component.</p>
+					<p style="text-align: left;">In Unity they are implemented with the Sprite Renderer component.</p>
 				</section>
 
 				<section>
@@ -202,10 +207,10 @@
 
 					<ul>
 						<li>Sprites that contains other smaller sprites</li>
-						<li>Improve performance</li>
+						<li>Improve performance (locality)</li>
 					</ul>
 
-					<img style="image-rendering: crisp-edges" height="300" src="images/Mario_Small_Sprite_Sheet.png">
+					<img height="280" src="images/Sprite_Sheet.png" alt="Sprite Sheet">
 				</section>
 
 				<section>
@@ -269,7 +274,7 @@
 				<section>
 					<h3>Sprite Sheet Animation Example</h3>
 
-					<img height="400" src="images/Sprite_Sheet_Animation.gif">
+					<img height="350" src="images/Sprite_Sheet_Animation.gif" alt="Sprite Sheet Animation">
 				</section>
 				
 				<section>
@@ -325,7 +330,7 @@
 				</section>
 
 				<section>
-					<img width="800" src="images/Animator.png">
+					<img width="800" src="images/Animator.png" alt="Animator">
 				</section>
 
 				<section>
@@ -351,7 +356,7 @@
 
 					<p>Blend between animations to get a new one</p>
 
-					<img height="400" src="images/Blend_Trees.gif">
+					<img height="330" src="images/Blend_Trees.gif" alt="Blend Trees">
 				</section>
 
 				<section>
