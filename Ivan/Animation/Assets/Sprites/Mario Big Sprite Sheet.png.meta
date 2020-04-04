@@ -100,7 +100,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -175,17 +175,17 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 33
-        width: 16
-        height: 32
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        width: 15
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0b652bb66f075bc4987075d87c770e50
-      internalID: -7172078893516926059
+      spriteID: 932128d82a6176e90800000000000000
+      internalID: -7032627405701115335
       vertices: []
       indices: 
       edges: []
@@ -194,19 +194,19 @@ TextureImporter:
       name: Mario Big Sprite Sheet_1
       rect:
         serializedVersion: 2
-        x: 16
+        x: 17
         y: 33
         width: 16
-        height: 32
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 502faf0d117a90643bd18ead4dce0fa1
-      internalID: 4238673552753763150
+      spriteID: 6a36c6f0db97c85b0800000000000000
+      internalID: -5364779203190561882
       vertices: []
       indices: 
       edges: []
@@ -215,19 +215,19 @@ TextureImporter:
       name: Mario Big Sprite Sheet_2
       rect:
         serializedVersion: 2
-        x: 32
+        x: 34
         y: 33
         width: 16
-        height: 32
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3d8ba6d976847d84da4acfb9341acd86
-      internalID: -3117451806142911298
+      spriteID: bfa1c0dbd134dc8d0800000000000000
+      internalID: -2824527596286633221
       vertices: []
       indices: 
       edges: []
@@ -236,19 +236,19 @@ TextureImporter:
       name: Mario Big Sprite Sheet_3
       rect:
         serializedVersion: 2
-        x: 48
-        y: 33
+        x: 51
+        y: 34
         width: 16
-        height: 32
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bd6b6be578661894eb2a130794ba63f9
-      internalID: 6126626816631565812
+      spriteID: f560fd48e8d2116c0800000000000000
+      internalID: -4174505289457924513
       vertices: []
       indices: 
       edges: []
@@ -257,19 +257,19 @@ TextureImporter:
       name: Mario Big Sprite Sheet_4
       rect:
         serializedVersion: 2
-        x: 64
+        x: 69
         y: 33
         width: 16
-        height: 32
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1034cca09c98643468fe59f6eb8e910e
-      internalID: -3448873943242405168
+      spriteID: 9c7532554fd6c8220800000000000000
+      internalID: 2489485590196869065
       vertices: []
       indices: 
       edges: []
@@ -281,16 +281,16 @@ TextureImporter:
         x: 0
         y: 0
         width: 16
-        height: 32
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ba826db1589acd549989c75f33c33a4c
-      internalID: 9023889193662623915
+      spriteID: 407ea7de2c2752700800000000000000
+      internalID: 514943913937266436
       vertices: []
       indices: 
       edges: []
@@ -299,19 +299,19 @@ TextureImporter:
       name: Mario Big Sprite Sheet_6
       rect:
         serializedVersion: 2
-        x: 16
+        x: 17
         y: 1
         width: 16
-        height: 32
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 12efc9d27dc112e4ca4380f474f4e867
-      internalID: -8113646256653904010
+      spriteID: be191b46272dea830800000000000000
+      internalID: 4084433300829082091
       vertices: []
       indices: 
       edges: []
@@ -320,19 +320,19 @@ TextureImporter:
       name: Mario Big Sprite Sheet_7
       rect:
         serializedVersion: 2
-        x: 32
+        x: 34
         y: 1
         width: 16
-        height: 32
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 45de04fe791bacf4f8f7f1ccb3443616
-      internalID: -462148816975921656
+      spriteID: a8b42f2eb936a5730800000000000000
+      internalID: 3988609941168606090
       vertices: []
       indices: 
       edges: []
@@ -341,19 +341,19 @@ TextureImporter:
       name: Mario Big Sprite Sheet_8
       rect:
         serializedVersion: 2
-        x: 48
+        x: 51
         y: 1
-        width: 16
-        height: 32
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        width: 17
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0640798a4460a7544ba393d543190122
-      internalID: 1293175989654818970
+      spriteID: f22c0a53f6730bc00800000000000000
+      internalID: 914291675136836143
       vertices: []
       indices: 
       edges: []
@@ -362,19 +362,19 @@ TextureImporter:
       name: Mario Big Sprite Sheet_9
       rect:
         serializedVersion: 2
-        x: 64
+        x: 69
         y: 1
         width: 16
-        height: 32
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ad5bfb071568f1442a175288db8bed86
-      internalID: 4665819710008019946
+      spriteID: 675a6b2c10dad9ad0800000000000000
+      internalID: -2693806779024366218
       vertices: []
       indices: 
       edges: []
