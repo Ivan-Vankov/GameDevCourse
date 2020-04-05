@@ -101,27 +101,54 @@
                 </section>
 
 				<section>
-					<h3>DFS</h3>
-
-					<p>TODO</p>
+					<h3>DFS(Depth first search)</h3>
+					<ul>
+						<li>Useful for traversing graphs</li>
+						<li>Can not be used for finding shortest path</li>
+						<li>Goes as deeply as possible before backtracking(returning to parent nodes)</li>
+					</ul>
                 </section>
 
 				<section>
 					<h3>BFS</h3>
 
-					<p>TODO</p>
+					<li>Breadth-first search</li>
+					<li>Useful for finding the shortest path in unweighted graphs</li>
+					<li>Traverses the graph by levels</li>
                 </section>
-                
+				 
+				<section>
+					<h3>Dijkstra</h3>
+
+					<p>Algorithm for finding the shortest path from one point to every other point in a weighted graph</p>
+					<p>At every step we add the closest to the start unvisited point</p>
+					<img src="images/dijkstra.gif"></img>
+				</section>
+
 				<section>
 					<h3>A*</h3>
-
-					<p>TODO: Explain the heuristic</p>
+					<ul>
+						<li>At every step we choose the node with smallest value f(n)=g(n)+h(h)</li>
+						<li>f(n) is the distance in the perfect case from node n to goal</li>
+						<li>g(n) is the distance from the starting node to the current node n</li>
+						<li>h(n) is the heurestic function which tries to guess distancee from n to goal node.</br>
+							Heurestic means that it is good enough but not always guranteed to be correct.</li>
+					</ul>
                 </section>
                 
 				<section>
-					<h3>A* code</h3>
-
-					<p>TODO: 1 or 2 slides for the code</p>
+					<h3>A* Demo</h3>
+					<p>Much faster than Dijkstra. It is always correct if the heurestic function underestimates the real value.</br>
+						Example heurestic functions:
+						<ul>
+							<li>absolute distance</li>
+							<li>manhattan distance(if we can't move diagonaly)</li>
+						</ul>
+					</p>
+					<img src="images/astar.gif"></img>
+                </section> <section>
+					<h3>A* code</h3> 
+		ASD<p>TODO: 1 or 2 slides for the code</p>
                 </section>
                 
 				<section>
