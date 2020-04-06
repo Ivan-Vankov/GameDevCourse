@@ -10,7 +10,7 @@ public class MonkIdleWalkBlendState : StateMachineBehaviour {
 	override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
 		this.animator = animator;
 		movementController = animator.GetComponent<MovementController>();
-		movementController.OnJumpEnded += ResetAnimationState;
+		//movementController.OnJumpEnded += ResetAnimationState;
 	}
 
 	override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
@@ -25,13 +25,13 @@ public class MonkIdleWalkBlendState : StateMachineBehaviour {
 		}
 	}
 
-	override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-		movementController.OnJumpEnded -= ResetAnimationState;
-	}
+	//override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
+	//	movementController.OnJumpEnded -= ResetAnimationState;
+	//}
 
-	private void ResetAnimationState() {
-		animator.SetBool("IsJumping", false);
-		animator.SetBool("IsFalling", false);
-		animator.SetBool("IsJumpKicking", false);
-	}
+	//private void ResetAnimationState() {
+	//	animator.SetBool("IsJumping", false);
+	//	animator.SetBool("IsFalling", false);
+	//	animator.SetBool("IsJumpKicking", false);
+	//}
 }

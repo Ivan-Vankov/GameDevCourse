@@ -26,7 +26,6 @@ public class MonkFallState : StateMachineBehaviour {
 	}
 
 	private void ResetAnimationState() {
-		animator.SetBool("IsJumping", false);
 		animator.SetBool("IsFalling", false);
 	}
 }

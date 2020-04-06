@@ -11,7 +11,7 @@ public class AIMoveToPlayerState : StateMachineBehaviour {
 	private MovementController movementController;
 
 	override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-		GameObject playerGameObject = GameObject.FindGameObjectWithTag("Player");
+		GameObject playerGameObject = GameObject.FindWithTag("Player");
 		if (playerGameObject == null) {
 			Debug.LogError("No GameObject with the \"Player\" tag found");
 		} else {
@@ -31,9 +31,5 @@ public class AIMoveToPlayerState : StateMachineBehaviour {
 		} else {
 			animator.SetBool("ShouldPunch", true);
 		}
-	}
-
-	override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-
 	}
 }

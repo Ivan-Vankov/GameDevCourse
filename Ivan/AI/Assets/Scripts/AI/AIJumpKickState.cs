@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
 using static UnityEngine.Mathf;
 
-public class MonkJumpKickState : StateMachineBehaviour {
+public class AIJumpKickState : StateMachineBehaviour {
 
 	private Animator animator;
 	private MovementController movementController;
 	private GameObject hitbox;
-	
+
 	override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
 		this.animator = animator;
 		float kickDirection = Sign(animator.transform.localScale.x);
@@ -24,7 +24,6 @@ public class MonkJumpKickState : StateMachineBehaviour {
 	}
 
 	private void ResetAnimationState() {
-		animator.SetBool("IsJumping", false);
-		animator.SetBool("IsJumpKicking", false);
+		animator.SetTrigger("Landed");
 	}
 }

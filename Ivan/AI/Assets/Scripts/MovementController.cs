@@ -32,16 +32,22 @@ public class MovementController : MonoBehaviour {
 
 	void Update() {
 		ResolveLookDirection();
+		Move();
+		if (IsAirborne) {
+			Fall();
+		}
+	}
 
+	private void Move() {
 		Vector2 newPosition = new Vector2 {
 			x = velocity.x * horizontalMoveSpeed,
 			y = velocity.y
 		} * Time.deltaTime + rigidbody.position;
 		rigidbody.MovePosition(newPosition);
+	}
 
-		if (IsAirborne) {
-			velocity.y -= gravity * Time.deltaTime;
-		}
+	private void Fall() {
+		velocity.y -= gravity * Time.deltaTime;
 	}
 
 	public void SetHorizontalMoveDirection(float amount) {
@@ -57,6 +63,10 @@ public class MovementController : MonoBehaviour {
 		if (Abs(velocity.x) > movementThreshold) {
 			transform.localScale = new Vector3(Sign(velocity.x), 1, 1);
 		}
+	}
+
+	public void TurnTowards(float direction) {
+		transform.localScale = new Vector3(Sign(direction), 1, 1);
 	}
 
 	private void OnCollisionEnter2D(Collision2D collision) {
