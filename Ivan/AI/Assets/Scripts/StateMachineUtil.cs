@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using static Controlls;
+using static UnityEngine.Mathf;
 
 public class StateMachineUtil : MonoBehaviour {
 
@@ -14,7 +15,7 @@ public class StateMachineUtil : MonoBehaviour {
 	public static void DoMove(Animator animator, MovementController movementController) {
 		float horizontalMoveDirection = Input.GetAxisRaw(HorizontalMovementAxis);
 		movementController.SetHorizontalMoveDirection(horizontalMoveDirection);
-		animator.SetFloat("NormalizedSpeed", horizontalMoveDirection);
+		animator.SetFloat("NormalizedSpeed", Abs(horizontalMoveDirection));
 	}
 
 	public static void DoWithDelay(float delayInSeconds, Action action) {
