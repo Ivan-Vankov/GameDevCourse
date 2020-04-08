@@ -61,7 +61,19 @@
 
 					<p>What is Skeletal Animation?</p>
 					<ul>
-						<li class="fragment">TODO</li>
+						<li class="fragment">A rig made of bones is used</li>
+						<li class="fragment">
+							Each bone associates with the vertices of the mesh 
+							around it with a certain weight
+						</li>
+						<li class="fragment">
+							Keyframes are made with the bones 
+							in different positions
+						</li>
+						<li class="fragment">
+							Animation is done by interpolationg 
+							between the keyframes
+						</li>
 					</ul>
 				</section>
 
@@ -70,7 +82,10 @@
 
 					<p>What is Sprite Sheet Animation?</p>
 					<ul>
-						<li class="fragment">TODO</li>
+						<li class="fragment">
+							Similar versions of the same sprite are 
+							displayed one after the other creating motion
+						</li>
 					</ul>
 				</section>
 
@@ -79,60 +94,125 @@
 
 					<p>How does the Unity Animator work?</p>
 					<ul>
-						<li class="fragment">TODO</li>
+						<li class="fragment">Operates like a finite state automaton</li>
+						<li class="fragment">Each state is an animation</li>
+						<li class="fragment">
+							Edges between states describe under what condition 
+							the animation change will occur and how
+						</li>
 					</ul>
 				</section>
 
 				<section>
 					<h3>AI Definition</h3>
 
-					<p>TODO</p>
+					<p>
+						An agent that can perceives its environment and takes actions 
+						based on its perception to successfully achieving its goals
+					</p>
 				</section>
 
 				<section>
 					<h3>Regular AI vs Game AI</h3>
 
-					<p>TODO</p>
+					<ul>
+						<li>Regular AI aims to maximize its chance of success</li>
+						<li>Game AI aims to maximize the fun factor of a game
+							<ul>
+								<li>Playing agains a bot that does perfect moves every turn isn't fun</li>
+							</ul>
+						</li>
+					</ul>
                 </section>
 
 				<section>
+					<h3>Uses of AI in games</h3>
+
+					<ul>
+						<li>Pathfinding</li>
+						<li>Decision making
+							<ul>
+								<li>Combat AI</li>
+								<li>Villagers going about their day in Skyrim</li>
+							</ul>
+						</li>
+						<li>Procedural content generation
+							<ul>
+								<li>Procedural levels in Spelunky</li>
+								<li>World generation in Minecraft</li>
+							</ul>
+						</li>
+						<li><a href="https://www.youtube.com/watch?v=cUTMhmVh1qs">Being the best StarCraft player in the world</a></li>
+					</ul>
+				</section>
+				
+				<section>
 					<h3>Pathfinding</h3>
 
-					<p>TODO</p>
+					<ul>
+						<li>You have a character</li>
+						<li>It needs to go from point A to point B</li>
+						<li>There may be obstacles</li>
+						<li>The character may not fit through gaps</li>
+					</ul>
                 </section>
 
 				<section>
 					<h3>Waypoint Graph</h3>
 
-					<p>TODO</p>
-                </section>
+					<ul>
+						<li>You have a level</li>
+						<li>You break it up into a graph of waypoints</li>
+						<li>Each waypoint marks a walkable location</li>
+						<li>Edges denote that the area near them has no obstacles</li>
+					</ul>
 
+					<img height="200" src="images/Waypoint_Graph.gif">
+				</section>
+				
 				<section>
-					<h3>DFS(Depth first search)</h3>
+					<h3>Pathfinding Algorithms</h3>
 
 					<ul>
-						<li>Useful for traversing graphs</li>
-						<li>Can not be used for finding shortest path</li>
-						<li>Goes as deeply as possible before backtracking(returning to parent nodes)</li>
+						<li>DFS</li>
+						<li>BFS</li>
+						<li>Dijkstra</li>
+						<li>A* ❤️</li>
+						<li>
+							<a href="https://theory.stanford.edu/~amitp/GameProgramming/Variations.html">
+								... Many others
+							</a>
+						</li>
 					</ul>
                 </section>
 
 				<section>
-					<h3>BFS</h3>
+					<h3>DFS (Depth first search)</h3>
 
 					<ul>
-						<li>Breadth-first search</li>
-						<li>Useful for finding the shortest path in unweighted graphs</li>
+						<li>Useful for traversing graphs with a large branching factor and low height</li>
+						<li>Inefficient for finding shortest path</li>
+						<li>Goes as deep as possible before backtracking (returning to parent nodes)</li>
+					</ul>
+                </section>
+
+				<section>
+					<h3>BFS (Breath first search)</h3>
+
+					<ul>
+						<li>Can find the shortest path in unweighted graphs</li>
 						<li>Traverses the graph by levels</li>
-						<li>May use way to much memory</li>
+						<li>May use way too much memory</li>
 					</ul>
                 </section>
 				 
 				<section>
 					<h3>Dijkstra</h3>
 
-					<p>Algorithm for finding the shortest path from one point to every other point in a weighted graph</p>
+					<p>Finds the shortest path from one point to every other point in a weighted graph</p>
+					<p>Every point is initialy infinately far from the starting point</p>
 					<p>At every step we add the closest to the start unvisited point</p>
+
 					<img src="images/dijkstra.gif"></img>
 				</section>
 
@@ -143,22 +223,17 @@
 						<li>At every step we choose the node with smallest value f(n)=g(n)+h(h)</li>
 						<li>f(n) is the distance in the perfect case from node n to goal</li>
 						<li>g(n) is the distance from the starting node to the current node n</li>
-						<li>h(n) is the heurestic function which tries to guess distancee from n to goal node.</li>
-						<li>Heurestic means that it is good enough but not always guranteed to be correct.</li>
+						<li>h(n) is the heurestic function which tries to guess distance from n to the goal node</li>
+						<li>Heurestic means that it is good enough but not always guranteed to be correct</li>
 					</ul>
                 </section>
                 
 				<section>
 					<h3>A* Demo</h3>
-					<!-- <p>
-						Much faster than Dijkstra for finding the shortest path between exactly two points. 
-						Is always correct if the heurestic function underestimates the real value.
-						Example heurestic functions:
-					</p> -->
 
 					<ul>
-						<li>Much faster than Dijkstra for finding the shortest path between exactly two points.</li>
-						<li>Is always correct if the heurestic function underestimates the real value.</li>
+						<li>Much faster than Dijkstra for finding the shortest path between exactly two points</li>
+						<li>Is always correct if the heurestic function underestimates the real value</li>
 						<li>
 							Example heurestic functions:
 							<ul>
@@ -181,19 +256,39 @@
                 </section>
                 
 				<section>
-					<h3>Navigation Meshes(NavMesh)</h3>
+					<h3>Navigation Meshes (NavMesh)</h3>
 
-					<p>TODO</p>
+					<ul>
+						<li>А collection of 2D convex polygons that 
+							define which areas of an environment are traversable by an agent</li>
+						<li>The polygons are the graphs vertices</li>
+						<li>An edge between two polygons exists if they are adjacent</li>
+					</ul>
+				</section>
+				
+				<section>
+					<h3>NavMesh vs Waypoint Graph</h3>
+
+					<img height="400" src="images/Waypoint_Graph_vs_NavMesh.gif">
                 </section>
                 
 				<section>
 					<h3>NavМeshes in Unity</h3>
 
-					<p>Located in a 
-						<a href="https://github.com/Unity-Technologies/NavMeshComponents">
-							separate repo
-						</a>
-					</p>
+					<ul>
+						<li>Agents are represented as cylinders
+							<ul>
+								<li>Found in Window/AI/Navigation/Agents</li>
+							</ul>
+						</li>
+						<li>Most components are located in a 
+							<a href="https://github.com/Unity-Technologies/NavMeshComponents">
+								separate repo
+							</a>
+						</li>
+					</ul>
+
+					<img height="300" src="images/NavMesh.png">
 				</section>
 				
 				<section>
@@ -203,23 +298,34 @@
 				<section>
 					<h3>State Machine AI</h3>
 
-					<p>TODO</p>
+					<ul>
+						<li>Each state represents a behaviour for the AI</li>
+						<li>Each edge represents a change of world state</li>
+					</ul>
+
+					<img height="350" src="images/State_Machine_AI.png">
                 </section>
                 
 				<section>
-					<h3>State Machine AI in Unity</h3>
+					<h3>Unity State Machine AI</h3>
 
-					<p>Integrated with Animator</p>
-					<p>TODO</p>
+					<ul>
+						<li>Integrated with the Animator</li>
+						<li>Each state can have several attached StateMachineBehaviours</li>
+						<li>A StateMachineBehaviours has:
+							<ul>
+								<li>OnStateEnter</li>
+								<li>OnStateUpdate</li>
+								<li>OnStateExit</li>
+							</ul>
+						</li>
+					</ul>
                 </section>
-                
+                                
 				<section>
-					<h3>State Machine AI in code</h3>
-
-					<p>Integrated with Animator</p>
-					<p>TODO</p>
+					<h3>Unity State Machine AI Live Demo</h3>
 				</section>
-                
+				
 				<section>
                     <h3>Extra Resources</h3>
 					
