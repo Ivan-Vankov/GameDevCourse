@@ -1,4 +1,4 @@
-# Homework 4 - Crouch Kick
+# Homework 4 - Crouch Kick Counter
 
 You have a scene with a player character and an AI that can both fight each other.
 You also have sprites for a crouch and crouch kick animation.
