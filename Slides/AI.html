@@ -38,6 +38,13 @@
 
 		<div class="reveal">
 
+			<a href="https://github.com/Ivan-Vankov/GameDevCourse#readme">
+				<i id="next-exercise" class="fas fa-arrow-circle-right navigation-button next-exercise"></i>
+			</a>
+			<a href="./Animation.html">
+				<i id="previous-exercise" class="fas fa-arrow-circle-left navigation-button previous-exercise"></i>
+			</a>
+
 			<div class="slides">
 				<section>
 					<h2 id="slides-title">Artificial Inteligence</h2>
@@ -143,19 +150,32 @@
                 
 				<section>
 					<h3>A* Demo</h3>
-					<p>
+					<!-- <p>
 						Much faster than Dijkstra for finding the shortest path between exactly two points. 
-						It is always correct if the heurestic function underestimates the real value.
+						Is always correct if the heurestic function underestimates the real value.
 						Example heurestic functions:
-					</p>
+					</p> -->
 
 					<ul>
-						<li>Euclidian distance</li>
-						<li>Manhattan distance(if we can't move diagonaly)</li>
+						<li>Much faster than Dijkstra for finding the shortest path between exactly two points.</li>
+						<li>Is always correct if the heurestic function underestimates the real value.</li>
+						<li>
+							Example heurestic functions:
+							<ul>
+								<li>Euclidian distance</li>
+								<li>Manhattan distance(if we can't move diagonaly)</li>
+							</ul>
+						</li>
 					</ul>
+				</section>
 
-					<img src="images/astar.gif"></img>
-                </section> <section>
+				<section>
+					<h3>A* Demo</h3>
+
+					<img height="400" src="images/astar.gif"></img>
+				</section>
+				
+				<section>
 					<h3>A* code</h3> 
 					<p>TODO: 1 or 2 slides for the code</p>
                 </section>
@@ -167,15 +187,17 @@
                 </section>
                 
 				<section>
-					<h3>Navmeshes in Unity</h3>
+					<h3>NavМeshes in Unity</h3>
 
-					<p>TODO</p>
-                </section>
-                
+					<p>Located in a 
+						<a href="https://github.com/Unity-Technologies/NavMeshComponents">
+							separate repo
+						</a>
+					</p>
+				</section>
+				
 				<section>
-					<h3>Perception</h3>
-
-					<p>TODO: Raycasts</p>
+					<h3>NavМeshe Live Demo</h3>
                 </section>
 
 				<section>
@@ -203,6 +225,11 @@
 					
 					<ul>
 						<li>
+							<a href="https://www.youtube.com/watch?v=-L-WgKMFuhE&list=PLFt_AvWsXl0cq5Umv3pMC9SPnKjfp9eGW">
+								A*
+							</a>
+						</li>
+						<li>
 							<a href="https://www.gamedev.net/tutorials/programming/artificial-intelligence/navigation-meshes-and-pathfinding-r4880/">
 								NavMeshes and Pathfinding Theory
 							</a>
@@ -213,18 +240,28 @@
 							</a>
 						</li>
 					</ul>
+					
+					<script>
+						console.log(document.getElementById("next-exercise"));
+						document.getElementById("next-exercise").style.visibility = "hidden";
+					</script>
                 </section>
                 
-				<section>
+				<section data-state="next-exercise">
 					<h3>Questions?</h3>
 
 					<img height="300" data-src="images/Question-Cat-6.png" alt="Question Cat">
+
+					<script>
+						document.getElementById("next-exercise").style.visibility = "visible";
+					</script>
 				</section>
 			</div>
-
 		</div>
 
-		<a href="https://github.com/Ivan-Vankov/GameDevCourse#readme"><i id="home" class="fa fa-home"></i></a>
+		<a href="https://github.com/Ivan-Vankov/GameDevCourse#readme">
+			<i class="fa fa-home navigation-button home"></i>
+		</a>	
 
 		<div id="slides-title-div">
 			<p id="slides-title-meta">AI</p>
@@ -233,6 +270,8 @@
 				document.getElementById("page-title").innerHTML = slides_title;
 			</script>
 		</div>
+
+        <script src="RevealJS/js/setup-exercise-navigation.js"></script>
 
 		<script src="RevealJS/js/reveal.js"></script>
 
@@ -261,6 +300,31 @@
 			});
 
 			Reveal.configure({ slideNumber: 'c/t' });
+
+			Reveal.addEventListener('hide-exercise-navigation-arrows', function() {
+				document.getElementById('next-exercise').style.visibility = 'hidden';
+				document.getElementById('previous-exercise').style.visibility = 'hidden';
+			});
+
+			Reveal.addEventListener('show-left-exercise-navigation-arrow', function() {
+				let previousExerciseButton = document.getElementById('previous-exercise');
+				previousExerciseButton.classList.add('fade-in');
+				setTimeout(() => {
+					previousExerciseButton.classList.remove('fade-in');
+				}, 500);
+				document.getElementById('next-exercise').style.visibility = 'hidden';
+				previousExerciseButton.style.visibility = 'visible';
+			});
+
+			Reveal.addEventListener('show-right-exercise-navigation-arrow', function() {
+				let nextExerciseButton = document.getElementById('next-exercise');
+				nextExerciseButton.classList.add('fade-in');
+				setTimeout(() => {
+					nextExerciseButton.classList.remove('fade-in');
+				}, 500);
+				nextExerciseButton.style.visibility = 'visible';
+				document.getElementById('previous-exercise').style.visibility = 'hidden';
+			});
 
 			// Set the theme to a combination of blood and black
 			document.getElementById('theme').setAttribute('href','RevealJS/css/theme/custom_theme.css'); 

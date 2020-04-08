@@ -38,6 +38,13 @@
 
 		<div class="reveal">
 
+			<a href="./Animation.html">
+				<i id="next-exercise" class="fas fa-arrow-circle-right navigation-button next-exercise"></i>
+			</a>
+			<a href="./C%23%20Basics.html">
+				<i id="previous-exercise" class="fas fa-arrow-circle-left navigation-button previous-exercise"></i>
+			</a>
+
 			<div class="slides">
 				<section>
 					<h2 id="slides-title">Physics</h2>
@@ -517,7 +524,7 @@ Debug.DrawLine(Vector3 start, Vector3 end);
 
 		</div>
 
-		<a href="https://github.com/Ivan-Vankov/GameDevCourse#readme"><i id="home" class="fa fa-home"></i></a>
+		<a href="https://github.com/Ivan-Vankov/GameDevCourse#readme"><i class="fa fa-home navigation-button home"></i></a>
 
 		<div id="slides-title-div">
 			<p id="slides-title-meta"></p>
@@ -527,6 +534,8 @@ Debug.DrawLine(Vector3 start, Vector3 end);
 				document.getElementById("page-title").innerHTML = slides_title;
 			</script>
 		</div>
+		
+        <script src="RevealJS/js/setup-exercise-navigation.js"></script>
 
 		<script src="RevealJS/js/reveal.js"></script>
 
@@ -555,6 +564,31 @@ Debug.DrawLine(Vector3 start, Vector3 end);
 			});
 
 			Reveal.configure({ slideNumber: 'c/t' });
+
+			Reveal.addEventListener('hide-exercise-navigation-arrows', function() {
+				document.getElementById('next-exercise').style.visibility = 'hidden';
+				document.getElementById('previous-exercise').style.visibility = 'hidden';
+			});
+
+			Reveal.addEventListener('show-left-exercise-navigation-arrow', function() {
+				let previousExerciseButton = document.getElementById('previous-exercise');
+				previousExerciseButton.classList.add('fade-in');
+				setTimeout(() => {
+					previousExerciseButton.classList.remove('fade-in');
+				}, 500);
+				document.getElementById('next-exercise').style.visibility = 'hidden';
+				previousExerciseButton.style.visibility = 'visible';
+			});
+
+			Reveal.addEventListener('show-right-exercise-navigation-arrow', function() {
+				let nextExerciseButton = document.getElementById('next-exercise');
+				nextExerciseButton.classList.add('fade-in');
+				setTimeout(() => {
+					nextExerciseButton.classList.remove('fade-in');
+				}, 500);
+				nextExerciseButton.style.visibility = 'visible';
+				document.getElementById('previous-exercise').style.visibility = 'hidden';
+			});
 
 			// Set the theme to a combination of blood and black
 			document.getElementById('theme').setAttribute('href','RevealJS/css/theme/custom_theme.css'); 
