@@ -20,6 +20,7 @@
 | 4 | [Physics](https://ivan-vankov.github.io/GameDevCourse/Slides/Physics.html) | 19.03.2020 |
 | 5 | ***Unity Test*** | 26.03.2020 |
 | 6 | [Animation](https://ivan-vankov.github.io/GameDevCourse/Slides/Animation.html) | 02.04.2020 |
+| 7 | [AI](https://ivan-vankov.github.io/GameDevCourse/Slides/AI.html) | 09.04.2020 |
 
 
 | # | Homework | Deadline |
