@@ -265,23 +265,23 @@ add startNode to openSet
 closedSet = empty set of nodes
 
 while openSet is not empty
-  current = node in openSet with min fCost
+  current = node in openSet with minimum fCost
   remove current from openSet
 
-  if current == final
+  if current is the final node
     return
 
-  for neighbour in neighbours of current
-	if (neighbour is an obstacles 
-	    or neighbour is in closedSet)
-	  continue
-	
-	if (new path to neighbour has a lower fScore 
-		or neighbour is not in openSet)
-	  set improved fCost of neighbour
-	  set parent of neighbour to current
-	  if neighbour is not in openSet
-	    add neighbour to openSet
+  foreach neighbour in neighbours of current
+    if (neighbour is not traversable
+        or neighbour is in closedSet)
+      continue
+    
+    if (new path to neighbour has a lower fScore 
+        or neighbour is not in openSet)
+      set improved fCost of neighbour
+      set parent of neighbour to current
+      if neighbour is not in openSet
+        add neighbour to openSet
 					</code>
 				</pre>
                 </section>
