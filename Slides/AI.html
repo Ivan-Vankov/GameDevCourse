@@ -211,7 +211,7 @@
 
 					<ul>
 						<li>Finds the shortest path from one point to every other point in a weighted graph</li>
-						<li>Every point is initialy infinately far from the starting point</li>
+						<li>Every point is initialy infinitely far from the starting point</li>
 						<li>At every step we add the closest to the start unvisited point</li>
 					</ul>
 
@@ -243,7 +243,7 @@
 							Example heurestic functions:
 							<ul>
 								<li>Euclidian distance</li>
-								<li>Manhattan distance(if we can't move diagonaly)</li>
+								<li>Manhattan distance (if we can't move diagonally)</li>
 							</ul>
 						</li>
 					</ul>
@@ -276,7 +276,7 @@ while openSet is not empty
         or neighbour is in closedSet)
       continue
     
-    if (new path to neighbour has a lower fScore 
+    if (new path to neighbour has a lower fCost
         or neighbour is not in openSet)
       set improved fCost of neighbour
       set parent of neighbour to current
