@@ -254,7 +254,35 @@
 				
 				<section>
 					<h3>A* code</h3> 
-					<p>TODO: 1 or 2 slides for the code</p>
+					<pre><code>
+Set&lt;Nodes&gt;openSet = New Set&lt;Nodes&gt;(){start}
+Set&lt;Nodes&gt; closedSet = New Set&lt;Nodes&gt;(){}
+
+gScore = map with default value of Infinity
+gScore[start] = 0
+
+fScore = map with default value of Infinity
+fScore[start] = h(start)
+
+while{ !openSet.empty()
+    current = findNodeWithMinFscore();
+    if(current = goal)
+        return reconstruct_path(cameFrom, current)
+
+    closeSet.add(current)
+    openSet.Remove(current)
+		
+    for(neighbor in current.getNeighbors()){
+    tentative_gScore = gScore[current] + d(current, neighbor)
+        if(tentative_gScore < gScore[neighbor]){
+            cameFrom[neighbor] = current
+            gScore[neighbor] = tentative_gScore
+            fScore[neighbor] = gScore[neighbor] + h(neighbor)
+            if(!closedSet.contains(neighbor))
+               openSet.add(neighbor)
+        }
+    }
+}</code></pre>
                 </section>
                 
 				<section>
