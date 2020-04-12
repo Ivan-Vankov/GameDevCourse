@@ -1,34 +1,21 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class Spawner : MonoBehaviour
-{
-    public GameObject mushroom;
-    public Sprite usedSprite;
+public class Spawner : MonoBehaviour {
+	public GameObject mushroom;
+	public Sprite emptyBlockSprite;
 
-    private bool hasSpawned;
-    private SpriteRenderer spriteRenderer;
-    // Start is called before the first frame update
-    void Start()
-    {
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        hasSpawned = false; 
-    }
+	private bool hasSpawned = false;
+	private SpriteRenderer spriteRenderer;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+	void Start() {
+		spriteRenderer = GetComponent<SpriteRenderer>();
+	}
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag.Equals("Player") && !hasSpawned)
-        {
-            hasSpawned = true;
-            GameObject.Instantiate(mushroom);
-            spriteRenderer.sprite = usedSprite;
-        }
-    }
+	private void OnTriggerEnter2D(Collider2D collision) {
+		if (collision.gameObject.CompareTag("Player") && !hasSpawned) {
+			hasSpawned = true;
+			Instantiate(mushroom);
+			spriteRenderer.sprite = emptyBlockSprite;
+		}
+	}
 }

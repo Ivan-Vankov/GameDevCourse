@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Floor
   - Mushroom
+  - BoxTop
+  - Obstacle
   layers:
   - Default
   - TransparentFX
