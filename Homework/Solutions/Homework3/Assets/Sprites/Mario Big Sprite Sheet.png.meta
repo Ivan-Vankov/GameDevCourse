@@ -1,0 +1,409 @@
+fileFormatVersion: 2
+guid: f8eea6ad0b4a61e42b549c79df7c6a3f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7172078893516926059
+    second: Mario Big Sprite Sheet_0
+  - first:
+      213: 4238673552753763150
+    second: Mario Big Sprite Sheet_1
+  - first:
+      213: -3117451806142911298
+    second: Mario Big Sprite Sheet_2
+  - first:
+      213: 6126626816631565812
+    second: Mario Big Sprite Sheet_3
+  - first:
+      213: -3448873943242405168
+    second: Mario Big Sprite Sheet_4
+  - first:
+      213: 9023889193662623915
+    second: Mario Big Sprite Sheet_5
+  - first:
+      213: -8113646256653904010
+    second: Mario Big Sprite Sheet_6
+  - first:
+      213: -462148816975921656
+    second: Mario Big Sprite Sheet_7
+  - first:
+      213: 1293175989654818970
+    second: Mario Big Sprite Sheet_8
+  - first:
+      213: 4665819710008019946
+    second: Mario Big Sprite Sheet_9
+  - first:
+      213: -7032627405701115335
+    second: Mario Big Sprite Sheet_0
+  - first:
+      213: -5364779203190561882
+    second: Mario Big Sprite Sheet_1
+  - first:
+      213: -2824527596286633221
+    second: Mario Big Sprite Sheet_2
+  - first:
+      213: -4174505289457924513
+    second: Mario Big Sprite Sheet_3
+  - first:
+      213: 2489485590196869065
+    second: Mario Big Sprite Sheet_4
+  - first:
+      213: 514943913937266436
+    second: Mario Big Sprite Sheet_5
+  - first:
+      213: 4084433300829082091
+    second: Mario Big Sprite Sheet_6
+  - first:
+      213: 3988609941168606090
+    second: Mario Big Sprite Sheet_7
+  - first:
+      213: 914291675136836143
+    second: Mario Big Sprite Sheet_8
+  - first:
+      213: -2693806779024366218
+    second: Mario Big Sprite Sheet_9
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Mario Big Sprite Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 33
+        width: 15
+        height: 28
+      alignment: 9
+      pivot: {x: 0.50000006, y: 0.41332096}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 932128d82a6176e90800000000000000
+      internalID: -7032627405701115335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mario Big Sprite Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 33
+        width: 16
+        height: 28
+      alignment: 9
+      pivot: {x: 0.5000001, y: 0.4238276}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a36c6f0db97c85b0800000000000000
+      internalID: -5364779203190561882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mario Big Sprite Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 33
+        width: 16
+        height: 27
+      alignment: 9
+      pivot: {x: 0.49540353, y: 0.44552174}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfa1c0dbd134dc8d0800000000000000
+      internalID: -2824527596286633221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mario Big Sprite Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 34
+        width: 16
+        height: 27
+      alignment: 9
+      pivot: {x: 0.5000005, y: 0.42373022}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f560fd48e8d2116c0800000000000000
+      internalID: -4174505289457924513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mario Big Sprite Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 33
+        width: 16
+        height: 28
+      alignment: 9
+      pivot: {x: 0.5000005, y: 0.45009395}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c7532554fd6c8220800000000000000
+      internalID: 2489485590196869065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mario Big Sprite Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 16
+        height: 31
+      alignment: 9
+      pivot: {x: 0.50000006, y: 0.41221935}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 407ea7de2c2752700800000000000000
+      internalID: 514943913937266436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mario Big Sprite Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 1
+        width: 16
+        height: 29
+      alignment: 9
+      pivot: {x: 0.49080682, y: 0.42899016}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be191b46272dea830800000000000000
+      internalID: 4084433300829082091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mario Big Sprite Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 1
+        width: 16
+        height: 15
+      alignment: 9
+      pivot: {x: 0.51379037, y: 0.84811854}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8b42f2eb936a5730800000000000000
+      internalID: 3988609941168606090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mario Big Sprite Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 1
+        width: 17
+        height: 28
+      alignment: 9
+      pivot: {x: 0.5216316, y: 0.42120078}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f22c0a53f6730bc00800000000000000
+      internalID: 914291675136836143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mario Big Sprite Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 1
+        width: 16
+        height: 29
+      alignment: 9
+      pivot: {x: 0.532177, y: 0.4264541}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 675a6b2c10dad9ad0800000000000000
+      internalID: -2693806779024366218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 04a78aae5e592cc4f9f495dc0331a682
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
