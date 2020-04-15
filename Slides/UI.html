@@ -63,7 +63,7 @@
 					<ul>
 						<li class="fragment">It solves the pathfinding problem</li>
 						<li class="fragment">
-							Vertices repsesent safe spots and edges represent 
+							Vertices repsesent safe(walkable) spots and edges represent 
 							that the space between vertices is walkable
 						</li>
 					</ul>
@@ -88,22 +88,30 @@
 					<ul>
 						<li class="fragment">Integrated with the animation system</li>
 						<li class="fragment">Each state has one or more StateMachineBehaviours</li>
-						<li class="fragment">Each StateMachineBehaviour implements some AI logic with OnStateXXX methods</li>
+						<li class="fragment">
+							Each StateMachineBehaviour implements some AI 
+							logic with OnStateXXX methods
+						</li>
 					</ul>
 				</section>
 
 				<section>
-					<h3>UI vs GUI Definition</h3>
+					<h3>User Interface Definition</h3>
 
                     <ul>
-						<li>UI:
+						<li>Everything that lets the player interact with the game</li>
+						<li>
+							By UI people generally mean GUI 
+							<br>
+							(Graphical User Interface)
+						</li>
+                        <li>The most common use cases for UI are:
                             <ul>
-                                <li>TODO</li>
-                            </ul>
-                        </li>
-                        <li>GUI:
-                            <ul>
-                                <li>TODO</li>
+                                <li>Main Menu</li>
+                                <li>Options Menu</li>
+                                <li>Heads-up Display (HUD)</li>
+                                <li>Health Bar</li>
+                                <li>Inventory</li>
                             </ul>
                         </li>
 					</ul>
@@ -113,50 +121,114 @@
 					<h3>Localization and Internationalization</h3>
 
                     <ul>
-						<li>UI:
-                            <ul>
-                                <li>TODO</li>
-                            </ul>
-                        </li>
-                        <li>GUI:
-                            <ul>
-                                <li>TODO</li>
-                            </ul>
-                        </li>
+						<li>Localization (l10n) is adapting the UI 
+							for a specific language and culture (locale)
+							<ul>
+								<li>Some languages are written right to left</li>
+								<li>In some languages a word with more letters is shorter that a word with fewer letters</li>
+							</ul>
+						</li>
+                        <li>Internationalization (i18n) is designing your UI so that l10n is easy</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Fonts</h3>
+
+					<ul>
+						<li>Raster fonts: every character is a 2D image</li>
+						<li>Vector fonts:
+							<ul>
+								<li>TrueType: straight lines and Bezier curves</li>
+								<li>Signed Distance Field (SDF): 
+									a pixel is treated not as intensity but as the distance 
+									to the nearest non-black part of the character
+									<ul>
+										<li>The prefered way of doing fonts in Unity (Text Mesh PRO)</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				
+				<section>
+					<h3>UI in Unity</h3>
+
+					<ul>
+						<li>GameObject based</li>
+						<li>Has a few inbuilt UI components but allows for custom ones</li>
+						<li>Handles positioning, anchoring, styling</li>
+						<li>Can edit UI directly in the editor</li>
+						<li>There is also an option to draw UI with the <a href="https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnGUI.html"></a>OnGUI method</li>
+					</ul>
+                </section>
+                
+				<section>
+					<h3>Canvas</h3>
+
+					<ul>
+						<li>The area where UI elements reside</li>
+						<li>All UI elements are children of a canvas</li>
+						<li>Render Modes:
+							<ul>
+								<li>Screen Space - Overlay: renders on top of the scene</li>
+								<li>World Space: behaves like a normal GameObject</li>
+							</ul>
+						</li>
+						<li>UI Scale Mode:
+							<ul>
+								<li>Constant Pixel Size: elements remain a constant size</li>
+								<li>Scale With Screen Size: the screen resizes -> the UI elements resize</li>
+							</ul>
+						</li>
 					</ul>
 				</section>
 				
 				<section>
 					<h3>Event System</h3>
 
-					<p>TODO</p>
+					<ul>
+						<li>
+							Is automatically added to the scene along with a 
+							canvas when adding any UI element to the scene
+						</li>
+						<li>Handles events like mouse and touch</li>
+						<li>Can tap into it by implementing these interfaces:
+							<ul>
+								<li>IPointerEnterHandler</li>
+								<li>IPointerExitHandler</li>
+								<li>IPointerClickHandler</li>
+							</ul>
+						</li>
+					</ul>
                 </section>
                 
 				<section>
-					<h3>Canvas</h3>
-
-					<p>TODO</p>
-					<p>Canvas/Render Mode</p>
-					<p>Canvas Scaler/UI Scale Mode</p>
+					<h3><span class="clazz">R<span class="lowercase">ect</span>T<span class="lowercase">ransform</span></span></h3>
+					
+					<ul>
+						<li>Every UI element has a RectTransform instead of a regular Transform</li>
+						<li>Adds a:
+							<ul>
+								<li>Pivot: point relative to which the element is rotated</li>
+								<li>Anchor: points relative to which the element is positioned</li>
+							</ul>
+						</li>
+					</ul>
                 </section>
-                
-				<section>
-					<h3>RectTransform</h3>
-
-					<p>TODO</p>
-                </section>
 
 				<section>
-					<h3>Legacy UI Types</h3>
+					<h3>UI Components</h3>
 
                     <ul>
-                        <li>TODO</li>
                         <li>Text</li>
                         <li>Image</li>
                         <li>Button</li>
+                        <li>Toggle</li>
                         <li>Slider</li>
                         <li>Input Field</li>
-                        <li>...</li>
+                        <li>Panel</li>
                     </ul>
                 </section>
 
@@ -164,29 +236,19 @@
 					<h3>Text Mesh Pro</h3>
 
                     <ul>
-                        <li>Window/TextMeshPro/Font Asset Creator</li>
-                        <li>TMP Import Essentials</li>
-                    </ul>
-                </section>
-
-                <section>
-					<h3>Vector vs Raster Graphics</h3>
-
-                    <ul>
-                        <li>TODO</li>
-                    </ul>
-                </section>
-
-                <section>
-					<h3>Distance Field</h3>
-
-                    <ul>
-                        <li>TODO</li>
+                        <li>An implementation of SDF for Unity fonts</li>
+                        <li>
+							To make a font into a TMP font go to:
+							<br>
+							Window/TextMeshPro/Font Asset Creator
+						</li>
                     </ul>
                 </section>
 				
 				<section>
 					<h3>Layout Group Components</h3>
+
+					<p>They help organize groups of UI elements</p>
 
                     <ul>
                         <li>Horizontal Layout Group</li>
@@ -199,46 +261,59 @@
 				<section>
 					<h3>UnityEvent</h3>
 
-					<p>TODO</p>
-					<p>Event that can be worked with inside the editor</p>
-					<p>Useful for UI: GameObject.SetEnabled(false)</p>
-					<p>TODO Getting result from dynamic input field</p>
+					<ul>
+                        <li>Same as a regular event but visible in the Editor</li>
+                        <li>Used in UI callbacks like OnClick
+							<ul>
+								<li>A designer can assign OnClick behaviour without writing code</li>
+							</ul>
+						</li>
+                    </ul>
                 </section>
 
 				<section>
 					<h3>UI in Code</h3>
 
-					<p>TODO</p>
-                </section>
+					<pre><code>using UnityEngine.UI;
+using TMPro;
 
-				<section>
-					<h3>OnGUI</h3>
+public class MenuItem : MonoBehaviour, 
+                        IPointerEnterHandler, 
+                        IPointerExitHandler,
+                        IPointerClickHandler {
 
-					<p>TODO</p>
-                </section>
+    public Text regularUIText;
+    public TextMeshProUGUI tmpText;
+    public UnityEvent OnClick;
 
-				<section>
-					<h3>Animating UI</h3>
+    public void OnPointerEnter(PointerEventData eventData) { 
+        tmpText.text = "...";
+        //...
+    }
 
-					<p>TODO</p>
+    public void OnPointerExit(PointerEventData eventData) {
+        //...
+    }
+
+    public void OnPointerClick(PointerEventData eventData) {
+        OnClick?.Invoke();
+    }
+}</code></pre>
                 </section>
                 
 				<section>
-					<h3>Designing nice looking UI</h3>
-
-					<p>TODO</p>
-                </section>
-                
-				<section>
-					<h3>Unity GUI Demo</h3>
-
-					<p>TODO</p>
+					<h3>Unity GUI Live Demo</h3>
                 </section>
                 
 				<section>
                     <h3>Extra Resources</h3>
 					
 					<ul>
+						<li>
+							<a href="https://docs.unity3d.com/Packages/com.unity.ugui@1.0/manual/index.html">
+								Unity UI documentation
+							</a>
+						</li>
 						<li>
 							<a href="https://youtu.be/HwdweCX5aMI">
 								Making Good-Looking UI

@@ -5601,6 +5601,27 @@
 
 	}
 
+
+	/**
+	 * Helper functions that let disable mouse scrolling while over certain objects.
+	 */
+	var mouseX;
+	var mouseY;
+
+	window.addEventListener('mousemove', function(e) {
+		mouseX = e.x;
+		mouseY = e.y;
+	});
+
+	function hasParentClass(element, clazz) {
+		do {
+			if (element.classList.contains(clazz)) { return true; }
+			element = element.parentElement;
+		} while (element != null);
+
+		return false;
+	}
+
 	/**
 	 * Handles mouse wheel scrolling, throttled to avoid skipping
 	 * multiple slides.
@@ -5610,6 +5631,12 @@
 	function onDocumentMouseScroll( event ) {
 
 		if( Date.now() - lastMouseWheelStep > 600 ) {
+
+			let currentElement = document.elementFromPoint(mouseX, mouseY);
+			if (hasParentClass(currentElement, 'slide-menu')
+				|| hasParentClass(currentElement, 'hljs')) {
+				return;
+			}
 
 			lastMouseWheelStep = Date.now();
 
