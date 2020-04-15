@@ -182,7 +182,13 @@
 						<li>Can edit UI directly in the editor</li>
 						<li>There is also an option to draw UI with the <a href="https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnGUI.html"></a>OnGUI method</li>
 					</ul>
-                </section>
+				</section>
+				
+				<section>
+					<h3>OnGUI Preview</h3>
+
+					<img height="220" src="images/OnGUI.png">
+				</section>
                 
 				<section>
 					<h3>Canvas</h3>
@@ -228,14 +234,16 @@
 					<h3><span class="clazz">R<span class="lowercase">ect</span>T<span class="lowercase">ransform</span></span></h3>
 					
 					<ul>
-						<li>Every UI element has a RectTransform instead of a regular Transform</li>
-						<li>Adds a:
+						<li>Every UI element has a RectTransform instead of a regular Transform. Has a:</li>
 							<ul>
 								<li>Pivot: point relative to which the element is rotated</li>
 								<li>Anchor: points relative to which the element is positioned</li>
 							</ul>
 						</li>
 					</ul>
+
+					
+					<img height="220" src="images/RectTransform.png">
                 </section>
 
 				<section>
@@ -262,7 +270,9 @@
 							<br>
 							Window/TextMeshPro/Font Asset Creator
 						</li>
-                    </ul>
+					</ul>		
+					<br>
+					<img height="200" src="images/TextMeshPRO.gif">
                 </section>
 				
 				<section>
@@ -270,16 +280,21 @@
 
 					<p>They help organize groups of UI elements</p>
 
-                    <ul>
-                        <li>Horizontal Layout Group</li>
-                        <li>Vertical Layout Group</li>
-                        <li>Layout Element</li>
-                        <li>Content Size Fitter</li>
-                    </ul>
+					<div style="display: flex; justify-content:baseline">
+						<ul>
+							<li>Horizontal Layout Group</li>
+							<li>Vertical Layout Group</li>
+							<li>Layout Element</li>
+						</ul>
+
+						<div style="flex-grow: 0.5;"></div>
+
+						<img height="250" src="images/Vertical_Layout_Group.gif">
+					</div>
                 </section>
 
 				<section>
-					<h3>UnityEvent</h3>
+					<h3><span class="clazz">U<span class="lowercase">nity</span>E<span class="lowercase">vent</span></span></h3>
 
 					<ul>
                         <li>Same as a regular event but visible in the Editor</li>
@@ -288,7 +303,9 @@
 								<li>A designer can assign OnClick behaviour without writing code</li>
 							</ul>
 						</li>
-                    </ul>
+					</ul>
+					<br>
+					<img height="200" src="images/UnityEvent.png">
                 </section>
 
 				<section>
@@ -331,7 +348,7 @@ public class MenuItem : MonoBehaviour,
 					<ul>
 						<li>
 							<a href="https://docs.unity3d.com/Packages/com.unity.ugui@1.0/manual/index.html">
-								Unity UI documentation
+								Unity UI Documentation
 							</a>
 						</li>
 						<li>
