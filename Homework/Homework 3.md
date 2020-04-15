@@ -6,9 +6,9 @@ You can find all these in Ivans Animation exercise.
 
 The task is to  
 
-1) Have a question block that Mario can jump into  <br>
-2) Have the question block drop a mushroom  <br>
-3) Have small Mario eat the Mushroom   <br>
-4) Play an animation for becoming big Mario  <br>
+1) Have a question block that Mario can jump into<br>
+2) Have the question block drop a mushroom<br>
+3) Have small Mario eat the Mushroom<br>
+4) Play an animation for becoming big Mario<br>
 
 Deadline **10.04.2020г**.
