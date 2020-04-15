@@ -6,6 +6,7 @@ You can find all these in Ivans AI exercise.
 (Sprites are at GothicVania Church/Sprites/Player)
 
 The task is to 
+
 1) Implement the crouch state
 2) Implement the crouch kick state
 3) Make the AI sometimes dodge and counter a player punch by crouching + crouch kicking

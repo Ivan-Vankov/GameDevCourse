@@ -5,6 +5,7 @@ You also have a sprite sheet for big Mario, a question block, an empty block and
 You can find all these in Ivans Animation exercise.
 
 The task is to 
+
 1) Have a question block that Mario can jump into
 2) Have the question block drop a mushroom
 3) Have small Mario eat the Mushroom 

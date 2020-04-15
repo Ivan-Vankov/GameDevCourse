@@ -21,12 +21,13 @@
 | 5 | ***Unity Test*** | 26.03.2020 |
 | 6 | [Animation](https://ivan-vankov.github.io/GameDevCourse/Slides/Animation.html) | 02.04.2020 |
 | 7 | [AI](https://ivan-vankov.github.io/GameDevCourse/Slides/AI.html) | 09.04.2020 |
-| 7 | [UI](./Slides/UI.html) | 16.04.2020 |
+| 8 | [UI](https://ivan-vankov.github.io/GameDevCourse/Slides/UI.html) | 16.04.2020 |
 
 
 | # | Homework | Deadline |
 |---| ---------------------------------------------------------------------------------------------------------------- |:----------:|
-| 1 | [Camera Follow](https://github.com/Ivan-Vankov/GameDevCourse/blob/gh-pages/Homework/Homework%201.md) | 29.03.2020 |
-| 2 | [Ground Detection](https://github.com/Ivan-Vankov/GameDevCourse/blob/gh-pages/Homework/Homework%202.md) | 29.03.2020 |
-| 3 | [Power-up Animation](https://github.com/Ivan-Vankov/GameDevCourse/blob/gh-pages/Homework/Homework%203.md) | 10.04.2020 |
-| 4 | [Crouch Kick Counter](https://github.com/Ivan-Vankov/GameDevCourse/blob/gh-pages/Homework/Homework%204.md) | 17.04.2020 |
+| 1 | [Camera Follow](https://ivan-vankov.github.io/GameDevCourse/Homework/Homework%201) | 29.03.2020 |
+| 2 | [Ground Detection](https://ivan-vankov.github.io/GameDevCourse/Homework/Homework%202) | 29.03.2020 |
+| 3 | [Power-up Animation](https://ivan-vankov.github.io/GameDevCourse/Homework/Homework%203) | 10.04.2020 |
+| 4 | [Crouch Kick Counter](https://ivan-vankov.github.io/GameDevCourse/Homework/Homework%204) | 17.04.2020 |
+| 5 | [Healthbar](https://ivan-vankov.github.io/GameDevCourse/Homework/Homework%205) | 24.04.2020 |
