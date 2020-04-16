@@ -7,8 +7,8 @@ You can find all these in Ivans AI exercise.
 
 The task is to  
 
-1) Implement the crouch state  \s\s
-2) Implement the crouch kick state  \s\s
-3) Make the AI sometimes dodge and counter a player punch by crouching + crouch kicking  \s\s
+1) Implement the crouch state<br>
+2) Implement the crouch kick state<br>
+3) Make the AI sometimes dodge and counter a player punch by crouching + crouch kicking<br>
 
 Deadline **17.04.2020г**.
