@@ -7,7 +7,6 @@ public class Menu : MonoBehaviour {
 	[Range(0, 5)]
 	private float rotationAmplitude = 2;
 
-
 	[SerializeField]
 	[Range(0, 5)]
 	private float rotationFrequency = 0.65f;

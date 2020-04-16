@@ -314,9 +314,10 @@
 				<section>
 					<h3>UI in Code</h3>
 
-					<pre><code>using UnityEngine.UI;
+					<pre><code>using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 using UnityEngine.Events;
+using UnityEngine.UI;
 using TMPro;
 
 public class MenuItem : MonoBehaviour, 
@@ -339,6 +340,7 @@ public class MenuItem : MonoBehaviour,
 
     public void OnPointerClick(PointerEventData eventData) {
         OnClick?.Invoke();
+        SceneManager.LoadScene("StartSceneName");
     }
 }</code></pre>
                 </section>
