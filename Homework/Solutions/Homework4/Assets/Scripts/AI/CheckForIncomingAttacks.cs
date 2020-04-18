@@ -1,31 +1,33 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using static Controlls;
-public class CheckForIncomingAttacks : MonoBehaviour
-{
-    //distance treshold from the player which will check for incoming attacks and crouch
-    private float distanceTreshold = 0.4f;
-    Animator animator;
-    // Start is called before the first frame update
-    void Start()
-    {
-        animator = GetComponent<Animator>(); 
-    }
+﻿using UnityEngine;
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(attackKey))
-        {
-            GameObject player = GameObject.Find("Monk");
-            float random = Random.value;
-            if (random <= 0.2f 
-                && (player.transform.position - transform.position).magnitude < distanceTreshold
-                && GetComponent<Health>().getHealth()>0)
-            {
-                animator.SetTrigger("shouldCrouch");
-            }
-        }
-    }
+public class CheckForIncomingAttacks : MonoBehaviour {
+
+	// Distance threshold from the player which will check for incoming attacks and crouch
+	[SerializeField]
+	private float distanceThreshold = 0.4f;
+
+	// The chance that the bot will dodge a player punch
+	[SerializeField]
+	private float dodgeChance = 0.5f;
+
+	private Animator animator;
+	private Transform player;
+	private Animator playerAnimator;
+
+	void Start() {
+		animator = GetComponent<Animator>();
+		player = GameObject.FindWithTag("Player").transform;
+		playerAnimator = player.GetComponent<Animator>();
+	}
+	
+	void Update() {
+		if (playerAnimator.GetBool("IsPunching")) {
+			float random = Random.value;
+			float distanceToPlayer = (player.position - transform.position).magnitude;
+			
+			if (random <= dodgeChance && distanceToPlayer < distanceThreshold) {
+				animator.SetTrigger("ShouldCrouch");
+			}
+		}
+	}
 }

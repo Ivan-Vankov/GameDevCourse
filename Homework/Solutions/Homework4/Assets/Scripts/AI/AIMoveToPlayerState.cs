@@ -25,13 +25,14 @@ public class AIMoveToPlayerState : StateMachineBehaviour {
 
 		Vector3 vectorToPlayer = player.position - animator.transform.position;
 		float distanceToPlayer = vectorToPlayer.magnitude;
+		float moveDirection = Sign(vectorToPlayer.x);
 
 		if (distanceToPlayer > wantedDistanceToPlayer) {
-			movementController.SetHorizontalMoveDirection(Sign(vectorToPlayer.x));
+			movementController.SetHorizontalMoveDirection(moveDirection);
 		} else {
             float random = Random.value;
             if (random <= 0.5f) {
-                animator.SetTrigger("shouldCrouch");
+                animator.SetTrigger("ShouldCrouch");
             } else {
 			    animator.SetTrigger("ShouldPunch");
             }
