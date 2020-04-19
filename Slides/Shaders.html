@@ -41,13 +41,13 @@
 			<a href="https://github.com/Ivan-Vankov/GameDevCourse#readme">
 				<i id="next-exercise" class="fas fa-arrow-circle-right navigation-button next-exercise"></i>
 			</a>
-			<a href="./AI.html">
+			<a href="./UI.html">
 				<i id="previous-exercise" class="fas fa-arrow-circle-left navigation-button previous-exercise"></i>
 			</a>
 
 			<div class="slides">
 				<section>
-					<h2 id="slides-title">User Interface</h2>
+					<h2 id="slides-title">Shaders</h2>
 					<img width="200" height="200" data-src="images/Unity-Logo.png" alt="Unity Logo">
 				</section>
 
@@ -59,59 +59,167 @@
 				<section>
 					<h3>Review</h3>
 
-					<p>What is a Waypoint Graph and what problem does it solve?</p>
+					<p>What is the difference between raster and vector fonts?</p>
 					<ul>
-						<li class="fragment">It solves the pathfinding problem</li>
-						<li class="fragment">
-							Vertices repsesent safe(walkable) spots and edges represent 
-							that the space between vertices is walkable
-						</li>
+						<li class="fragment">TODO</li>
 					</ul>
 				</section>
 
 				<section>
 					<h3>Review</h3>
 
-					<p>What is a NavMesh?</p>
+					<p>What is a Canvas and what can it do?</p>
 					<ul>
-						<li class="fragment">
-							А collection of polygons that define what parts 
-							of the terrain are traversable by agents
-						</li>
+						<li class="fragment">TODO</li>
 					</ul>
 				</section>
 
 				<section>
 					<h3>Review</h3>
 
-					<p>How is State Machine AI done in Unity?</p>
+					<p>Name any 3 UI Components</p>
 					<ul>
-						<li class="fragment">Integrated with the animation system</li>
-						<li class="fragment">Each state has one or more StateMachineBehaviours</li>
-						<li class="fragment">
-							Each StateMachineBehaviour implements some AI 
-							logic with OnStateXXX methods
-						</li>
+						<li class="fragment">TODO</li>
 					</ul>
+				</section>
+
+				<section>
+					<h3>CPU vs GPU</h3>
+
+					<p>Frequency vs Throughput</p>
+					<p>TODO</p>
+				</section>
+
+				<section>
+					<h3>Graphics Pipeline</h3>
+
+					<img height="400" src="images/Graphics_Pipeline.jpg" alt="Graphics Pipeline"/>
+					<br>
+					<a href="http://www.cgchannel.com/2010/11/cg-science-for-artists-part-2-the-real-time-rendering-pipeline/">
+						Source: CG Science for Artists
+					</a>
+				</section>
+
+				<section>
+					<h3>Shader Definition</h3>
+
+					<p>
+						A shader is a program that runs in the graphics 
+						pipeline and tells the gpu how to render each pixel
+					</p>
+				</section>
+
+				<section>
+					<h3>Shading Languages</h3>
+
+					<p>TODO</p>
+					<p>cg, hlsl, glsl</p>
+				</section>
+
+				<section>
+					<h3>Shaders in Unity</h3>
+
+					<p>TODO</p>
+					<p>cg, Shaderlab, Materials</p>
+				</section>
+				                
+				<section>
+					<h3>Vertex Shader</h3>
+
+					<p>TODO</p>
+				</section>
+				
+				<section>
+					<h3>Fragment Shader</h3>
+
+					<p>TODO</p>
+				</section>
+    
+				<section>
+					<h3>Shader Properties</h3>
+
+					<a href="https://docs.unity3d.com/Manual/SL-Properties.html">
+						Shader Properties Documentation
+					</a>
+					<p>TODO</p>
+					<p>_MainTex</p>
+				</section>
+
+				<section>
+					<h3>Providing Vertex Data</h3>
+
+					<a href="https://docs.unity3d.com/Manual/SL-VertexProgramInputs.html">
+						Vertex Data Documentation
+					</a>
+					<p>TODO</p>
 				</section>
                 
+				<section>
+					<h3>Normals</h3>
+
+					<img height="200" src="images/Normals.png" alt="Shading Normals"/>
+					<img height="200" src="images/Sphere-Normals.png" alt="Sphere Normals"/>
+					<br>
+					<a href=https://www.scratchapixel.com/lessons/3d-basic-rendering/introduction-to-shading/shading-normals">
+						Source: Introduction to Shading - Normals
+					</a>
+				</section>
+
+				<section>
+					<h3>UVs</h3>
+
+					<p>TODO</p>
+				</section>
+
+				<section>
+					<h3>Shader Semantics</h3>
+
+					<a href="https://docs.unity3d.com/Manual/SL-VertexProgramInputs.html">
+						Vertex Data Documentation
+					</a>
+					<p>TODO</p>
+				</section>
+				
+				<section>
+					<h3>Blending</h3>
+
+					<a href="https://docs.unity3d.com/Manual/SL-Blend.html">Blending Documentaiton</a>
+					<p>TODO</p>
+					<p>Handling Transparency</p>
+					<p>Additive</p>
+					<p>Multiplicative</p>
+				</section>
+
+				<section>
+					<h3>Post-Processing Shaders</h3>
+
+					<p>TODO</p>
+					<p>OnRenderImage</p>
+					<p>Graphics.Blit</p>
+				</section>
+
 				<section>
                     <h3>Extra Resources</h3>
 					
 					<ul>
 						<li>
-							<a href="https://docs.unity3d.com/Packages/com.unity.ugui@1.0/manual/index.html">
-								Unity UI Documentation
+							<a href="https://www.shadertoy.com/">
+								Shadertoy
 							</a>
 						</li>
 						<li>
-							<a href="https://youtu.be/HwdweCX5aMI">
-								Making Good-Looking UI
+							<a href="https://www.scratchapixel.com/lessons/3d-basic-rendering/introduction-to-shading/what-is-shading-light-matter-interaction">
+								Introduction to Shading
 							</a>
 						</li>
 						<li>
-							<a href="https://youtu.be/vqZjZ6yv1lA">
-								Nice Animated Start Menu
+							<a href="https://www.youtube.com/watch?v=3penhrrKCYg">
+								Shaders Crash Course
+							</a>
+						</li>
+						<li>
+							<a href="https://www.youtube.com/watch?v=T-HXmQAMhG0&list=PLJ4rOFLQFH4BUVziWikfHvL8TbNGJ6M_f">
+								Shaders 101
 							</a>
 						</li>
 					</ul>
@@ -120,17 +228,17 @@
 				<section>
 					<h3>Questions?</h3>
 
-					<img height="300" data-src="images/GUI-Cat-7.jpg" alt="GUI Cat">
+					<img src="images/Anaglyph_Cat.gif" alt="Anaglyph Cat">
 				</section>
 			</div>
 		</div>
 
 		<a href="https://github.com/Ivan-Vankov/GameDevCourse#readme">
 			<i class="fa fa-home navigation-button home"></i>
-		</a>	
+		</a>
 
 		<div id="slides-title-div">
-			<p id="slides-title-meta">Shaders</p>
+			<p id="slides-title-meta"></p>
 			<script>
 				var slides_title = document.getElementById("slides-title").innerHTML;
 				document.getElementById("slides-title-meta").innerHTML = slides_title;
