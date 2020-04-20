@@ -59,9 +59,10 @@
 				<section>
 					<h3>Review</h3>
 
-					<p>What is the difference between raster and vector fonts?</p>
+					<p>What is the main difference between raster and vector fonts?</p>
 					<ul>
-						<li class="fragment">TODO</li>
+						<li class="fragment">Raster fonts blur when zoomed in</li>
+						<li class="fragment">Vector fonts don't</li>
 					</ul>
 				</section>
 
@@ -70,28 +71,58 @@
 
 					<p>What is a Canvas and what can it do?</p>
 					<ul>
-						<li class="fragment">TODO</li>
+						<li class="fragment">Parent object for all UI elements</li>
+						<li class="fragment">Can be rendered as a screen overlay or in world space</li>
+						<li class="fragment">Can have constant pixels size or scale with screen size</li>
 					</ul>
 				</section>
 
 				<section>
 					<h3>Review</h3>
 
-					<p>Name any 3 UI Components</p>
+					<p>Name any 3 UI Elements</p>
 					<ul>
-						<li class="fragment">TODO</li>
+						<li class="fragment">Text</li>
+						<li class="fragment">Button</li>
+						<li class="fragment">Image</li>
 					</ul>
 				</section>
 
 				<section>
+					<h3>Rendering</h3>
+
+					<ul>
+						<li>The process of creating am image from the contents of a scene</li>
+						<li>
+							Belongs to the class of 
+							<a href="https://www.freecodecamp.org/news/embarrassingly-parallel-algorithms-explained-with-examples/">
+								embarrasingly parallel problems
+							</a>
+						</li>
+						<li>As such it is mainly done on the GPU</li>
+					</ul>
+				</section>
+
+
+				<section>
 					<h3>CPU vs GPU</h3>
 
-					<p>Frequency vs Throughput</p>
-					<p>TODO</p>
+					<ul>
+						<li>The CPU has few cores with high clocks speeds
+							<ul>
+								<li><strong>High Frequency</strong></li>
+							</ul>
+						</li>
+						<li>The GPU has many cores with low clocks speeds
+							<ul>
+								<li><strong>High Throughput</strong></li>
+							</ul>
+						</li>
+					</ul>
 				</section>
 
 				<section>
-					<h3>Graphics Pipeline</h3>
+					<h3>Rendering Pipeline</h3>
 
 					<img height="400" src="images/Graphics_Pipeline.jpg" alt="Graphics Pipeline"/>
 					<br>
@@ -104,16 +135,33 @@
 					<h3>Shader Definition</h3>
 
 					<p>
-						A shader is a program that runs in the graphics 
-						pipeline and tells the gpu how to render each pixel
+						A shader is a program that runs in the rendering 
+						pipeline and tells the GPU how to render each pixel
 					</p>
 				</section>
 
 				<section>
 					<h3>Shading Languages</h3>
 
-					<p>TODO</p>
-					<p>cg, hlsl, glsl</p>
+					<ul>
+						<li>The most popular ones are:
+							<ul>
+								<li>Cg</li>
+								<li>HLSL (High-Level Shading Language)</li>
+								<li>GLSL (OpenGL Shading Language)</li>
+							</ul>
+						</li>
+						<li>All have a C-like syntax 
+							<ul>
+								<li>Cg and HLSL have the same syntax</li>
+							</ul>
+						</li>						
+						<li>Shaders in Unity are in a HLSL variant (ShaderLab) 
+							<a href="https://docs.unity3d.com/Manual/SL-ShadingLanguage.html">
+							and uses different compilers for different platforms
+							</a>
+						</li>
+					</ul>
 				</section>
 
 				<section>
