@@ -22,6 +22,7 @@
 | 6 | [Animation](https://ivan-vankov.github.io/GameDevCourse/Slides/Animation.html) | 02.04.2020 |
 | 7 | [AI](https://ivan-vankov.github.io/GameDevCourse/Slides/AI.html) | 09.04.2020 |
 | 8 | [UI](https://ivan-vankov.github.io/GameDevCourse/Slides/UI.html) | 16.04.2020 |
+| 8 | [Shaders](https://ivan-vankov.github.io/GameDevCourse/Slides/Shaders.html) | 23.04.2020 |
 
 
 | # | Homework | Deadline |
@@ -31,3 +32,4 @@
 | 3 | [Power-up Animation](https://ivan-vankov.github.io/GameDevCourse/Homework/Homework%203) | 10.04.2020 |
 | 4 | [Crouch Kick Counter](https://ivan-vankov.github.io/GameDevCourse/Homework/Homework%204) | 17.04.2020 |
 | 5 | [Healthbar](https://ivan-vankov.github.io/GameDevCourse/Homework/Homework%205) | 24.04.2020 |
+| 6 | [Pixelization Shader](https://ivan-vankov.github.io/GameDevCourse/Homework/Homework%206) | 01.05.2020 |
