@@ -10,6 +10,11 @@
 
 	SubShader
 	{
+        Tags
+        {
+            "PreviewType" = "Plane"
+        }
+
 		Pass
 		{
 			CGPROGRAM

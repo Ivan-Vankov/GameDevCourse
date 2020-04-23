@@ -45,9 +45,10 @@
 
 			float4 frag(v2f i) : SV_Target
 			{
-				float2 distuv = float2(i.uv.x + _Time.x * _WobbleSpeed, i.uv.y + _Time.x * _WobbleSpeed);
+				float2 displacementUV = float2(i.uv.x + _Time.x * _WobbleSpeed, 
+                                               i.uv.y + _Time.x * _WobbleSpeed);
 
-				float2 displacement = tex2D(_DisplaceTex, distuv).xy;
+				float2 displacement = tex2D(_DisplaceTex, displacementUV).xy;
 				displacement = ((displacement * 2) - 1) * _Intensity;
 
 				float4 color = tex2D(_MainTex, i.uv + displacement);

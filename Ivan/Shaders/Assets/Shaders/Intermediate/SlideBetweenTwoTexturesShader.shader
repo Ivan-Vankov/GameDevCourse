@@ -4,7 +4,7 @@
     {
         _MainTex ("Texture", 2D) = "white" {}
 		_SecondaryTex ("Secondary Texture", 2D) = "black" {}
-		_Slider ("Slider", Range(0,1)) = 0
+        _SlideSpeed("Slider", Range(0, 10)) = 1
     }
     SubShader
     {
@@ -45,13 +45,14 @@
 
             sampler2D _MainTex;
 			sampler2D _SecondaryTex;
-			float _Slider;
+			float _SlideSpeed;
 
             fixed4 frag (v2f i) : SV_Target
             {
                 fixed4 mainColor = tex2D(_MainTex, i.uv);
 				fixed4 secondColor = tex2D(_SecondaryTex, i.uv);
-				mainColor = (1 - _Slider) * mainColor + _Slider * secondColor;
+                float lerpValue = (sin(_Time.y* _SlideSpeed) + 1) / 2.;
+                mainColor = (1 - lerpValue) * mainColor + lerpValue * secondColor;
 				//mainColor = lerp(mainColor, secondColor, _Slider);
                 return mainColor;
             }
