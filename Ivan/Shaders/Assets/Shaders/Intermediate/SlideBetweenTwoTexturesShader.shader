@@ -51,7 +51,7 @@
             {
                 fixed4 mainColor = tex2D(_MainTex, i.uv);
 				fixed4 secondColor = tex2D(_SecondaryTex, i.uv);
-                float lerpValue = (sin(_Time.y* _SlideSpeed) + 1) / 2.;
+                float lerpValue = (sin(_Time.y * _SlideSpeed) + 1) / 2.;
                 mainColor = (1 - lerpValue) * mainColor + lerpValue * secondColor;
 				//mainColor = lerp(mainColor, secondColor, _Slider);
                 return mainColor;

@@ -4,6 +4,7 @@
     {
 		// Make sure to set the texture wrap mode to repeat
         _MainTex("Texture", 2D) = "white" {}
+        _TileMultiplier("Tile Multiplier", Range(1, 5)) = 2
     }
     SubShader
     {
@@ -43,10 +44,11 @@
             }
 
             sampler2D _MainTex;
+            float _TileMultiplier;
 
             fixed4 frag (v2f i) : SV_Target
             {
-                fixed4 color = tex2D(_MainTex, i.uv * 2);
+                fixed4 color = tex2D(_MainTex, i.uv * _TileMultiplier);
                 return color;
             }
             ENDCG
