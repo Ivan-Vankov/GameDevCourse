@@ -1,18 +1,15 @@
 ﻿using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
 using static UnityEngine.Mathf;
 
+/// <summary>
+/// Responsible for smooth healthbar scaling.
+/// </summary>
 public class HealthbarScaler : MonoBehaviour {
 
-    [SerializeField]
-    private Transform healthMain = null;
-
-    [SerializeField]
-    private Transform healthHighlight = null;
-
-    [SerializeField]
-    private Transform hitDisplay = null;
+    [SerializeField] private Transform healthMain = null;
+    [SerializeField] private Transform healthHighlight = null;
+    [SerializeField] private Transform hitDisplay = null;
 
     [SerializeField]
     [Range(1, 5)]
@@ -23,6 +20,10 @@ public class HealthbarScaler : MonoBehaviour {
     private float initialWait = 0.1f;
 
     private float targetScale = 1;
+
+    /// <summary>
+    /// The set property triggers smooth healthbar scaling.
+    /// </summary>
     public float TargetScale {
         get { return targetScale; }
         set {
@@ -38,6 +39,10 @@ public class HealthbarScaler : MonoBehaviour {
     private float epsilon = 0.01f;
     private bool isScaling = false;
 
+    /// <summary>
+    /// Scales the healthbar at an even rate while also waiting initialy.
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator ScaleHealthbar() {
         isScaling = true;
         yield return new WaitForSeconds(initialWait);

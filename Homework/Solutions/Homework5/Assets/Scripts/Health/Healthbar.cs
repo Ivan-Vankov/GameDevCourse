@@ -2,6 +2,9 @@
 using UnityEngine;
 using TMPro;
 
+/// <summary>
+/// Responsible for initializing and resizing the healthbar.
+/// </summary>
 public class Healthbar : MonoBehaviour {
 
     [SerializeField] private Sprite avatar = null;
@@ -24,6 +27,11 @@ public class Healthbar : MonoBehaviour {
         heroHealth.OnDamageTaken -= ScaleHealthbar;
     }
 
+    /// <summary>
+    /// Function that will be subscribed to <see cref="Health.OnDamageTaken"/>.
+    /// It scales the healthbar based on the current and mahimum health.
+    /// </summary>
+    /// <param name="health">The current health of the player</param>
     private void ScaleHealthbar(int health) {
         healthbarScaler.TargetScale = (float)health / Health.maxHealth;
     }
