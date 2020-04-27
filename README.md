@@ -23,7 +23,7 @@
 | 7 | [AI](https://ivan-vankov.github.io/GameDevCourse/Slides/AI.html) | 09.04.2020 |
 | 8 | [UI](https://ivan-vankov.github.io/GameDevCourse/Slides/UI.html) | 16.04.2020 |
 | 9 | [Shaders](https://ivan-vankov.github.io/GameDevCourse/Slides/Shaders.html) | 23.04.2020 |
-| 10 | ***Coding Practice*** | 30.05.2020 |
+| 10 | ***Coding Practice*** | 30.04.2020 |
 
 
 | # | Homework | Deadline |
