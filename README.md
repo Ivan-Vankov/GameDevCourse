@@ -25,7 +25,6 @@
 | 9 | [Shaders](https://ivan-vankov.github.io/GameDevCourse/Slides/Shaders.html) | 23.04.2020 |
 | 10 | [Coding Practice](https://ivan-vankov.github.io/GameDevCourse/Homework/Homework%207) | 30.04.2020 |
 
-
 | # | Homework | Deadline |
 |---| ---------------------------------------------------------------------------------------------------------------- |:----------:|
 | 1 | [Camera Follow](https://ivan-vankov.github.io/GameDevCourse/Homework/Homework%201) | 29.03.2020 |
