@@ -9,4 +9,4 @@ The task is to create to following:
 
 You can use [this project to start from](https://github.com/Ivan-Vankov/GameDevCourse/tree/gh-pages/Ivan/Coding%20Practice)
 
-Deadline **01.05.2020г**
+Deadline **08.05.2020г**
