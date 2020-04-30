@@ -33,4 +33,4 @@
 | 4 | [Crouch Kick Counter](https://ivan-vankov.github.io/GameDevCourse/Homework/Homework%204) | 17.04.2020 |
 | 5 | [Healthbar](https://ivan-vankov.github.io/GameDevCourse/Homework/Homework%205) | 24.04.2020 |
 | 6 | [Pixelization Shader](https://ivan-vankov.github.io/GameDevCourse/Homework/Homework%206) | 01.05.2020 |
-| 7 | [Doom Coding Practice](https://ivan-vankov.github.io/GameDevCourse/Homework/Homework%207) | 08.05.2020 |
+| 7 | [Doom Coding Practice](https://ivan-vankov.github.io/GameDevCourse/Homework/Homework%207) | 22.05.2020 |

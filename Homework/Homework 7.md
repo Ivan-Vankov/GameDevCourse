@@ -13,4 +13,4 @@ The task is to use [this project](https://github.com/Ivan-Vankov/GameDevCourse/t
 
 Assets for all the animations and UI are provided in the [base project](https://github.com/Ivan-Vankov/GameDevCourse/tree/gh-pages/Ivan/Coding%20Practice/Assets/Sprites) (all of them from the original Doom game by ID Software).
 
-Deadline **08.05.2020г**
+Deadline **22.05.2020г**
