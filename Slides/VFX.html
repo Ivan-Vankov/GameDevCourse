@@ -59,35 +59,176 @@
 				<section>
 					<h3>Review</h3>
 
-					<p>TODO</p>
+                    <p>What is a Vertex Shader?</p>
+                    
 					<ul>
-						<li class="fragment">TODO</li>
+						<li class="fragment">Runs on the GPU</li>
+						<li class="fragment">
+                            Takes data from the mesh, transforms it in some way
+                            and passes the transformed data down the rendering pipeline
+                        </li>
+                        <li class="fragment">
+                            Most often used to transform vertex positions 
+                            from object space to clip space
+                        </li>
+					</ul>
+                </section>
+
+				<section>
+					<h3>Review</h3>
+
+                    <p>What is a Fragment Shader?</p>
+                    
+					<ul>
+						<li class="fragment">Also runs on the GPU</li>
+						<li class="fragment">
+                            Takes interpolated data from the Vertex Shader and 
+                            from it, shader parameters and some custom logic 
+                            determines the final color of the fragment (pixel)
+                        </li>
+					</ul>
+                </section>
+                
+                <section>
+					<h3>What is UV Mapping?</h3>
+
+                    <ul>
+						<li class="fragment">The process of mapping a 3D object to a 2D image</li>
+						<li class="fragment">Used for applying textures on 3D objects</li>
 					</ul>
                 </section>
                 
                 <section>
 					<h3>Visual Effects (VFX) Definition</h3>
 
-					<p>TODO</p>
+                    <ul>
+                        <li>Effects added to an existing scene in order to enchance it's visual appeal</li>
+                        <li>Typically added in post-production</li>
+                        <li>Typical VFX are:
+                            <ul>
+                                <li>Explosions</li>
+                                <li>Particles</li>
+                                <li>Color Correction</li>
+                                <li>Bloom</li>
+                                <li>Motion Blur</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+
+                <section>
+					<h3 style="visibility: hidden; position: fixed;">VFX Preview</h3>
+
+					<img height="354" src="images/Noita_Particles.gif">
+					<br>
+					<a href="https://store.steampowered.com/app/881100/Noita/">
+						Source: Noita
+					</a>
+                </section>
+
+                <section>
+					<h3>Shaders</h3>
+
+                    <p>As we have already seen shaders can be use to make all kinds of effects.</p>
+                    
+                    <img height="200" src="images/Disolve_Shader.gif">
+					<br>
+                    <a href="https://youtu.be/5dzGj9k8Qy8">
+						Source: Brackeys 2D Shader Graph
+					</a>
                 </section>
                 
                 <section>
 					<h3>Particle Systems</h3>
 
-					<p>TODO</p>
-				</section>
+					<p>
+                        A technique for visualizing fuzzy objects 
+                        by rendering many small sprites or meshes
+                    </p>
+
+                    <img height="300" src="images/Fluffy_Fire.gif">
+                </section>
+
+                <section>
+					<h3>Tweaking Particle Systems</h3>
+
+                    <p>Unitys Particle System offers many parameters for artistic tweeking</p>
+
+                    <ul>
+                        <li>Emission over Time</li>
+                        <li>Emission Shape</li>
+                        <li>Velocity Over Lifetime</li>
+                        <li>Color Over Lifetime</li>
+                        <li>Rotation Over Lifetime</li>
+                        <li>... Many more</li>
+                    </ul>
+                </section>
+                
+                <section>
+					<h3>Complex Particle Systems</h3>
+
+					<p>
+                        Several particle systems can be stacked on top of 
+                        each other to create some really nice effects
+                    </p>
+
+                    <img height="400" src="images/Heart_Particles.gif">
+                </section>
+                
+                <section>
+					<h3>Particle Systems Live Demo</h3>
+
+                    <img height="450" src="images/Recall.gif">
+                </section>
                 
                 <section>
 					<h3>Post-Processing</h3>
 
-					<p>TODO</p>
-				</section>
-                
+					<p>
+                        Post-processing applies effects to a 
+                        camera’s image buffer before the image appears on screen
+                    </p>
+                    
+                    <img height="300" src="images/Before_vs_After_Post_Processing.png">
+					<br>
+                    <a href="https://learn.unity.com/project/tanks-tutorial">
+						Source: Unity Tanks Demo
+					</a>
+                </section>
+                        
                 <section>
-					<h3>Shaders</h3>
+					<h3>Post-Processing Volume</h3>
 
 					<p>TODO</p>
+                    <ul>
+                        <li>Post-Processing Package</li>
+                        <li>PostProcessingLayer Component</li>
+                        <li>PostProcessing (Physics) Layer</li>
+                        <li>IsGlobal</li>
+                        <li>!IsGlobal
+                            <ul>
+                                <li>Apply effect in finite volume/li>
+                                <li>Control blending with Blend Distance</li>
+                        </li>
+                    </ul>
                 </section>
+
+                <section>
+					<h3>Post-Processing Live Demo</h3>
+
+					<p>TODO add coom post-processed pic</p>
+                </section>
+                
+                <section>
+					<h3>Effects</h3>
+
+					<p>TODO</p>
+					<p>Bloom</p>
+					<p>Vignette</p>
+					<p>Ambient Occlusion</p>
+					<p>Color Grading</p>
+					<p>...</p>
+				</section>
                 
                 <section>
                     <h3>Extra Resources</h3>
