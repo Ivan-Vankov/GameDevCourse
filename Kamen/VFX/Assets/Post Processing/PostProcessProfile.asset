@@ -21,7 +21,7 @@ MonoBehaviour:
     value: {fileID: 0}
     defaultState: 1
   intensity:
-    overrideState: 0
+    overrideState: 1
     value: 0
   fastMode:
     overrideState: 0
@@ -78,8 +78,8 @@ MonoBehaviour:
     value: {fileID: 0}
     defaultState: 1
   tonemapper:
-    overrideState: 0
-    value: 0
+    overrideState: 1
+    value: 2
   toneCurveToeStrength:
     overrideState: 0
     value: 0
@@ -1386,7 +1386,7 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 0.25
+    value: 0.43
   color:
     overrideState: 1
     value: {r: 0, g: 0, b: 0, a: 1}
@@ -1412,8 +1412,8 @@ MonoBehaviour:
     overrideState: 0
     value: 0.25
   quality:
-    overrideState: 0
-    value: 2
+    overrideState: 1
+    value: 4
 --- !u!114 &-2483483444506131830
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -1451,31 +1451,7 @@ MonoBehaviour:
   speedDown:
     overrideState: 0
     value: 1
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e6292b2c06870d4495f009f912b9600, type: 3}
-  m_Name: PostProcessProfile
-  m_EditorClassIdentifier: 
-  settings:
-  - {fileID: 1887898475409479239}
-  - {fileID: 4967064089896072949}
-  - {fileID: 5787974062025589610}
-  - {fileID: -7074121615226353073}
-  - {fileID: -3898326549116197765}
-  - {fileID: 7438102670452233175}
-  - {fileID: 853023150848593787}
-  - {fileID: -2483483444506131830}
-  - {fileID: -5103649415279530336}
-  - {fileID: -6228457717875243163}
-  - {fileID: 2216997045666485444}
---- !u!114 &853023150848593787
+--- !u!114 &-654643372035717898
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1509,6 +1485,30 @@ MonoBehaviour:
   scale:
     overrideState: 0
     value: 1
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e6292b2c06870d4495f009f912b9600, type: 3}
+  m_Name: PostProcessProfile
+  m_EditorClassIdentifier: 
+  settings:
+  - {fileID: 1887898475409479239}
+  - {fileID: 4967064089896072949}
+  - {fileID: 5787974062025589610}
+  - {fileID: -7074121615226353073}
+  - {fileID: -3898326549116197765}
+  - {fileID: 7438102670452233175}
+  - {fileID: -654643372035717898}
+  - {fileID: -2483483444506131830}
+  - {fileID: -5103649415279530336}
+  - {fileID: -6228457717875243163}
+  - {fileID: 2216997045666485444}
 --- !u!114 &1887898475409479239
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -1574,7 +1574,7 @@ MonoBehaviour:
     value: 1
   preset:
     overrideState: 0
-    value: 2
+    value: 6
   maximumIterationCount:
     overrideState: 0
     value: 16
@@ -1649,7 +1649,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b94fcd11afffcb142908bfcb1e261fba, type: 3}
   m_Name: MotionBlur
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   enabled:
     overrideState: 1
     value: 1
