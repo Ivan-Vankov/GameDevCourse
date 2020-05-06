@@ -208,7 +208,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 422429540}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.1815314, y: 4.849759, z: -3.6184607}
+  m_LocalPosition: {x: 7.1815314, y: 4.849759, z: 0.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -384,7 +384,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.007519179, y: 0.96826714, z: -0.2480745, w: 0.029348431}
-  m_LocalPosition: {x: 6.826605, y: 7.3153815, z: 0.16664931}
+  m_LocalPosition: {x: 6.826605, y: 7.3153815, z: 5.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -460,6 +460,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1821175502}
   - component: {fileID: 1821175501}
+  - component: {fileID: 1821175503}
   m_Layer: 8
   m_Name: Post-ProcessVolume
   m_TagString: Untagged
@@ -481,8 +482,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sharedProfile: {fileID: 11400000, guid: 815c3b62d700809459f160e4ad7a061f, type: 2}
   isGlobal: 1
-  blendDistance: 0
-  weight: 1
+  blendDistance: 3.18
+  weight: 0
   priority: 0
 --- !u!4 &1821175502
 Transform:
@@ -498,3 +499,16 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1821175503
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1821175500}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
