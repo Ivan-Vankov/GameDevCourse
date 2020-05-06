@@ -154,77 +154,131 @@
 						Source: Unity Tanks Demo
 					</a>
                 </section>
-                        
+                       
                 <section>
-					<h3>Post-Processing Volume</h3>
+					<h3>Post-Processing Profile</h3>
 
-					<p>Unity Component which defines the area/volume in which a post processing profile is active(a set of post processing effects).</p>
-                    <ul>
-                        <li>Post-Processing Package</li>
-                        <li>PostProcessingLayer Component</li>
-                        <li>PostProcessing (Physics) Layer</li>
-                        <li>IsGlobal</li>
-                        <li>!IsGlobal
-                            <ul>
-                                <li>Apply effect in finite volume</li>
-                                <li>Control blending with Blend Distance</li>
-                        </li>
-                    </ul>
+					<p>
+                        The main part of the Post-Processing package.
+                        Defines a configurable set of post-processing effects 
+                        like Bloom and Color Grading.
+                    </p>
+
+                    <img height="300" src="images/PostProcessProfile.png" alt="PostProcessProfile">
+
                 </section>
 
 				<section>
-					<h3>Bloom</h3>
-					<p>Simulates light extending out of edges of super bright areas.</p>
-					<img height=300 src="images/bloom-filter.png">
+                    <h3>Bloom</h3>
+                    
+					<p>Simulates light extending out of edges of super bright areas</p>
+                    
+                    <img height=300 src="images/bloom-filter.png">
 				</section>
 
 				<section>
-					<h3>Vignette</h3>
+                    <h3>Vignette</h3>
+                    
 					<p>Makes the area closer to the corners more tinted in a specific color</p>
-					<img height=300 src="images/vignette.jpg">
+                    
+                    <img height=300 src="images/vignette.jpg">
 				</section>
 				
 				<section>
-					<h3>Ambient Occlusion</h3>
-					<p>Calculates how exposed is each pixel to ambient light(global light)</p>
+                    <h3>Ambient Occlusion</h3>
+                    
+					<p>
+                        Calculates how exposed is each pixel to 
+                        ambient light (approximates global illumination)
+                    </p>
+
 					<img height=300 src="images/ambient-occlusion.png">
 				</section>
 				
 				<section>
-					<h3>Motion Blur</h3>
-					<p>Blurs the objects which move</p>
+                    <h3>Motion Blur</h3>
+                    
+                    <p>Blurs the objects which move</p>
+                    
 					<img height=300 src="images/motion-blur.jpg">
 				</section>
 
 				<section>
-					<h3>Auto Exposure</h3>
-					<p>Simulates how our eyes adapt to light. Changes the amount of light recieved to match the mid tone of the picture</p>
+                    <h3>Auto Exposure</h3>
+                    
+					<p>
+                        Simulates how our eyes adapt to light. 
+                        <br>
+                        Changes the amount of light recieved so that the 
+                        picture is neither too dark or too bright.
+                    </p>
+
 					<img height=300 src="images/autoexposure.jpg">
 				</section>
 
 				<section>
-					<h3>Depth of field</h3>
-					<p>Blurs the things not in the focus distance. Anything closer or further to it is blurred.</p>
-					<img height=300 src="images/depth-of-field.jpg">
+                    <h3>Depth of Field</h3>
+                    
+					<p>Blurs things that are not in focus</p>
+                    
+                    <img height=300 src="images/depth-of-field.jpg">
 				</section>
 
 				<section>
-					<h3>Chromatic abberation</h3>
+                    <h3>Chromatic Abberation</h3>
+                    
 					<p>Simulates the effect of cheap cameras which can't focus all the colors in the same point</p>
-					<img height=300 src="images/Chromatic_aberration_(comparison).jpg">
+                    
+                    <img height=300 src="images/Chromatic_aberration_(comparison).jpg">
 				</section>
 				
 				<section>
-					<h3>Color Grading</h3>
-					<p>Changes the colors and luminance of the image. Pretty much like an Instagram filter.</p>
-					<img height=300 src="images/thematrix.jpeg">
+                    <h3>Color Grading</h3>
+                    
+					<p>
+                        Changes the colors and luminance of the image. 
+                        Pretty much like an Instagram filter.
+                    </p>
+                    
+                    <img height=300 src="images/thematrix.jpeg">
 				</section>
 
 				<section>
-					<h3>Grain</h3>
-					<p>Film grain gives a vintage effect. Looks like the film is old and is damaged/has some particles on it. </p>
-					<img height=300 src="images/grain.jpg">
+                    <h3>Grain</h3>
+                    
+					<p>
+                        Film grain gives a vintage effect. 
+                        <br>
+                        Looks like the film is old and is 
+                        damaged/has some particles on it.
+                    </p>
+                    
+                    <img height=300 src="images/grain.jpg">
 				</section>
+
+                <section>
+					<h3>Post-Processing Volume</h3>
+
+                    <ul>
+                        <li>
+                            A component which defines the area/volume in which 
+                            a post processing profile is active
+                        </li>
+                        <li>Should be on its own Physics layer</li>
+                        <li>Can be Global</li>
+                        <li>Can control how the effect is blended</li>
+                    </ul>
+                </section>
+
+                <section>
+					<h3>Post-Processing Layer</h3>
+
+                    <ul>
+                        <li>Is added to the camera</li>
+                        <li>Can select which layer Post-Processing is applied to</li>
+                        <li>Can add Anti-Aliasing</li>
+                    </ul>
+                </section>
 
                 <section>
 					<h3>Post-Processing Live Demo</h3>
