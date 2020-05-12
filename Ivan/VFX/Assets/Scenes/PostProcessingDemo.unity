@@ -41610,7 +41610,7 @@ MonoBehaviour:
   volumeTrigger: {fileID: 1137186610}
   volumeLayer:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 256
   stopNaNPropagation: 1
   finalBlitToCameraTarget: 0
   antialiasingMode: 0
@@ -53702,7 +53702,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1431212257}
   - component: {fileID: 1431212256}
-  m_Layer: 0
+  - component: {fileID: 1431212258}
+  m_Layer: 8
   m_Name: Post Process Volume
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53722,7 +53723,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sharedProfile: {fileID: 11400000, guid: 815c3b62d700809459f160e4ad7a061f, type: 2}
-  isGlobal: 1
+  isGlobal: 0
   blendDistance: 0
   weight: 1
   priority: 0
@@ -53733,13 +53734,26 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1431212255}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.0442905, y: 4.939434, z: -2.413334}
+  m_LocalRotation: {x: 0.0021307264, y: -0.9696967, z: 0.008462436, w: 0.24415646}
+  m_LocalPosition: {x: 24.867804, y: 75.342155, z: 316.79254}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 1, y: -871.735, z: 0}
+--- !u!65 &1431212258
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1431212255}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1431317584
 PrefabInstance:
   m_ObjectHideFlags: 0

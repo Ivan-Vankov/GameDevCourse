@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title id="page-title">Game Dev Presentation</title>
+		<link rel="icon" href="images/Unity-Icon.png">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="RevealJS/css/reset.css">
+		<link rel="stylesheet" href="RevealJS/css/reveal.css">
+		<link rel="stylesheet" href="RevealJS/css/custom.css">
+		<link rel="stylesheet" href="RevealJS/css/theme/black.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="RevealJS/lib/css/vs2015.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'RevealJS/css/print/pdf.css' : 'RevealJS/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="RevealJS/lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<a href="https://github.com/Ivan-Vankov/GameDevCourse#readme">
+				<i id="next-exercise" class="fas fa-arrow-circle-right navigation-button next-exercise"></i>
+			</a>
+			<a href="./VFX.html">
+				<i id="previous-exercise" class="fas fa-arrow-circle-left navigation-button previous-exercise"></i>
+			</a>
+
+			<div class="slides">
+				<section>
+					<h2 id="slides-title">Game Feel (Juice)</h2>
+					<img width="200" height="200" data-src="images/Unity-Logo.png" alt="Unity Logo">
+				</section>
+
+				<section>
+					<h2>Are we recording?</h2>
+					<img width="300" height="300" data-src="images/Cat-Cam.png" alt="Meow Cam">
+                </section>
+                
+                <section>
+                    <h3>Review</h3>
+                    
+					<p>TODO?</p>
+
+                    <ul>
+						<li class="fragment">TODO</li>
+					</ul>
+                </section>
+                
+                <section>
+					<h3>Game Feel Definition</h3>
+
+                    <ul>
+                        <li>The tactile, kinesthetic sence of manipulationg virtual objects
+                            <ul>
+                                <li>From 
+                                    <a href="https://www.amazon.com/Game-Feel-Designers-Sensation-Kaufmann/dp/0123743281">
+                                         Game Feel: A game designer's guide to virtual sensation
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>All the little things that make a game fun to play</li>
+                        <li>Not noticed when it is there</li>
+                        <li>Immediately noticed when it is not</li>
+                        <li>Not an exact science (different for every game)</li>
+                    </ul>
+
+
+
+
+
+                    <!-- -----------------TO ADD FROM--------------------------- -->
+                    <!-- <ul>
+                        <li>Intuitive controlls</li>
+                        <li>A lot of feedback for little input</li>
+                        <li>Real-time control, simulated spaces, polishing effects</li>
+                    </ul> -->
+                    <!-- ------------------------------------------------------- -->
+
+
+                </section>
+
+                <section>
+					<h3>Screenshake</h3>
+
+                    <ul>
+                        <li>TODO</li>
+                    </ul>
+                </section>
+
+                <section>
+					<h3>Tweening</h3>
+
+                    <ul>
+                        <li>TODO</li>
+                    </ul>
+                </section>
+
+                <section>
+					<h3>Camera Movement</h3>
+
+                    <ul>
+                        <li>TODO</li>
+                    </ul>
+                </section>
+
+                <section>
+					<h3>Sound Effects</h3>
+
+                    <ul>
+                        <li>TODO</li>
+                        <li>AudioSource</li>
+                        <li>AudioClip</li>
+                        <li>AudioListener</li>
+                        <li><a href="https://www.bfxr.net/">SFX Generator</a></li>
+                        <li>Pitch shift to remove redundancy (annoying when there is only one foostep sound)</li>
+                    </ul>
+                </section>
+
+                <section>
+					<h3>Particles</h3>
+
+                    <ul>
+                        <li>TODO</li>
+                    </ul>
+                </section>
+
+                <section>
+					<h3>Permanence</h3>
+
+                    <ul>
+                        <li>TODO</li>
+                        <li>Give impact to your actions</li>
+                        <li>Dead bodies stay</li>
+                        <li>Bullet shells stay</li>
+                    </ul>
+                </section>
+
+                <section>
+					<h3>What you should take away from this</h3>
+
+                    <ul>
+                        <li>Game Feel is about making the fundamental actions of the game feel impactful</li>
+                        <li>If the fundamental action is shooting then:
+                            <ul>
+                                <li>Add recoil</li>
+                                <li>Add satisfying SFX</li>
+                                <li>Make bullets really big</li>
+                                <li>Make the screen shake on hit</li>
+                            </ul>
+                        </li>
+                        <li>If the fundamental action is platforming then:
+                            <ul>
+                                <li>Make the controlls responsive</li>
+                                <li>Add smoke particles when the character falls down</li>
+                                <li>Give the character friction</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Extra Resources</h3>
+					
+					<ul>
+						<li>
+							<a href="https://youtu.be/Fy0aCDmgnxg">
+								Juice it or lose it
+							</a>
+						</li>
+						<li>
+							<a href="https://youtu.be/AJdEqssNZ-U">
+								The art of screenshake
+							</a>
+						</li>
+						<li>
+							<a href="https://youtu.be/sgwlJu8Ql2o?list=PLC261E393485CD2F1&t=132">
+								Cactus IGS
+							</a>
+                        </li>
+						<li>
+							<a href="https://youtu.be/pmSAG51BybY">
+								Game Feel: Why Your Death Animation Sucks
+							</a>
+						</li>
+					</ul>
+				</section>
+                
+				<section>
+					<h3>Questions?</h3>
+
+					<img height="250" src="images/Question-Cat-Particles.gif" alt="Particles Question Cat">
+				</section>
+			</div>
+		</div>
+
+		<a href="https://github.com/Ivan-Vankov/GameDevCourse#readme">
+			<i class="fa fa-home navigation-button home"></i>
+		</a>
+
+		<div id="slides-title-div">
+			<p id="slides-title-meta">Game Feel</p>
+			<script>
+				var slides_title = document.getElementById("slides-title").innerHTML;
+				document.getElementById("page-title").innerHTML = slides_title;
+			</script>
+		</div>
+
+        <script src="RevealJS/js/setup-exercise-navigation.js"></script>
+
+		<script src="RevealJS/js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				center: true,
+				hash: true,
+				mouseWheel: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'RevealJS/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'RevealJS/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'RevealJS/plugin/highlight/highlight.js' },
+					{ src: 'RevealJS/plugin/search/search.js', async: true },
+					{ src: 'RevealJS/plugin/zoom-js/zoom.js', async: true },
+					{ src: 'RevealJS/plugin/notes/notes.js', async: true },
+					{ src: 'RevealJS/plugin/menu/menu.js', async: true }
+				]
+			});
+
+			Reveal.configure({ slideNumber: 'c/t' });
+
+			Reveal.addEventListener('hide-exercise-navigation-arrows', function() {
+				document.getElementById('next-exercise').style.visibility = 'hidden';
+				document.getElementById('previous-exercise').style.visibility = 'hidden';
+			});
+
+			Reveal.addEventListener('show-left-exercise-navigation-arrow', function() {
+				let previousExerciseButton = document.getElementById('previous-exercise');
+				previousExerciseButton.classList.add('fade-in');
+				setTimeout(() => {
+					previousExerciseButton.classList.remove('fade-in');
+				}, 500);
+				document.getElementById('next-exercise').style.visibility = 'hidden';
+				previousExerciseButton.style.visibility = 'visible';
+			});
+
+			Reveal.addEventListener('show-right-exercise-navigation-arrow', function() {
+				let nextExerciseButton = document.getElementById('next-exercise');
+				nextExerciseButton.classList.add('fade-in');
+				setTimeout(() => {
+					nextExerciseButton.classList.remove('fade-in');
+				}, 500);
+				nextExerciseButton.style.visibility = 'visible';
+				document.getElementById('previous-exercise').style.visibility = 'hidden';
+			});
+
+			// Set the theme to a combination of blood and black
+			document.getElementById('theme').setAttribute('href','RevealJS/css/theme/custom_theme.css'); 
+		</script>
+
+	</body>
+</html>
