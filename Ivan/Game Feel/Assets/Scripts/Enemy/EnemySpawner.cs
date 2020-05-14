@@ -10,16 +10,19 @@ public class EnemySpawner : MonoBehaviour {
     [Range(0, 10)]
     private float spawnRate = 1.5f;
 
+    private Transform player;
 
     void Start() {
         StartCoroutine(SpawnEnemies());
+        player = GameObject.FindWithTag("Player").transform;
     }
 
     private IEnumerator SpawnEnemies() {
         while (true) {
             yield return new WaitForSeconds(1f / spawnRate);
 
-            Vector3 spawnLocation = Random.insideUnitCircle.normalized * 50;
+            Vector3 spawnLocation = player.position 
+                + (Vector3)Random.insideUnitCircle.normalized * 50;
             Instantiate(enemy,
                 spawnLocation, 
                 Quaternion.identity);

@@ -1,8 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 using static Controlls;
 using static AudioManager;
+using static JuiceUIManager;
 
 public class PlayerMovement : MonoBehaviour {
 
@@ -10,6 +12,9 @@ public class PlayerMovement : MonoBehaviour {
     private Animator animator;
 
     private Vector3 lastNonZeroMoveDirection = Vector3.zero;
+
+    public static event Action OnPlayerMove;
+    public static event Action OnPlayerDash;
 
     private void Start() {
         animator = GetComponent<Animator>();
@@ -26,6 +31,7 @@ public class PlayerMovement : MonoBehaviour {
                                           Input.GetAxisRaw("Vertical"),
                                           0).normalized
                                           * speed * Time.deltaTime;
+        OnPlayerMove?.Invoke();
     }
 
     private void LookAtMouse() {
@@ -42,5 +48,21 @@ public class PlayerMovement : MonoBehaviour {
     private void Dash() {
         animator.SetTrigger("IsDashing");
         PlayDashSound();
+        OnPlayerDash?.Invoke();
+    }
+
+    private void AddRecoil() {
+        print("gere");
+        if (RecoilOn) {
+            print("gere");
+        }
+    }
+
+    private void OnEnable() {
+        PlayerGun.OnPlayerShoot += AddRecoil;
+    }
+
+    private void OnDisable() {
+        PlayerGun.OnPlayerShoot -= AddRecoil;
     }
 }

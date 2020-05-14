@@ -22,11 +22,9 @@ public class ScreenShaker : MonoBehaviour {
     private float duration = 0.1f;
 
     private static ScreenShaker instance;
-    private static Vector3 originalCameraPosition = Vector3.zero;
 
     private void Start() {
         instance = this;
-        originalCameraPosition = transform.position;
     }
 
     public static void ShakeScreenLight() {
@@ -39,14 +37,12 @@ public class ScreenShaker : MonoBehaviour {
 
     private static void ShakeScreen(float intensity) {
         if (ScreenShakeOn) {
-            instance.transform.position = originalCameraPosition;
             instance.StopAllCoroutines();
             instance.StartCoroutine(instance.ShakeScreenCoroutine(intensity));
         }
     }
 
     private IEnumerator ShakeScreenCoroutine(float intensity) {
-        originalCameraPosition = transform.position;
         float shakeStart = Time.time;
         float shakeEnd = shakeStart + duration;
 
@@ -55,20 +51,15 @@ public class ScreenShaker : MonoBehaviour {
 
         while (Time.time < shakeEnd) {
             float normalizedTime = (Time.time - shakeStart) / duration;
-            float offsetX = (PerlinNoise(noiseSeed + Time.time * intensity, 0) 
-                                        * 2) - 1;
-
-            float offsetY = (PerlinNoise(0, noiseSeed + Time.time * intensity)
-                                        * 2) - 1;
+            float offsetX = PerlinNoise(noiseSeed + Time.time * intensity, 0);
+            float offsetY = PerlinNoise(0, noiseSeed + Time.time * intensity);
 
             Vector3 offset = new Vector2(offsetX, offsetY) 
                            * shakeCurve.Evaluate(normalizedTime)
                            * intensity;
 
-            transform.position = originalCameraPosition + offset;
+            transform.position = transform.position + offset;
             yield return null;
         }
-
-        transform.position = originalCameraPosition;
     }
 }

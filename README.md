@@ -25,6 +25,7 @@
 | 9 | [Shaders](https://ivan-vankov.github.io/GameDevCourse/Slides/Shaders.html) | 23.04.2020 |
 | 10 | [Coding Practice](https://ivan-vankov.github.io/GameDevCourse/Homework/Homework%207) | 30.04.2020 |
 | 11 | [VFX](https://ivan-vankov.github.io/GameDevCourse/Slides/VFX.html) | 07.05.2020 |
+| 12 | [Game Feel](https://ivan-vankov.github.io/GameDevCourse/Slides/Game%20Feel.html) | 14.05.2020 |
 
 | # | Homework | Deadline |
 |---| ---------------------------------------------------------------------------------------------------------------- |:----------:|

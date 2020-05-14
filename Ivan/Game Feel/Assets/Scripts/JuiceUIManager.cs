@@ -24,4 +24,12 @@ public class JuiceUIManager : MonoBehaviour {
     public void SetScreenShakeState() {
         ScreenShakeOn = !ScreenShakeOn;
     }
+
+    public void SetParticlesState() {
+        ParticlesOn = !ParticlesOn;
+    }
+
+    public void SetRecoilState() {
+        RecoilOn = !RecoilOn;
+    }
 }

@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using static AudioManager;
 using static ScreenShaker;
+using static JuiceUIManager;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour {
 
     [SerializeField] private GameObject hitParticles = null;
+    [SerializeField] private GameObject trailParticles = null;
     [SerializeField] private float speed = 100;
 
     public Vector3 MoveDirection { get; set; } = Vector3.zero;
@@ -14,6 +16,7 @@ public class Bullet : MonoBehaviour {
 
     private void Start() {
         hitParticles = transform.GetChild(0).gameObject;
+        trailParticles.SetActive(ParticlesOn);
     }
 
     private void Update() {
@@ -26,7 +29,7 @@ public class Bullet : MonoBehaviour {
 
             GetComponent<SpriteRenderer>().enabled = false;
             MoveDirection = Vector3.zero;
-            hitParticles.SetActive(true);
+            if (ParticlesOn) { hitParticles.SetActive(true); }
             PlayHitSound();
             ShakeScreenLight();
 
