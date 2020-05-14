@@ -8,7 +8,7 @@ public class PlayerGun : MonoBehaviour {
     [SerializeField] private GameObject bullet = null;
     private Transform bulletSpawnLocation = null;
 
-    public static Action OnPlayerShoot;
+    public static Action<Vector3> OnPlayerShoot;
 
     private void Start() {
         bulletSpawnLocation = transform.GetChild(0);
@@ -17,7 +17,7 @@ public class PlayerGun : MonoBehaviour {
     private void Update() {
         if (Input.GetKeyDown(fireKey)) {
             Shoot();
-            OnPlayerShoot?.Invoke();
+            OnPlayerShoot?.Invoke(bulletSpawnLocation.position);
         }
     }
     

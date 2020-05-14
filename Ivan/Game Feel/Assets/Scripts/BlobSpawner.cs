@@ -16,7 +16,6 @@ public class BlobSpawner : MonoBehaviour {
     }
 
     public void SpawnBlob(Vector3 position) {
-        print("here");
         if (PermananceOn) {
             int blobIndex = Random.Range(0, blobs.Length);
             Instantiate(blobs[blobIndex], position, Quaternion.identity);

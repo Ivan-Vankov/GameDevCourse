@@ -46,4 +46,8 @@ public class JuiceUIManager : MonoBehaviour {
     public void SetPermananceState() {
         PermananceOn = !PermananceOn;
     }
+
+    public void SetMuzzleFlashState() {
+        MuzzleFlashOn = !MuzzleFlashOn;
+    }
 }

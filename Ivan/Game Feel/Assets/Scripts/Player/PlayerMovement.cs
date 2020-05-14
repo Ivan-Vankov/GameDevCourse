@@ -94,7 +94,7 @@ public class PlayerMovement : MonoBehaviour {
         return inputVelocity + recoilVelocity + dashVelocity;
     }
 
-    private void AddRecoil() {
+    private void AddRecoil(Vector3 position) {
         if (RecoilOn) {
             recoilDirection = -transform.right;
             recoilStart = Time.time;
