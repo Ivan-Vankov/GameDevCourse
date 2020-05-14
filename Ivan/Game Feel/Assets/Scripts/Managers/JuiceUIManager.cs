@@ -15,6 +15,7 @@ public class JuiceUIManager : MonoBehaviour {
     public static bool TweeningOn { get; private set; } = false;
 
     public static Action<bool> OnSoundStateChanged;
+    public static Action<bool> OnRewardStateChanged;
 
     public void SetSoundState() {
         SoundOn = !SoundOn;
@@ -31,5 +32,14 @@ public class JuiceUIManager : MonoBehaviour {
 
     public void SetRecoilState() {
         RecoilOn = !RecoilOn;
+    }
+    
+    public void SetRewardState() {
+        RewardOn = !RewardOn;
+        OnRewardStateChanged?.Invoke(RewardOn);
+    }
+
+    public void SetTweeningState() {
+        TweeningOn = !TweeningOn;
     }
 }

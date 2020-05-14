@@ -9,9 +9,8 @@ using static JuiceUIManager;
 public class PlayerMovement : MonoBehaviour {
 
     [SerializeField] private float speed = 30;
+    [SerializeField] private float dashSpeed = 0;
     private Animator animator;
-
-    private Vector3 lastNonZeroMoveDirection = Vector3.zero;
 
     public static event Action OnPlayerMove;
     public static event Action OnPlayerDash;
@@ -29,6 +28,9 @@ public class PlayerMovement : MonoBehaviour {
     private Vector3 recoilDirection = Vector3.zero;
     private float recoilStart = 0;
     private float recoilEnd = 0;
+
+    private Vector3 lastNonZeroInputDirection = Vector3.right;
+    [SerializeField] private Transform playerGraphics = null;
 
     private void Start() {
         animator = GetComponent<Animator>();
@@ -57,15 +59,24 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     private void Dash() {
-        animator.SetTrigger("IsDashing");
+        if (TweeningOn) {
+            animator.SetTrigger("IsDashing");
+        } else {
+            animator.SetTrigger("IsDashingNoTween");
+        }
         PlayDashSound();
         OnPlayerDash?.Invoke();
     }
 
     private Vector3 CalculateVelocity() {
         Vector3 inputVelocity = new Vector3(Input.GetAxisRaw("Horizontal"),
-                                          Input.GetAxisRaw("Vertical"),
-                                          0).normalized;
+                                            Input.GetAxisRaw("Vertical"),
+                                            0).normalized;
+        playerGraphics.right = inputVelocity;
+
+        if (inputVelocity.magnitude > 0.01f) {
+            lastNonZeroInputDirection = inputVelocity;
+        }
 
         Vector3 recoilVelocity = Vector3.zero;
         if (Time.time < recoilEnd) {
@@ -76,7 +87,11 @@ public class PlayerMovement : MonoBehaviour {
                 * recoilCurve.Evaluate(normalizedTime);
         }
 
-        return inputVelocity + recoilVelocity;
+        Vector3 dashVelocity = lastNonZeroInputDirection 
+                             * dashSpeed 
+                             * Time.deltaTime;
+
+        return inputVelocity + recoilVelocity + dashVelocity;
     }
 
     private void AddRecoil() {
