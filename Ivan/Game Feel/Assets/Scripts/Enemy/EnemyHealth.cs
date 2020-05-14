@@ -11,7 +11,7 @@ public class EnemyHealth : MonoBehaviour {
     [Range(1, 5)]
     protected int hp = 3;
 
-    public static event Action OnEnemyDeath;
+    public static event Action<Vector3> OnEnemyDeath;
 
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.CompareTag("Bullet")) {
@@ -24,7 +24,7 @@ public class EnemyHealth : MonoBehaviour {
         if (hp <= 0) {
             PlayDeathSound();
             ShakeScreenHeavy();
-            OnEnemyDeath?.Invoke();
+            OnEnemyDeath?.Invoke(transform.position);
             Destroy(gameObject);
         }
     }

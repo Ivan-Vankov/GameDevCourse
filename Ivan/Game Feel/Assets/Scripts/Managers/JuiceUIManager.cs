@@ -42,4 +42,8 @@ public class JuiceUIManager : MonoBehaviour {
     public void SetTweeningState() {
         TweeningOn = !TweeningOn;
     }
+
+    public void SetPermananceState() {
+        PermananceOn = !PermananceOn;
+    }
 }

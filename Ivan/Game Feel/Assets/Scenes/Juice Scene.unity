@@ -2435,6 +2435,54 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ecabefa0c511e14e98755bf350b1928, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &967129782
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 967129784}
+  - component: {fileID: 967129783}
+  m_Layer: 0
+  m_Name: Blob Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &967129783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 967129782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aab424ddb3d50944190b0468a3777742, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blobs:
+  - {fileID: 5304803966408379669, guid: 29ad993a184c0ec4e8e7bfa297a25aef, type: 3}
+  - {fileID: 5304803966408379669, guid: 754ed2db4ef688a40b29ad9cca10d826, type: 3}
+  - {fileID: 5304803966408379669, guid: 338aef5fb95f2ef4d9012877609377fe, type: 3}
+  - {fileID: 5304803966408379669, guid: 10f610e018adb4d4e9719bf95b71fb04, type: 3}
+--- !u!4 &967129784
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 967129782}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &990043188
 GameObject:
   m_ObjectHideFlags: 0
@@ -9484,8 +9532,8 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 0
-  orthographic size: 5
+  orthographic: 1
+  orthographic size: 31.78
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -10074,6 +10122,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1876864682}
+        m_MethodName: SetPermananceState
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2117801308
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10121,6 +10180,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4757816915157284249, guid: 233c7a0a169e69a478548520e79259e2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4757816915157284251, guid: 233c7a0a169e69a478548520e79259e2,
         type: 3}

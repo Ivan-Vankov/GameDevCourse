@@ -30,7 +30,7 @@ public class ScoreSystem : MonoBehaviour {
         scoreText.enabled = isEnabled;
     }
 
-    private void UpdateScoreUI() {
+    private void UpdateScoreUI(Vector3 position) {
         score += 10;
         scoreText.text = score.ToString();
         animator.SetTrigger("HasScored");
