@@ -51,8 +51,8 @@ public class ScreenShaker : MonoBehaviour {
 
         while (Time.time < shakeEnd) {
             float normalizedTime = (Time.time - shakeStart) / duration;
-            float offsetX = PerlinNoise(noiseSeed + Time.time * intensity, 0);
-            float offsetY = PerlinNoise(0, noiseSeed + Time.time * intensity);
+            float offsetX = PerlinNoise(noiseSeed + Time.time * cameraJiggle, 0);
+            float offsetY = PerlinNoise(0, noiseSeed + Time.time * cameraJiggle);
 
             Vector3 offset = new Vector2(offsetX, offsetY) 
                            * shakeCurve.Evaluate(normalizedTime)

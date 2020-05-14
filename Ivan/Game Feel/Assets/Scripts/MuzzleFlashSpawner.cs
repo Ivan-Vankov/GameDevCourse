@@ -17,7 +17,9 @@ public class MuzzleFlashSpawner : MonoBehaviour {
 
     private void SpawnMuzzleFlash(Vector3 position) {
         if (MuzzleFlashOn) {
-            Instantiate(muzzleFlash, position, Quaternion.identity);
+            Instantiate(muzzleFlash, 
+                        position, 
+                        Quaternion.Euler(0, 0, Random.Range(0, 360)));
         }
     }
 }
