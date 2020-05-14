@@ -10,6 +10,7 @@ public class Bullet : MonoBehaviour {
     [SerializeField] private float speed = 100;
 
     public Vector3 MoveDirection { get; set; } = Vector3.zero;
+    private bool hasHit = false;
 
     private void Start() {
         hitParticles = transform.GetChild(0).gameObject;
@@ -20,11 +21,13 @@ public class Bullet : MonoBehaviour {
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
-        if (collision.CompareTag("Enemy")) {
+        if (collision.CompareTag("Enemy") && !hasHit) {
+            hasHit = true;
+
             GetComponent<SpriteRenderer>().enabled = false;
             MoveDirection = Vector3.zero;
             hitParticles.SetActive(true);
-            if (SoundOn) { PlayHitSound(); }
+            PlayHitSound();
 
             Destroy(gameObject, 1);
         }
