@@ -36,3 +36,4 @@
 | 5 | [Healthbar](https://ivan-vankov.github.io/GameDevCourse/Homework/Homework%205) | 24.04.2020 |
 | 6 | [Pixelization Shader](https://ivan-vankov.github.io/GameDevCourse/Homework/Homework%206) | 01.05.2020 |
 | 7 | [Doom Coding Practice](https://ivan-vankov.github.io/GameDevCourse/Homework/Homework%207) | 22.05.2020 |
+| 8 | [Game Feel](https://ivan-vankov.github.io/GameDevCourse/Homework/Homework%208) | 22.05.2020 |
