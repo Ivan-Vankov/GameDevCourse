@@ -1,0 +1,32 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using static AudioManager;
+using static JuiceUIManager;
+using UnityEngine;
+
+public class Bullet : MonoBehaviour {
+
+    [SerializeField] private GameObject hitParticles = null;
+    [SerializeField] private float speed = 100;
+
+    public Vector3 MoveDirection { get; set; } = Vector3.zero;
+
+    private void Start() {
+        hitParticles = transform.GetChild(0).gameObject;
+    }
+
+    private void Update() {
+        transform.position += MoveDirection * speed * Time.deltaTime;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision) {
+        if (collision.CompareTag("Enemy")) {
+            GetComponent<SpriteRenderer>().enabled = false;
+            MoveDirection = Vector3.zero;
+            hitParticles.SetActive(true);
+            if (SoundOn) { PlayHitSound(); }
+
+            Destroy(gameObject, 1);
+        }
+    }
+}
