@@ -16,6 +16,20 @@ public class PlayerMovement : MonoBehaviour {
     public static event Action OnPlayerMove;
     public static event Action OnPlayerDash;
 
+    [SerializeField]
+    [Range(0, 5)]
+    private float recoilDuration = 0.3f;
+
+    [SerializeField]
+    [Range(0, 50)]
+    private float recoilIntensity = 0.5f;
+
+    [SerializeField] private AnimationCurve recoilCurve = null;
+
+    private Vector3 recoilDirection = Vector3.zero;
+    private float recoilStart = 0;
+    private float recoilEnd = 0;
+
     private void Start() {
         animator = GetComponent<Animator>();
     }
@@ -27,10 +41,7 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     private void Move() {
-        transform.position += new Vector3(Input.GetAxisRaw("Horizontal"),
-                                          Input.GetAxisRaw("Vertical"),
-                                          0).normalized
-                                          * speed * Time.deltaTime;
+        transform.position += CalculateVelocity() * speed * Time.deltaTime;
         OnPlayerMove?.Invoke();
     }
 
@@ -51,10 +62,28 @@ public class PlayerMovement : MonoBehaviour {
         OnPlayerDash?.Invoke();
     }
 
+    private Vector3 CalculateVelocity() {
+        Vector3 inputVelocity = new Vector3(Input.GetAxisRaw("Horizontal"),
+                                          Input.GetAxisRaw("Vertical"),
+                                          0).normalized;
+
+        Vector3 recoilVelocity = Vector3.zero;
+        if (Time.time < recoilEnd) {
+            float normalizedTime = (Time.time - recoilStart) / recoilDuration;
+            recoilVelocity = recoilDirection 
+                * recoilIntensity 
+                * Time.deltaTime
+                * recoilCurve.Evaluate(normalizedTime);
+        }
+
+        return inputVelocity + recoilVelocity;
+    }
+
     private void AddRecoil() {
-        print("gere");
         if (RecoilOn) {
-            print("gere");
+            recoilDirection = -transform.right;
+            recoilStart = Time.time;
+            recoilEnd = recoilStart + recoilDuration;
         }
     }
 

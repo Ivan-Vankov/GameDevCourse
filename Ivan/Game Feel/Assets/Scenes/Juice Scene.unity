@@ -1773,6 +1773,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1876864682}
+        m_MethodName: SetRecoilState
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &670855626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9537,6 +9548,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
+  recoilDuration: 0.3
+  recoilIntensity: 35
+  recoilCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: -3.1702125
+      outSlope: -3.1702125
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.040268455
+    - serializedVersion: 3
+      time: 1.0022278
+      value: 0
+      inSlope: -0.10932162
+      outSlope: -0.10932162
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.25892165
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!95 &2055920304
 Animator:
   serializedVersion: 3
