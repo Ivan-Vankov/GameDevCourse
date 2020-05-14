@@ -2654,7 +2654,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 4757816915157284249, guid: 233c7a0a169e69a478548520e79259e2, type: 3}
-  spawnRate: 1.5
+  spawnRate: 1
 --- !u!1 &1256681030
 GameObject:
   m_ObjectHideFlags: 0
@@ -4057,7 +4057,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 6355452756908274bbdcbbb40416a29b, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.7
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -4398,33 +4398,36 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0.0000003669411
       value: 0.99967754
-      inSlope: 10
-      outSlope: 10
+      inSlope: -2.9206262
+      outSlope: -2.9206262
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.33333334
+      outWeight: 0.08115647
     - serializedVersion: 3
-      time: 0.1
-      value: 1
-      inSlope: 4.4444447
-      outSlope: 4.4444447
+      time: 0.46861765
+      value: 0.075921014
+      inSlope: -0.34998628
+      outSlope: -0.34998628
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.33333334
+      outWeight: 0.12452317
     - serializedVersion: 3
       time: 1
       value: 0
-      inSlope: -1.1111112
-      outSlope: -1.1111112
+      inSlope: -0.04695732
+      outSlope: -0.04695732
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
+      inWeight: 0.17412138
       outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  lightIntensity: 0.5
+  heavyIntensity: 2
+  duration: 0.2
 --- !u!1 &2028097873
 GameObject:
   m_ObjectHideFlags: 0

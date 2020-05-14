@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using static AudioManager;
+using static ScreenShaker;
 
 public class Health : MonoBehaviour {
 
@@ -19,6 +20,7 @@ public class Health : MonoBehaviour {
         hp -= 1;
         if (hp <= 0) {
             PlayDeathSound();
+            ShakeScreenHeavy();
             Destroy(gameObject);
         }
     }

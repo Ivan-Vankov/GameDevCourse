@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using static AudioManager;
-using static JuiceUIManager;
+using static ScreenShaker;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour {
@@ -28,6 +28,7 @@ public class Bullet : MonoBehaviour {
             MoveDirection = Vector3.zero;
             hitParticles.SetActive(true);
             PlayHitSound();
+            ShakeScreenLight();
 
             Destroy(gameObject, 1);
         }
