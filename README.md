@@ -26,6 +26,7 @@
 | 10 | [Coding Practice](https://ivan-vankov.github.io/GameDevCourse/Homework/Homework%207) | 30.04.2020 |
 | 11 | [VFX](https://ivan-vankov.github.io/GameDevCourse/Slides/VFX.html) | 07.05.2020 |
 | 12 | [Game Feel](https://ivan-vankov.github.io/GameDevCourse/Slides/Game%20Feel.html) | 14.05.2020 |
+| 13 | **Coding Practice** | 21.05.2020 |
 
 | # | Homework | Deadline |
 |---| ---------------------------------------------------------------------------------------------------------------- |:----------:|
