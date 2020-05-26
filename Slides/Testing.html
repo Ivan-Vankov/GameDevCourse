@@ -59,10 +59,23 @@
                 <section>
                     <h3>Review</h3>
                     
-					<p>TODO</p>
+					<p>What is Game Feel about?</p>
 
                     <ul>
-							<li class="fragment">TODO</li>
+						<li class="fragment">It's about enchancing the moment to moment gameplay</li>
+						<li class="fragment">It's about maximum output for minimum input</li>
+                    </ul>
+				</section>
+				
+                <section>
+                    <h3>Review</h3>
+                    
+					<p>Name 3 ways of achieving good game feel</p>
+
+                    <ul>
+						<li class="fragment">Sound Effects</li>
+						<li class="fragment">Screen Shake</li>
+						<li class="fragment">Tweening</li>
                     </ul>
                 </section>
                 
@@ -70,8 +83,44 @@
 					<h3>Testing Definition</h3>
 
                     <ul>
-                        <li>TODO</li>
+                        <li>Checking if the actual result of a program matches the expected result</li>
                     </ul>
+                </section>
+                
+                <section>
+					<h3>Why test?</h3>
+
+                    <ul>
+						<li>
+							A program does <strong>what you say</strong>, 
+							<strong>
+								<span style="color: red">NOT</span> what you want
+							</strong>
+						</li>
+                        <li>Prevents bugs from becoming worse and more obscure</li>
+                        <li>Verifies functionality</li>
+                        <li>Gives you a feeling of security that your game will not crash and burn on startup</li>
+                    </ul>
+                </section>
+                
+				<section>
+					<h3>The cost of a bugfix scales up exponentially</h3>
+
+					<img height="200" src="images/Bugfix_Cost.gif" alt="Bugfix Cost">
+					<br>
+					<a href="https://hoantv.wordpress.com/2014/09/26/defect-prevention-reducing-costs-and-enhancing-quality/">Source</a>
+                </section>
+
+                <section>
+					<h3>Important!</h3>
+
+                    <p>
+						Having 100% code coverage does not mean your code works as intended.
+						<br>
+						That can only be achieved through formal verification. 
+						<br>
+						(But formal verification is very hard 😢)
+					</p>
                 </section>
                 
                 <section>
@@ -92,23 +141,74 @@
                             </ul>
                         </li>
                     </ul>
-				</section>
+                </section>
 
+                <section>
+					<h3>Arrange, Act, Assert</h3>
+
+                    <p>The AAA (Arrange, Act, Assert) pattern is a common way of writing unit tests</p>
+
+                    <ul>
+                        <li>The <strong>Arrange</strong> section sets up the test parameters</li>
+                        <li>The <strong>Act</strong> section invokes the tested method with the arranged parameters</li>
+                        <li>The <strong>Assert</strong> section verifies that the method behaved as expected</li>
+                    </ul>
+				</section>
+                
                 <section>
 					<h3>Test Runner</h3>
 
                     <ul>
-                        <li>TODO</li>
+                        <li>The Unity Test Runner is a tool that tests your code in both Edit mode and Play mode</li>
+                        <li>Accessed under Window/General/Test Runner</li>
+                    </ul>
+                    <br>
+                    <img src="images/Test_Runner.png" alt="Test Runner">
+				</section>
+				
+                <section>
+					<h3>NUnit</h3>
+
+                    <ul>
+                        <li>A popular unit-testing framework for all .Net languages</li>
+                        <li>For our purposes we</li>
+                        <li>Learn more <a href="https://github.com/nunit/docs/wiki/NUnit-Documentation">here</a></li>
                     </ul>
 				</section>
 				
                 <section>
-					<h3>NUnit Test</h3>
+					<h3>NSubstitute</h3>
 
                     <ul>
-                        <li>A Test behaves as an ordinary method</li>
-                        <li>Use the Assert class to test conditions</li>
                         <li>TODO</li>
+                    </ul>
+                </section>
+
+                <section>
+					<h3>Mocking</h3>
+
+                    <ul>
+                        <li>TODO</li>
+                    </ul>
+                </section>
+
+                <section>
+					<h3>Not just verifying state</h3>
+
+                    <p>You can also verify if a:</p>
+
+                    <ul>
+                        <li>Method was called</li>
+                        <li>Event was triggered</li>
+                    </ul>
+                </section>
+
+                <section>
+					<h3>Testing a MonoBehaviour</h3>
+
+                    <ul>
+                        <li>Instantiating a MonoBehaviour with new gives a warning</li>
+                        <li>Can move logic into other classes and test those</li>
                     </ul>
                 </section>
                 
@@ -116,6 +216,7 @@
 					<h3>UnityTest</h3>
 
                     <ul>
+                        <!-- TODO: UnityTest за recoil -->
                         <li>A UnityTest behaves like a coroutine in Play Mode</li>
                         <li>TODO</li>
                     </ul>
@@ -136,6 +237,16 @@
                     <img height="300" src="images/Script_Compilation.png" alt="Predifined vs manually defined assemblies">
                 </section>
 
+                <section>
+                    <h3>Problems with testing</h3>
+					
+					<ul>
+						<li>Time Consuming</li>
+						<li>Tests are often longer than the actual code</li>
+						<li>Refactoring has to include the tests</li>
+					</ul>
+                </section>
+                
                 <section>
                     <h3>Extra Resources</h3>
 					
@@ -161,10 +272,11 @@
 		</a>
 
 		<div id="slides-title-div">
-			<p id="slides-title-meta">Game Feel</p>
+			<p id="slides-title-meta"></p>
 			<script>
 				var slides_title = document.getElementById("slides-title").innerHTML;
 				document.getElementById("page-title").innerHTML = slides_title;
+				document.getElementById("slides-title-meta").innerHTML = slides_title;
 			</script>
 		</div>
 
