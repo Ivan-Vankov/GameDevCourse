@@ -115,7 +115,7 @@
 					<h3>Important!</h3>
 
                     <p>
-						Having 100% code coverage does not mean your code works as intended.
+						Having 100% code coverage(the % of code covered by tests) does not mean your code works as intended.
 						<br>
 						That can only be achieved through formal verification. 
 						<br>
@@ -160,27 +160,143 @@
 
                     <ul>
                         <li>The Unity Test Runner is a tool that tests your code in both Edit mode and Play mode</li>
+                        <li>Available from the <strong>Unity Test Framework</strong> package</li>
                         <li>Accessed under Window/General/Test Runner</li>
                     </ul>
                     <br>
                     <img src="images/Test_Runner.png" alt="Test Runner">
-				</section>
+                </section>
+                
+                <section>
+					<h3>Test Runner Usage Details</h3>
+
+                    <ol>
+                        <li>From the Test Runner menu create a folder where the Edit/Play mode tests will be</li>
+                        <li>
+                            Since the tests will be compiled into a different assembly 
+                            they can't referency your regular scripts by default
+                            <ul>
+                                <li>
+                                    You must create an <strong>Assembly Definition</strong> in 
+                                    your Scripts folder and add it to the Assembly Definition 
+                                    References of the tests Assembly Definition
+                                </li>
+                            </ul>
+                        </li>
+                    </ol>
+                </section>
 				
                 <section>
-					<h3>NUnit</h3>
+					<h3>Assembly Definition</h3>
 
                     <ul>
-                        <li>A popular unit-testing framework for all .Net languages</li>
-                        <li>For our purposes we</li>
-                        <li>Learn more <a href="https://github.com/nunit/docs/wiki/NUnit-Documentation">here</a></li>
+                        <!-- <li>Used to organize the scripts into separate assemblies</li> -->
+                        <li>
+                            When you create an Assembly Definition in a folder, Unity compiles a separate assembly from all the scripts in that folder
+                            <!-- <ul>
+                                <li>Scripts in subfolders are included unless the subfolder has its own Assembly Definition</li>
+                            </ul> -->
+                        </li>
+                        <!-- <li>In our project we will have separate Assembly Definitions for tests and regular scripts</li> -->
+                        <li>
+                            While Assembly Definitions have other benefits we will 
+                            use them only so that test scripts can reference regular scripts
+                        </li>
                     </ul>
-				</section>
+
+                    <br>
+                    <img height="150" src="images/Script_Compilation.png" alt="Predifined vs manually defined assemblies">
+                    <br>
+                    <a href="https://docs.unity3d.com/Manual/ScriptCompilationAssemblyDefinitionFiles.html">
+                        Documentation
+                    </a>
+                </section>
 				
                 <section>
-					<h3>NSubstitute</h3>
+					<h3>NU<span class="lowercase">nit</span></h3>
 
                     <ul>
-                        <li>TODO</li>
+                        <li>A popular unit-testing framework for all .NET languages</li>
+                        <li>For our purposes we will use:
+                            <ul>
+                                <li>[<span class="attribute">Test</span>] to indicate a test method</li>
+                                <li>The <span class="clazz">Assert</span> class for the <strong>Assert</strong> section</li>
+                                <li>[<span class="attribute">SetUp</span>] for the <strong>Arrange</strong> section</li>
+                                <li>[<span class="attribute">TearDown</span>] to clean up resources</li>
+                            </ul>
+                        </li>
+                        <li>Further details <a href="https://github.com/nunit/docs/wiki/NUnit-Documentation">here</a></li>
+                    </ul>
+                </section>
+                
+                <section>
+					<h3>Unit Testing Example</h3>
+
+<pre><code class="language-cs hljs">        public static bool IsPalindrome(string str) {
+            char[] strReverse = str.ToCharArray();
+            Array.Reverse(strReverse);
+            return str.Equals(new string(strReverse));
+        }
+        //...
+        [Test]
+        public void ababaIsAPalindrome() {
+            // Arrange
+            string palindrome = "ababa";
+            // Act
+            bool actualResult = IsPalindrome(palindrome);
+            // Assert
+            Assert.IsTrue(actualResult);
+        }</code></pre>
+				</section>
+
+                <section>
+					<h3>Edit Mode vs Play Mode tests</h3>
+
+                    <ul>
+                        <li>Edit Mode Tests:
+                            <ul>
+                                <li>Doesn't enter Play Mode</li>
+                                <li>Doesn't use the primary event loop</li>
+                            </ul>
+                        </li>
+                        <li>Play Mode Tests:
+                            <ul>
+                                <li>Enters Play Mode</li>
+                                <li>Uses the primary event loop</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+                
+                <section>
+					<h3><span class="attribute">U<span class="lowercase">nity</span>T<span class="lowercase">est</span></span></h3>
+
+                    <ul>
+                        <!-- TODO: UnityTest за recoil -->
+                        <li>A UnityTest behaves like a coroutine in Play Mode</li>
+                        <li>Can be used in both Play Mode and Edit Mode</li>
+                    </ul>
+                </section>
+
+                <section>
+					<h3>Testing a MonoBehaviour</h3>
+
+<pre><code class="language-cs hljs">// Instantiating a MonoBehaviour with new gives a warning
+// You should use:
+MyComponent x = new GameObject().AddComponent&lt;MyComponent&gt;();</code></pre>
+                </section>
+
+                <section>
+					<h3>Handling Dependencies</h3>
+
+                    <ul>
+                        <li>Unit tests have to be executed in isolation</li>
+                        <li>Objects having any kind of dependency makes this difficult</li>
+                        <li>
+                            For example if enemies only work when there is an 
+                            internet connection then how do you test the enemies?
+                        </li>
+                        <li>Enter <strong>Mocking</strong></li>
                     </ul>
                 </section>
 
@@ -188,54 +304,96 @@
 					<h3>Mocking</h3>
 
                     <ul>
-                        <li>TODO</li>
+                        <li>Mocking is creating objects that simulate the behavior of real objects</li>
+                        <li>We pass these mocked objects to the object we want to test</li>                        
+                        <li>This way the object can be tested in isolation</li>
                     </ul>
                 </section>
 
                 <section>
 					<h3>Not just verifying state</h3>
 
-                    <p>You can also verify if a:</p>
-
-                    <ul>
-                        <li>Method was called</li>
-                        <li>Event was triggered</li>
-                    </ul>
-                </section>
-
-                <section>
-					<h3>Testing a MonoBehaviour</h3>
-
-                    <ul>
-                        <li>Instantiating a MonoBehaviour with new gives a warning</li>
-                        <li>Can move logic into other classes and test those</li>
-                    </ul>
-                </section>
-                
-                <section>
-					<h3>UnityTest</h3>
-
-                    <ul>
-                        <!-- TODO: UnityTest за recoil -->
-                        <li>A UnityTest behaves like a coroutine in Play Mode</li>
-                        <li>TODO</li>
-                    </ul>
+                    <p>
+                        When testing you generally only look if the state changed properly.
+                        When mocking you can also verify if the expeced methods were called 
+                        or the expected events triggered.
+                    </p>
                 </section>
 				
                 <section>
-					<h3>Assembly Definition</h3>
+					<h3>NS<span class="lowercase">ubstitute</span></h3>
 
                     <ul>
-                        <li>TODO</li>
+                        <li>A popular .NET mocking library</li>
+                        <li>Further details <a href="https://github.com/nunit/docs/wiki/NUnit-Documentation">here</a></li>
+                        <li>For our purposes we will use:</li>
+                    </ul>
+
+<pre><code class="language-cs hljs">        // To create mocks
+        MyInterface myObj = Substitute.For&lt;MyInterface&gt;();
+
+        // To mock method return values
+        myObj.MyMethod().Returns(expectedResult);
+
+        // To mock void methods
+        myObj.When(x => x.MyMethod()).Do(x => {...});
+
+        // To check if a method was called
+        myObj.Received().MyMethod();</code></pre>
+                </section>
+                
+                <section>
+					<h3>Using NS<span class="lowercase">ubstitute</span></h3>
+
+                    <ul>
+                        <li>Get the .dll from <a>here TODO</a></li>
+                        <li>Add it to your project</li>
+                        <li>Add it to the Assembly References in the Tests Assembly Definition</li>
                     </ul>
 
                     <br>
-                    <a href="https://docs.unity3d.com/Manual/ScriptCompilationAssemblyDefinitionFiles.html">
-                        Documentation
-                    </a>
-
-                    <img height="300" src="images/Script_Compilation.png" alt="Predifined vs manually defined assemblies">
+                    <img height="100" src="images/Referencing_NSubstitute.gif" alt="Referencing NSubstitute">
                 </section>
+
+                <section>
+					<h3>Mocking Play Mode Test Example</h3>
+
+<pre><code class="language-cs hljs">public interface ICustomInput {
+	float GetVerticalInput();
+}
+
+public class CustomInput : ICustomInput {
+	public float GetVerticalInput() {
+		return Input.GetAxisRaw("Vertical");
+	}
+}
+
+public class Movement : MonoBehaviour {
+    public ICustomInput customInput { get; set; } 
+            = new CustomInput();
+    void Update() {
+        transform.position += Vector3.up 
+            * customInput.GetVerticalInput() 
+            * Time.deltaTime;
+    }
+}
+
+[UnityTest]
+public IEnumerator TestMovementUp() {
+    GameObject player = GameObject.Instantiate(
+        Resources.Load&lt;GameObject&gt;("Prefabs/Player"));
+    Movement movement = player.AddComponent&lt;Movement&gt;();
+
+    ICustomInput customInput = Substitute.For&lt;ICustomInput&gt;();
+    customInput.GetVerticalInput().Returns(1);
+    movement.customInput = customInput;
+
+    yield return new WaitForSeconds(1);
+
+    Assert.IsTrue(player.transform.position.y > 0, 
+                  "Did not move");
+}</code></pre>
+				</section>
 
                 <section>
                     <h3>Problems with testing</h3>
@@ -252,8 +410,8 @@
 					
 					<ul>
 						<li>
-							<a href="https://youtu.be/Fy0aCDmgnxg">
-								TODO
+							<a href="https://dzone.com/articles/unit-testing-best-practices-how-to-get-the-most-ou">
+								Unit Testing Best Practices
 							</a>
 						</li>
 					</ul>
