@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title id="page-title">Game Dev Presentation</title>
+		<link rel="icon" href="images/Unity-Icon.png">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="RevealJS/css/reset.css">
+		<link rel="stylesheet" href="RevealJS/css/reveal.css">
+		<link rel="stylesheet" href="RevealJS/css/custom.css">
+		<link rel="stylesheet" href="RevealJS/css/theme/black.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="RevealJS/lib/css/vs2015.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'RevealJS/css/print/pdf.css' : 'RevealJS/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="RevealJS/lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<a href="./Testing.html">
+				<i id="previous-exercise" class="fas fa-arrow-circle-left navigation-button previous-exercise"></i>
+			</a>
+
+			<div class="slides">
+				<section>
+					<h2 id="slides-title">Tools</h2>
+					<img width="200" height="200" data-src="images/Unity-Logo.png" alt="Unity Logo">
+				</section>
+
+				<section>
+					<h2>Are we recording?</h2>
+					<img width="300" height="300" data-src="images/Cat-Cam.png" alt="Meow Cam">
+                </section>
+                
+                <section>
+                    <h3>Review</h3>
+                    
+					<p>TODO?</p>
+
+                    <ul>
+						<li class="fragment">TODO</li>
+                    </ul>
+				</section>
+                
+                <section>
+                    <h3>Visual Studio</h3>
+
+                    <ul>
+						<li>Attaching to Unity</li>
+						<li>Conditional Breakpoints</li>
+						<li>Immediate Window</li>
+						<li>Instruction pointer modification</li>
+						<li>... TODO</li>
+                    </ul>
+                </section>
+                
+                <section>
+                    <h3>Unity Collaborate</h3>
+
+                    <ul>
+						<li>TODO</li>
+                    </ul>
+                </section>
+                
+                <section>
+                    <h3>Unity Timeline</h3>
+
+                    <ul>
+						<li>TODO</li>
+                    </ul>
+                </section>
+                
+                <section>
+                    <h3>New Input System</h3>
+
+                    <ul>
+						<li>TODO</li>
+                    </ul>
+				</section>
+                
+                <section>
+                    <h3>Extra Resources</h3>
+					
+					<ul>
+						<li>
+							<a href="https://dzone.com/articles/unit-testing-best-practices-how-to-get-the-most-ou">
+								TODO
+							</a>
+						</li>
+					</ul>
+				</section>
+                
+				<section>
+					<h3>Questions?</h3>
+
+					<img height="400" src="images/WTF_is_this_input_system.png" alt="WTF IS THIS INPUT SYSTEM???">
+                </section>
+                
+				<section>
+					<h3 style="visibility: hidden; position: fixed;">That's all folks!</h3>
+
+					<img src="images/Thats_All_Folks.gif" alt="That's all folks!">
+				</section>
+			</div>
+		</div>
+
+		<a href="https://github.com/Ivan-Vankov/GameDevCourse#readme">
+			<i class="fa fa-home navigation-button home"></i>
+		</a>
+
+		<div id="slides-title-div">
+			<p id="slides-title-meta"></p>
+			<script>
+				var slides_title = document.getElementById("slides-title").innerHTML;
+				document.getElementById("page-title").innerHTML = slides_title;
+				document.getElementById("slides-title-meta").innerHTML = slides_title;
+			</script>
+		</div>
+
+        <script src="RevealJS/js/setup-exercise-navigation.js"></script>
+
+		<script src="RevealJS/js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				center: true,
+				hash: true,
+				mouseWheel: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'RevealJS/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'RevealJS/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'RevealJS/plugin/highlight/highlight.js' },
+					{ src: 'RevealJS/plugin/search/search.js', async: true },
+					{ src: 'RevealJS/plugin/zoom-js/zoom.js', async: true },
+					{ src: 'RevealJS/plugin/notes/notes.js', async: true },
+					{ src: 'RevealJS/plugin/menu/menu.js', async: true }
+				]
+			});
+
+			Reveal.configure({ slideNumber: 'c/t' });
+
+			Reveal.addEventListener('hide-exercise-navigation-arrows', function() {
+				document.getElementById('next-exercise').style.visibility = 'hidden';
+				document.getElementById('previous-exercise').style.visibility = 'hidden';
+			});
+
+			Reveal.addEventListener('show-left-exercise-navigation-arrow', function() {
+				let previousExerciseButton = document.getElementById('previous-exercise');
+				previousExerciseButton.classList.add('fade-in');
+				setTimeout(() => {
+					previousExerciseButton.classList.remove('fade-in');
+				}, 500);
+				document.getElementById('next-exercise').style.visibility = 'hidden';
+				previousExerciseButton.style.visibility = 'visible';
+			});
+
+			Reveal.addEventListener('show-right-exercise-navigation-arrow', function() {
+				let nextExerciseButton = document.getElementById('next-exercise');
+				nextExerciseButton.classList.add('fade-in');
+				setTimeout(() => {
+					nextExerciseButton.classList.remove('fade-in');
+				}, 500);
+				nextExerciseButton.style.visibility = 'visible';
+				document.getElementById('previous-exercise').style.visibility = 'hidden';
+			});
+
+			// Set the theme to a combination of blood and black
+			document.getElementById('theme').setAttribute('href','RevealJS/css/theme/custom_theme.css'); 
+		</script>
+
+	</body>
+</html>
