@@ -1,0 +1,505 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title id="page-title">Game Dev Presentation</title>
+		<link rel="icon" href="images/Unity-Icon.png">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="RevealJS/css/reset.css">
+		<link rel="stylesheet" href="RevealJS/css/reveal.css">
+		<link rel="stylesheet" href="RevealJS/css/custom.css">
+		<link rel="stylesheet" href="RevealJS/css/theme/black.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="RevealJS/lib/css/vs2015.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'RevealJS/css/print/pdf.css' : 'RevealJS/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="RevealJS/lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<a href="./Tools.html">
+				<i id="next-exercise" class="fas fa-arrow-circle-right navigation-button next-exercise"></i>
+			</a>
+			<a href="./Game%20Feel.html">
+				<i id="previous-exercise" class="fas fa-arrow-circle-left navigation-button previous-exercise"></i>
+			</a>
+
+			<div class="slides">
+				<section>
+					<h2 id="slides-title">Testing</h2>
+					<img width="200" height="200" data-src="images/Unity-Logo.png" alt="Unity Logo">
+				</section>
+
+				<section>
+					<h2>Are we recording?</h2>
+					<img width="300" height="300" data-src="images/Cat-Cam.png" alt="Meow Cam">
+                </section>
+                
+                <section>
+                    <h3>Review</h3>
+                    
+					<p>What is Game Feel about?</p>
+
+                    <ul>
+						<li class="fragment">It's about enchancing the moment to moment gameplay</li>
+						<li class="fragment">It's about maximum output for minimum input</li>
+                    </ul>
+				</section>
+				
+                <section>
+                    <h3>Review</h3>
+                    
+					<p>Name 3 ways of achieving good game feel</p>
+
+                    <ul>
+						<li class="fragment">Sound Effects</li>
+						<li class="fragment">Screen Shake</li>
+						<li class="fragment">Tweening</li>
+                    </ul>
+                </section>
+                
+                <section>
+					<h3>Testing Definition</h3>
+
+                    <ul>
+                        <li>Checking if the actual result of a program matches the expected result</li>
+                    </ul>
+                </section>
+                
+                <section>
+					<h3>Why test?</h3>
+
+                    <ul>
+						<li>
+							A program does <strong>what you say</strong>, 
+							<strong>
+								<span style="color: red">NOT</span> what you want
+							</strong>
+						</li>
+                        <li>Prevents bugs from becoming worse and more obscure</li>
+                        <li>Verifies functionality</li>
+                        <li>Gives you a feeling of security that your game will not crash and burn on startup</li>
+                    </ul>
+                </section>
+                
+				<section>
+					<h3>The cost of a bugfix scales up exponentially</h3>
+
+					<img height="200" src="images/Bugfix_Cost.gif" alt="Bugfix Cost">
+					<br>
+					<a href="https://hoantv.wordpress.com/2014/09/26/defect-prevention-reducing-costs-and-enhancing-quality/">Source</a>
+                </section>
+
+                <section>
+					<h3>Important!</h3>
+
+                    <p>
+						Having 100% code coverage(the % of code covered by tests) does not mean your code works as intended.
+						<br>
+						That can only be achieved through formal verification. 
+						<br>
+						(But formal verification is very hard 😢)
+					</p>
+                </section>
+                
+                <section>
+					<h3>Types of Testing</h3>
+
+                    <ul>
+                        <li>General Types:
+                            <ul>
+                                <li>Unit Testing</li>
+                                <li>Integration Testing</li>
+                            </ul>
+                        </li>
+                        <li>Games-Specific Types:
+                            <ul>
+                                <li>Playtesting</li>
+                                <li>Edit Mode Testing</li>
+                                <li>Play Mode Testing</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+
+                <section>
+					<h3>Arrange, Act, Assert</h3>
+
+                    <p>The AAA (Arrange, Act, Assert) pattern is a common way of writing unit tests</p>
+
+                    <ul>
+                        <li>The <strong>Arrange</strong> section sets up the test parameters</li>
+                        <li>The <strong>Act</strong> section invokes the tested method with the arranged parameters</li>
+                        <li>The <strong>Assert</strong> section verifies that the method behaved as expected</li>
+                    </ul>
+				</section>
+                
+                <section>
+					<h3>Test Runner</h3>
+
+                    <ul>
+                        <li>The Unity Test Runner is a tool that tests your code in both Edit mode and Play mode</li>
+                        <li>Available from the <strong>Unity Test Framework</strong> package</li>
+                        <li>Accessed under Window/General/Test Runner</li>
+                    </ul>
+                    <br>
+                    <img src="images/Test_Runner.png" alt="Test Runner">
+                </section>
+                
+                <section>
+					<h3>Test Runner Usage Details</h3>
+
+                    <ol>
+                        <li>From the Test Runner menu create a folder where the Edit/Play mode tests will be</li>
+                        <li>
+                            Since the tests will be compiled into a different assembly 
+                            they can't referency your regular scripts by default
+                            <ul>
+                                <li>
+                                    You must create an <strong>Assembly Definition</strong> in 
+                                    your Scripts folder and add it to the Assembly Definition 
+                                    References of the tests Assembly Definition
+                                </li>
+                            </ul>
+                        </li>
+                    </ol>
+                </section>
+				
+                <section>
+					<h3>Assembly Definition</h3>
+
+                    <ul>
+                        <!-- <li>Used to organize the scripts into separate assemblies</li> -->
+                        <li>
+                            When you create an Assembly Definition in a folder, Unity compiles a separate assembly from all the scripts in that folder
+                            <!-- <ul>
+                                <li>Scripts in subfolders are included unless the subfolder has its own Assembly Definition</li>
+                            </ul> -->
+                        </li>
+                        <!-- <li>In our project we will have separate Assembly Definitions for tests and regular scripts</li> -->
+                        <li>
+                            While Assembly Definitions have other benefits we will 
+                            use them only so that test scripts can reference regular scripts
+                        </li>
+                    </ul>
+
+                    <br>
+                    <img height="150" src="images/Script_Compilation.png" alt="Predifined vs manually defined assemblies">
+                    <br>
+                    <a href="https://docs.unity3d.com/Manual/ScriptCompilationAssemblyDefinitionFiles.html">
+                        Documentation
+                    </a>
+                </section>
+				
+                <section>
+					<h3>NU<span class="lowercase">nit</span></h3>
+
+                    <ul>
+                        <li>A popular unit-testing framework for all .NET languages</li>
+                        <li>For our purposes we will use:
+                            <ul>
+                                <li>[<span class="attribute">Test</span>] to indicate a test method</li>
+                                <li>The <span class="clazz">Assert</span> class for the <strong>Assert</strong> section</li>
+                                <li>[<span class="attribute">SetUp</span>] for the <strong>Arrange</strong> section</li>
+                                <li>[<span class="attribute">TearDown</span>] to clean up resources</li>
+                            </ul>
+                        </li>
+                        <li>Further details <a href="https://github.com/nunit/docs/wiki/NUnit-Documentation">here</a></li>
+                    </ul>
+                </section>
+                
+                <section>
+					<h3>Unit Testing Example</h3>
+
+<pre><code class="language-cs hljs">        public static bool IsPalindrome(string str) {
+            char[] strReverse = str.ToCharArray();
+            Array.Reverse(strReverse);
+            return str.Equals(new string(strReverse));
+        }
+        //...
+        [Test]
+        public void ababaIsAPalindrome() {
+            // Arrange
+            string palindrome = "ababa";
+            // Act
+            bool actualResult = IsPalindrome(palindrome);
+            // Assert
+            Assert.IsTrue(actualResult);
+        }</code></pre>
+				</section>
+
+                <section>
+					<h3>Edit Mode vs Play Mode tests</h3>
+
+                    <ul>
+                        <li>Edit Mode Tests:
+                            <ul>
+                                <li>Doesn't enter Play Mode</li>
+                                <li>Doesn't use the primary event loop</li>
+                            </ul>
+                        </li>
+                        <li>Play Mode Tests:
+                            <ul>
+                                <li>Enters Play Mode</li>
+                                <li>Uses the primary event loop</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+                
+                <section>
+					<h3><span class="attribute">U<span class="lowercase">nity</span>T<span class="lowercase">est</span></span></h3>
+
+                    <ul>
+                        <!-- TODO: UnityTest за recoil -->
+                        <li>A UnityTest behaves like a coroutine in Play Mode</li>
+                        <li>Can be used in both Play Mode and Edit Mode</li>
+                    </ul>
+                </section>
+
+                <section>
+					<h3>Testing a MonoBehaviour</h3>
+
+<pre><code class="language-cs hljs">// Instantiating a MonoBehaviour with new gives a warning
+// You should use:
+MyComponent x = new GameObject().AddComponent&lt;MyComponent&gt;();</code></pre>
+                </section>
+
+                <section>
+					<h3>Handling Dependencies</h3>
+
+                    <ul>
+                        <li>Unit tests have to be executed in isolation</li>
+                        <li>Objects having any kind of dependency makes this difficult</li>
+                        <li>
+                            For example if enemies only work when there is an 
+                            internet connection then how do you test the enemies?
+                        </li>
+                        <li>Enter <strong>Mocking</strong></li>
+                    </ul>
+                </section>
+
+                <section>
+					<h3>Mocking</h3>
+
+                    <ul>
+                        <li>Mocking is creating objects that simulate the behavior of real objects</li>
+                        <li>We pass these mocked objects to the object we want to test</li>                        
+                        <li>This way the object can be tested in isolation</li>
+                    </ul>
+                </section>
+
+                <section>
+					<h3>Not just verifying state</h3>
+
+                    <p>
+                        When testing you generally only look if the state changed properly.
+                        When mocking you can also verify if the expeced methods were called 
+                        or the expected events triggered.
+                    </p>
+                </section>
+				
+                <section>
+					<h3>NS<span class="lowercase">ubstitute</span></h3>
+
+                    <ul>
+                        <li>A popular .NET mocking library</li>
+                        <li>Further details <a href="https://github.com/nunit/docs/wiki/NUnit-Documentation">here</a></li>
+                        <li>For our purposes we will use:</li>
+                    </ul>
+
+<pre><code class="language-cs hljs">        // To create mocks
+        MyInterface myObj = Substitute.For&lt;MyInterface&gt;();
+
+        // To mock method return values
+        myObj.MyMethod().Returns(expectedResult);
+
+        // To mock void methods
+        myObj.When(x => x.MyMethod()).Do(x => {...});
+
+        // To check if a method was called
+        myObj.Received().MyMethod();</code></pre>
+                </section>
+                
+                <section>
+					<h3>Using NS<span class="lowercase">ubstitute</span></h3>
+
+                    <ul>
+                        <li>You can get the .dll from 
+                            <a href="https://github.com/Ivan-Vankov/GameDevCourse/blob/gh-pages/Ivan/Testing/Assets/Plugins/NSubstitute.dll">
+                                here
+                            </a>
+                        </li>
+                        <li>Add it to your project</li>
+                        <li>Add it to the Assembly References in the Tests Assembly Definition</li>
+                    </ul>
+
+                    <br>
+                    <img height="100" src="images/Referencing_NSubstitute.gif" alt="Referencing NSubstitute">
+                </section>
+
+                <section>
+					<h3>Mocking Play Mode Test Example</h3>
+
+<pre><code class="language-cs hljs">public interface ICustomInput {
+	float GetVerticalInput();
+}
+
+public class CustomInput : ICustomInput {
+	public float GetVerticalInput() {
+		return Input.GetAxisRaw("Vertical");
+	}
+}
+
+public class Movement : MonoBehaviour {
+    public ICustomInput customInput { get; set; } 
+            = new CustomInput();
+    void Update() {
+        transform.position += Vector3.up 
+            * customInput.GetVerticalInput() 
+            * Time.deltaTime;
+    }
+}
+
+[UnityTest]
+public IEnumerator TestMovementUp() {
+    GameObject player = GameObject.Instantiate(
+        Resources.Load&lt;GameObject&gt;("Prefabs/Player"));
+    Movement movement = player.AddComponent&lt;Movement&gt;();
+
+    ICustomInput customInput = Substitute.For&lt;ICustomInput&gt;();
+    customInput.GetVerticalInput().Returns(1);
+    movement.customInput = customInput;
+
+    yield return new WaitForSeconds(1);
+
+    Assert.IsTrue(player.transform.position.y > 0, 
+                  "Did not move");
+}</code></pre>
+				</section>
+
+                <section>
+                    <h3>Problems with testing</h3>
+					
+					<ul>
+						<li>Time Consuming</li>
+						<li>Tests are often longer than the actual code</li>
+						<li>Refactoring has to include the tests</li>
+					</ul>
+                </section>
+                
+                <section>
+                    <h3>Extra Resources</h3>
+					
+					<ul>
+						<li>
+							<a href="https://dzone.com/articles/unit-testing-best-practices-how-to-get-the-most-ou">
+								Unit Testing Best Practices
+							</a>
+						</li>
+					</ul>
+				</section>
+                
+				<section>
+					<h3>Questions?</h3>
+
+					<img height="400" src="images/Unit-Test-Cat.jpg" alt="Unit Test Cat">
+				</section>
+			</div>
+		</div>
+
+		<a href="https://github.com/Ivan-Vankov/GameDevCourse#readme">
+			<i class="fa fa-home navigation-button home"></i>
+		</a>
+
+		<div id="slides-title-div">
+			<p id="slides-title-meta"></p>
+			<script>
+				var slides_title = document.getElementById("slides-title").innerHTML;
+				document.getElementById("page-title").innerHTML = slides_title;
+				document.getElementById("slides-title-meta").innerHTML = slides_title;
+			</script>
+		</div>
+
+        <script src="RevealJS/js/setup-exercise-navigation.js"></script>
+
+		<script src="RevealJS/js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				center: true,
+				hash: true,
+				mouseWheel: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'RevealJS/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'RevealJS/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'RevealJS/plugin/highlight/highlight.js' },
+					{ src: 'RevealJS/plugin/search/search.js', async: true },
+					{ src: 'RevealJS/plugin/zoom-js/zoom.js', async: true },
+					{ src: 'RevealJS/plugin/notes/notes.js', async: true },
+					{ src: 'RevealJS/plugin/menu/menu.js', async: true }
+				]
+			});
+
+			Reveal.configure({ slideNumber: 'c/t' });
+
+			Reveal.addEventListener('hide-exercise-navigation-arrows', function() {
+				document.getElementById('next-exercise').style.visibility = 'hidden';
+				document.getElementById('previous-exercise').style.visibility = 'hidden';
+			});
+
+			Reveal.addEventListener('show-left-exercise-navigation-arrow', function() {
+				let previousExerciseButton = document.getElementById('previous-exercise');
+				previousExerciseButton.classList.add('fade-in');
+				setTimeout(() => {
+					previousExerciseButton.classList.remove('fade-in');
+				}, 500);
+				document.getElementById('next-exercise').style.visibility = 'hidden';
+				previousExerciseButton.style.visibility = 'visible';
+			});
+
+			Reveal.addEventListener('show-right-exercise-navigation-arrow', function() {
+				let nextExerciseButton = document.getElementById('next-exercise');
+				nextExerciseButton.classList.add('fade-in');
+				setTimeout(() => {
+					nextExerciseButton.classList.remove('fade-in');
+				}, 500);
+				nextExerciseButton.style.visibility = 'visible';
+				document.getElementById('previous-exercise').style.visibility = 'hidden';
+			});
+
+			// Set the theme to a combination of blood and black
+			document.getElementById('theme').setAttribute('href','RevealJS/css/theme/custom_theme.css'); 
+		</script>
+
+	</body>
+</html>
