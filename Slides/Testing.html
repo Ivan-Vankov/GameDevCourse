@@ -408,7 +408,59 @@ public IEnumerator TestMovementUp() {
 						<li>Refactoring has to include the tests</li>
 					</ul>
                 </section>
-                
+
+                <section>
+                    <h3>Testing styles</h3>
+                    <p>There are two major unit testing styles concerning depency handling. 
+                    The first is using real objects for every unit test and the second is testing in isolation using mocks.
+                    Neither is perfect.
+                    </p>
+                </section>
+
+                <section>
+                    <h3>Testing in isolation</h3>
+                    <ul>
+                        <li>
+                    Obvious what is wrong when a test fails 
+                        </li>
+                        <li>
+                    No false positives for failed tests
+                        </li>
+                        <li>
+                    Doesn't test if the components work correctly together
+                        </li>
+                        <li>
+                    Tests are tightly coupled with implementation
+                        </li>
+                        <li>
+                    A little bit slower to write compared to non isolated tests
+                        </li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Non isolation tests</h3>
+                    <ul>
+                        <li>
+                        A domino of failing tests when a test fails thus it can be harder to find the cause of the problem. 
+                        </li>
+                        <li>
+                        Sometimes bugs are found only in Integration with other components/pieces of code
+                        </li>
+                        <li>
+                        You can easily do black box testing
+                        </li>
+                        <li>
+                        Easier to write compared to tests in isolation
+                        </li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Visual Comparison</h3>
+                    <img src="images/integrationVsUnitTests.gif">
+                </section>
+
                 <section>
                     <h3>Extra Resources</h3>
 					
