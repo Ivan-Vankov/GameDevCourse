@@ -255,26 +255,16 @@
                     <ul>
                         <li>Edit Mode Tests:
                             <ul>
-                                <li>Doesn't enter Play Mode</li>
-                                <li>Doesn't use the primary event loop</li>
+                                <li>Don't enter Play Mode</li>
+                                <li>Don't use the primary event loop</li>
                             </ul>
                         </li>
                         <li>Play Mode Tests:
                             <ul>
                                 <li>Enters Play Mode</li>
-                                <li>Uses the primary event loop</li>
+                                <li>Use the primary event loop</li>
                             </ul>
                         </li>
-                    </ul>
-                </section>
-                
-                <section>
-					<h3><span class="attribute">U<span class="lowercase">nity</span>T<span class="lowercase">est</span></span></h3>
-
-                    <ul>
-                        <!-- TODO: UnityTest за recoil -->
-                        <li>A UnityTest behaves like a coroutine in Play Mode</li>
-                        <li>Can be used in both Play Mode and Edit Mode</li>
                     </ul>
                 </section>
 
@@ -282,7 +272,7 @@
 					<h3>Testing a MonoBehaviour</h3>
 
 <pre><code class="language-cs hljs">// Instantiating a MonoBehaviour with new gives a warning
-// You should use:
+// Instead you should use:
 MyComponent x = new GameObject().AddComponent&lt;MyComponent&gt;();</code></pre>
                 </section>
 
@@ -358,11 +348,22 @@ MyComponent x = new GameObject().AddComponent&lt;MyComponent&gt;();</code></pre>
                     <br>
                     <img height="100" src="images/Referencing_NSubstitute.gif" alt="Referencing NSubstitute">
                 </section>
+                
+                <section>
+					<h3><span class="attribute">U<span class="lowercase">nity</span>T<span class="lowercase">est</span></span></h3>
+
+                    <ul>
+                        <!-- TODO: UnityTest за recoil -->
+                        <li>A UnityTest behaves like a coroutine in Play Mode</li>
+                        <li>Can be used in both Play Mode and Edit Mode</li>
+                    </ul>
+                </section>
 
                 <section>
 					<h3>Mocking Play Mode Test Example</h3>
 
-<pre><code class="language-cs hljs">public interface ICustomInput {
+<pre><code class="language-cs hljs">// Custom Input interface intended to be mocked when testing
+public interface ICustomInput {
 	float GetVerticalInput();
 }
 
@@ -373,8 +374,12 @@ public class CustomInput : ICustomInput {
 }
 
 public class Movement : MonoBehaviour {
+
+    // If we had just used Input.GetAxis("Vertical") 
+    // then this class would not be testable
     public ICustomInput customInput { get; set; } 
             = new CustomInput();
+
     void Update() {
         transform.position += Vector3.up 
             * customInput.GetVerticalInput() 
@@ -388,14 +393,26 @@ public IEnumerator TestMovementUp() {
         Resources.Load&lt;GameObject&gt;("Prefabs/Player"));
     Movement movement = player.AddComponent&lt;Movement&gt;();
 
+    // Get a mock of ICustomInput
     ICustomInput customInput = Substitute.For&lt;ICustomInput&gt;();
+    
+    // Mock the GetVerticalInput method to always return 1
     customInput.GetVerticalInput().Returns(1);
+    
+    // Inject the mocked customInput into the object 
+    // that we are testing 
     movement.customInput = customInput;
 
+    // Wait a bit so that the Update method inside "movement"
+    // can execute a few times
     yield return new WaitForSeconds(1);
 
+    // Assert thet we have actually moved up
     Assert.IsTrue(player.transform.position.y > 0, 
                   "Did not move");
+                  
+    // Verify that GetVerticalInput was actually called
+    customInput.Received().GetVerticalInput();
 }</code></pre>
 				</section>
 

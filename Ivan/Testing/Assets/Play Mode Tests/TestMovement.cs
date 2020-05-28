@@ -45,7 +45,7 @@ namespace Tests {
             // Assert thet we have actually moved up
 			Assert.IsTrue(player.transform.position.y > 0, "Did not move up");
 
-            // Verify that the GetVerticalInput was actually called
+            // Verify that GetVerticalInput was actually called
             customInput.Received().GetVerticalInput();
         }
 
