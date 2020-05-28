@@ -389,8 +389,12 @@ public class Movement : MonoBehaviour {
 
 [UnityTest]
 public IEnumerator TestMovementUp() {
+    // Setup the scene by instantiating a prefab 
+    // form the Resources folder
     GameObject player = GameObject.Instantiate(
         Resources.Load&lt;GameObject&gt;("Prefabs/Player"));
+
+    // Add the Movement script to it (which we are testing)
     Movement movement = player.AddComponent&lt;Movement&gt;();
 
     // Get a mock of ICustomInput
@@ -403,8 +407,8 @@ public IEnumerator TestMovementUp() {
     // that we are testing 
     movement.customInput = customInput;
 
-    // Wait a bit so that the Update method inside "movement"
-    // can execute a few times
+    // Wait a bit so that the Update method inside 
+    // the Movement script can execute a few times
     yield return new WaitForSeconds(1);
 
     // Assert thet we have actually moved up
@@ -428,8 +432,8 @@ public IEnumerator TestMovementUp() {
 
                 <section>
                     <h3>Testing styles</h3>
-                    <p>There are two major unit testing styles concerning dependency handling. 
-                    The first is using real objects for every unit test and the second is testing in isolation using mocks/stubs.
+                    <p>There are two major testing styles concerning dependency handling. 
+                    The first is using real objects for every test and the second is testing in isolation using mocks/stubs.
                     Neither is perfect.
                     </p>
                 </section>

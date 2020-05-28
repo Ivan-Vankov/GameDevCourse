@@ -22,12 +22,12 @@ namespace Tests {
         // You should always garbage collect in Play Mode Tests.
         // If not then assets from previous tests can stay 
         // and interfere with future tests.
-		[TearDown]
-		public void TearDown() {
-			GameObject.Destroy(player);
-		}
-        
-		[UnityTest]
+        [TearDown]
+        public void TearDown() {
+            GameObject.Destroy(player);
+        }
+
+        [UnityTest]
 		public IEnumerator TestMovementUp() {
             // Get a mock of ICustomInput
             ICustomInput customInput = Substitute.For<ICustomInput>();
