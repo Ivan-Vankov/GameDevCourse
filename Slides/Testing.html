@@ -411,7 +411,7 @@ public IEnumerator TestMovementUp() {
 
                 <section>
                     <h3>Testing styles</h3>
-                    <p>There are two major unit testing styles concerning dependcy handling. 
+                    <p>There are two major unit testing styles concerning dependency handling. 
                     The first is using real objects for every unit test and the second is testing in isolation using mocks/stubs.
                     Neither is perfect.
                     </p>
@@ -427,7 +427,7 @@ public IEnumerator TestMovementUp() {
                     No false positives for failed tests
                         </li>
                         <li>
-                    Doesn't test if the components work correctly together
+                    Doesn't test if the units work correctly together
                         </li>
                         <li>
                     Tests are tightly coupled with implementation
@@ -445,7 +445,7 @@ public IEnumerator TestMovementUp() {
                         A domino of failing tests when a test fails thus it can be harder to find the cause of the problem. 
                         </li>
                         <li>
-                        Sometimes bugs are found only in Integration with other components/pieces of code
+                        Sometimes bugs in one unit are found when it interacts with other units 
                         </li>
                         <li>
                         You can easily do black box testing
