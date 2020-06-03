@@ -28,6 +28,7 @@
 | 12 | [Game Feel](https://ivan-vankov.github.io/GameDevCourse/Slides/Game%20Feel.html) | 14.05.2020 |
 | 13 | **Coding Practice** | 21.05.2020 |
 | 14 | [Testing](https://ivan-vankov.github.io/GameDevCourse/Slides/Testing.html) | 28.05.2020 |
+| 15 | [Tools](https://ivan-vankov.github.io/GameDevCourse/Slides/Tools.html) | 04.06.2020 |
 
 | # | Homework | Deadline |
 |---| ---------------------------------------------------------------------------------------------------------------- |:----------:|

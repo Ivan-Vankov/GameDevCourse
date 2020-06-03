@@ -1,13 +1,12 @@
 ﻿using UnityEngine;
 
-[HelpURL("http://unity3d.college")]
 [SelectionBase]
 public class ManyAttributes : MonoBehaviour {
-    [Header("Text Attributes")]
-    [TextArea]
-    [Tooltip("A string using the TextArea attribute")]
+    [Header("My Header")]
+    //[TextArea]
+    [Tooltip("Appears when hovering over")]
     [SerializeField]
-    private string descriptionTextArea;
+    private string myVariable;
 
     [Multiline]
     [Tooltip("A string using the MultiLine attribute")]
@@ -39,7 +38,7 @@ public class ManyAttributes : MonoBehaviour {
     [SerializeField]
     private Color colorHdr;
 
-    [ContextMenu("Choose Random Values")]
+    [ContextMenu("My Method")]
     private void ChooseRandomValues() {
         rangedFloat = Random.Range(-5f, 5f);
         rangedInt = Random.Range(-5, 5);

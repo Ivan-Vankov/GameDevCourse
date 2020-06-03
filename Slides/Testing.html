@@ -367,6 +367,7 @@ public interface ICustomInput {
 	float GetVerticalInput();
 }
 
+// A default implementation of the above interface
 public class CustomInput : ICustomInput {
 	public float GetVerticalInput() {
 		return Input.GetAxisRaw("Vertical");
@@ -375,8 +376,7 @@ public class CustomInput : ICustomInput {
 
 public class Movement : MonoBehaviour {
 
-    // If we had just used Input.GetAxis("Vertical") 
-    // then this class would not be testable
+    // The field which willbe mocked when testing
     public ICustomInput customInput { get; set; } 
             = new CustomInput();
 

@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -20,7 +19,6 @@ public class NewPlayerMovement : MonoBehaviour {
         body = GetComponent<Rigidbody>();
 
         playerControlls.Player.Movement.started += context => StartCoroutine(Move());
-        playerControlls.Player.Movement.canceled += context => StopMoving();
         playerControlls.Player.Jump.started += context => Jump();
     }
 
@@ -33,9 +31,16 @@ public class NewPlayerMovement : MonoBehaviour {
         }
 
         isMoving = true;
+        Vector2 inputDirection;
         print("Starting the Move coroutine");
-        while (isMoving) {
-            Vector2 inputDirection = playerControlls.Player.Movement.ReadValue<Vector2>();
+        do {
+            inputDirection = playerControlls.Player.Movement.ReadValue<Vector2>();
+
+            //playerControlls.Player.Movement.PerformInteractiveRebinding()
+            //        // To avoid accidental input from mouse motion
+            //        .WithControlsExcluding("Mouse")
+            //        .OnMatchWaitForAnother(0.1f)
+            //        .Start();
 
             if (inputDirection == null) {
                 Debug.LogError("Can't read Vector2 input from playerControlls.Player.Movement");
@@ -47,16 +52,13 @@ public class NewPlayerMovement : MonoBehaviour {
                 y = 0,
                 z = inputDirection.y
             } * speed * Time.deltaTime;
-            
+
             body.MovePosition(body.position + movement);
 
             yield return null;
-        }
+        } while (inputDirection.sqrMagnitude > 0);
 
         print("Ending the Move coroutine");
-    }
-
-    public void StopMoving() {
         isMoving = false;
     }
 

@@ -85,6 +85,10 @@
     color: rgb(184,215,163);
 }
 
+.string {
+    color: rgb(214,157,133);
+}
+
 .uppercase {
     text-transform: uppercase;
 }

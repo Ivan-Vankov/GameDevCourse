@@ -69,28 +69,87 @@
                     <ul>
 						<li>Any piece of software that helps you work more efficiently</li>
 						<li>Gaming companies have whole teams of tools programmers</li>
-						<li>We will be focusing on programming tools</li>
                     </ul>
                 </section>
                 
                 <section>
-                    <h3>IDE Tools</h3>
-                    <p>(Specifically in Visual Studio)</p>
+                    <h3>
+                        IDE Tools:
+                        <br>
+                        Visual Studio
+                    </h3>
 
                     <ul>
 						<li>Attaching to Unity</li>
 						<li>Conditional Breakpoints</li>
 						<li>Immediate Window</li>
-						<li>Instruction pointer modification</li>
-						<li>Shortcuts: F5, F10, F11, F12, ctrl + ., ctrl + shift + b</li>
+						<li>Watch</li>
+						<li>Instruction Pointer Modification</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Useful Visual Studio Shortcuts</h3>
+
+                    <ul>
+                        <li><strong>F5:</strong> Start Debugging</li>
+                        <li><strong>F10:</strong> Step Over</li>
+                        <li><strong>F11:</strong> Step Into</li>
+                        <li><strong>F12:</strong> Go to Definition</li>
+                        <li><strong>Shift + F12:</strong> Find All References</li>
+                        <li><strong>Ctrl + .:</strong> Quick Actions</li>
+                        <li><strong>Ctrl + Shift + B:</strong> Start Build</li>
+                        <li><strong>Ctrl + R + R:</strong> Rename All Occurrences</li>
                     </ul>
                 </section>
                 
                 <section>
-                    <h3>Unity Collaborate</h3>
+                    <h3>
+                        Version Control:
+                        <br>
+                        Unity Collaborate
+                    </h3>
 
                     <ul>
-						<li>TODO</li>
+						<li>Unity's solution for version controll</li>
+						<li>Much more streamlined than regular git (no branching)</li>
+						<li>Auto-merges scenes!</li>
+                    </ul>
+                </section>
+                
+                <section>
+                    <h3>Useful Editor-Modifying Attributes</h3>
+
+                    <ul>
+                        <li>
+                            <div style="display: flex; justify-content:baseline">
+                                <p>[<span class="attribute">Header</span>(<span class="string">"My Header"</span>)]:</p>
+        
+                                <div style="flex-grow: 0.05;"></div>
+        
+                                <img height="50" src="images/Header.png">
+                            </div>
+                        </li>
+                        
+                        <li>
+                            <div style="display: flex; justify-content:baseline">
+                                <p>[<span class="attribute">Tooltip</span>(<span class="string">"Appears when hovering over"</span>)]: </p>
+        
+                                <div style="flex-grow: 0.05;"></div>
+        
+                                <img height="65" src="images/Tooltip.png">
+                            </div>
+                        </li>
+                        
+                        <li>
+                            <div style="display: flex; justify-content:baseline">
+                                <p>[<span class="attribute">ContextMenu</span>] <span class="keyword">void</span> MyMethod() {...}: </p>
+        
+                                <div style="flex-grow: 0.05;"></div>
+        
+                                <img height="80" src="images/Context_Menu.png">
+                            </div>
+                        </li>
                     </ul>
                 </section>
                 
@@ -141,35 +200,23 @@
                                 <li>Events that should happen based on input</li>
                             </ul>
                         </li>
-                        <li>Bindings
+                        <li>Properties
                             <ul>
                                 <li>What should be pressed for an action to be triggered</li>
                                 <li>Can listen for input</li>
-                                <li>A binding can be:
-                                    <ul>
-                                        <li>Regular</li>
-                                        <li>Composite</li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>Properties
-                            <ul>
-                                <li></li>
-                            </ul>
-                        </li>
-                        <li>Controller Schemes
-                            <ul>
-                                <li></li>
+                                <li>Can be a regular binding or a 1D/2D composite</li>
                             </ul>
                         </li>
                     </ul>
                 </section>
                 
                 <section>
-                    <h3>Action Callbacks</h3>
+                    <h3>InputAction Callbacks</h3>
 
-                    
+<pre><code class="language-cs hljs">void Start() {
+    // Call Move() whenever the movement action is started
+    playerControlls.Player.Movement.started += context => Move();
+}</code></pre>
 				</section>
                 
                 <section>
@@ -177,8 +224,8 @@
 					
 					<ul>
 						<li>
-							<a href="https://dzone.com/articles/unit-testing-best-practices-how-to-get-the-most-ou">
-								TODO
+							<a href="https://youtu.be/zIhtPSX8hqA">
+								How to use the New Unity Input System
 							</a>
 						</li>
 					</ul>
