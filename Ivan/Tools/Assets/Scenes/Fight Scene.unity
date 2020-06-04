@@ -439,6 +439,8 @@ PlayableDirector:
     value: {fileID: 2006830291}
   - key: {fileID: 276521864934159097, guid: dc1759b62f52e2e4793ff33e85984f24, type: 2}
     value: {fileID: 1304420240}
+  - key: {fileID: -8335538496771341058, guid: dc1759b62f52e2e4793ff33e85984f24, type: 2}
+    value: {fileID: 963194229}
   m_ExposedReferences:
     m_References:
     - 0a394b6404bfe6144ba538670797c60b: {fileID: 1135044547}
@@ -478,6 +480,12 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 0.41349235
       objectReference: {fileID: 0}
+    - target: {fileID: 839400518071424540, guid: dcf5d11945bc4664f8e16e57546f5a6a,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: fdb550509659347d4b4c37d05c566ad2,
+        type: 3}
     - target: {fileID: 839400518071424541, guid: dcf5d11945bc4664f8e16e57546f5a6a,
         type: 3}
       propertyPath: m_Name
@@ -837,6 +845,7 @@ GameObject:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
+  - component: {fileID: 963194229}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -902,13 +911,32 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.82, y: 0.381, z: -3.869061}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.82, y: 0.381, z: -3.87}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &963194229
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!4 &1054232775 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5065455668169363, guid: 65ba2f24eefa49d45afe75b367f59c72,
