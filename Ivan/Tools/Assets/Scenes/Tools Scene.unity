@@ -151,7 +151,7 @@ Transform:
   m_GameObject: {fileID: 560838945}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1.04, z: 1}
   m_Children: []
   m_Father: {fileID: 1312232216}
   m_RootOrder: 0
@@ -168,22 +168,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a865ee0dc1dcb004aaeafb1ebe796507, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  descriptionTextArea: ertetert
-  descriptionMultiLine: 'erter
+  myVariable: 'a
 
+    a
 
-    ert
+    a
 
+    a
 
+    aa
 
+    a
 
-    ert'
-  rangedFloat: 0.14
-  rangedInt: 0
+    a
+
+    a
+
+    a
+
+    a
+
+    a
+
+    a
+
+    a
+
+    a
+
+    a
+
+    a
+
+    a
+
+    a
+
+    a
+
+    a
+
+    a'
   colorNormal: {r: 0, g: 0, b: 0, a: 0.7294118}
   colorNoAlpha: {r: 0, g: 0, b: 0, a: 0}
-  colorHdr: {r: 0.84313726, g: 0.14117648, b: 0.14117648, a: 0}
-  randomValue: -1.0424538
+  colorHDR: {r: 0.6509434, g: 0.027634379, b: 0.027634379, a: 0}
+  randomValue: 3.9194715
 --- !u!65 &560838948
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -256,6 +285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c04547291428914458614f19a430e5a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mediumSize: {x: 1, y: 1.04, z: 1}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -434,12 +464,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 711116199}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.47391844, y: -0.7363024, z: 1.1550808}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_Father: {fileID: 1328708691}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &963194225
 GameObject:
@@ -622,7 +652,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1312232216}
   m_Layer: 0
-  m_Name: Custom Editor Demo
+  m_Name: With SelectionBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -653,7 +683,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1328708691}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: With SelectionBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -667,9 +697,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1328708690}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.47391844, y: -0.7363024, z: 1.1550808}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 711116203}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

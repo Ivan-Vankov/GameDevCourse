@@ -1,55 +1,41 @@
 ﻿using UnityEngine;
 
-[SelectionBase]
 public class ManyAttributes : MonoBehaviour {
+    // Headers apper as bold text
+    // Can be used for indicating 
     [Header("My Header")]
-    //[TextArea]
+    // A [TextArea(minLines, maxLines)] adds an expandable and scrollable 
+    // view for text editing in the inspector
+    [TextArea(2, 5)]
     [Tooltip("Appears when hovering over")]
     [SerializeField]
     private string myVariable;
 
-    [Multiline]
-    [Tooltip("A string using the MultiLine attribute")]
-    [SerializeField]
-    private string descriptionMultiLine;
-
-    [Header("Numeric Attributes")]
-    [Tooltip("A float using the Range attribute")]
-    [Range(-5f, 5f)]
-    [SerializeField]
-    private float rangedFloat;
-
-    [Space]
-    [Tooltip("An integer using the Range attribute")]
-    [Range(-5, 5)]
-    [SerializeField]
-    private int rangedInt;
-
+    // [Space(n)] adds n pixels of empty space from the last element
+    [Space(20)]
     [Header("Color Attributes")]
-
     [SerializeField]
+    // By default colors appear as rgba in the inspector
     private Color colorNormal;
 
+    // [ColorUsage(showAlpha = false)] makes them appear in rgb mode
     [ColorUsage(false)]
     [SerializeField]
     private Color colorNoAlpha;
 
+    // [ColorUsage(hdr = false)] makes them appear as hdr (high dynamic range) colors
     [ColorUsage(true, true)]
     [SerializeField]
-    private Color colorHdr;
+    private Color colorHDR;
 
-    [ContextMenu("My Method")]
-    private void ChooseRandomValues() {
-        rangedFloat = Random.Range(-5f, 5f);
-        rangedInt = Random.Range(-5, 5);
-    }
-
-    [Header("Context Menu Items")]
-    [ContextMenuItem("RandomValue", "RandomizeValueFromRightClick")]
+    [Space(20)]
+    [Header("Can be changed from the context menu")]
     [SerializeField]
     private float randomValue;
 
-    private void RandomizeValueFromRightClick() {
+    // Appears in the context menu as an extra function
+    [ContextMenu("My Context Menu Method")]
+    private void ChooseRandomValues() {
         randomValue = Random.Range(-5f, 5f);
     }
 }

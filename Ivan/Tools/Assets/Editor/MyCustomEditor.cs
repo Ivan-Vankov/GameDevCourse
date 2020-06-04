@@ -1,18 +1,21 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
+﻿using UnityEditor;
 using UnityEngine;
 
 [CustomEditor(typeof(MyScript))]
 public class MyCustomEditor : Editor {
     public override void OnInspectorGUI() {
+        base.OnInspectorGUI();
+
         MyScript myScript = (MyScript)target;
+        
+        GUILayout.BeginHorizontal();
 
-        if (GUILayout.Button(Resources.Load<Texture>("Sprites/Explosion"), 
-            GUILayout.Width(40),
-            GUILayout.Height(40))) {
+        GUILayout.Label("Set Size");
 
-            myScript.BOOM();
-        }
+        if (GUILayout.Button("Small"))  { myScript.SetSmallSize(); }
+        if (GUILayout.Button("Medium")) { myScript.SetMediumSize(); }
+        if (GUILayout.Button("Large"))  { myScript.SetLargeSize(); }
+
+        GUILayout.EndHorizontal();
     }
 }

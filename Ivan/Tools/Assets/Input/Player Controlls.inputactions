@@ -37,7 +37,7 @@
                 {
                     "name": "",
                     "id": "8632d376-0500-416d-b830-0d30c35b983d",
-                    "path": "<Gamepad>/leftStickPress",
+                    "path": "<Joystick>/trigger",
                     "interactions": "Press",
                     "processors": "",
                     "groups": "Gamepad Scheme",
