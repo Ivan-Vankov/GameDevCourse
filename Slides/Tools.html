@@ -157,7 +157,7 @@
                 <section>
                     <h3>View Collab History</h3>
 
-                    <p>Accessed from <strong></strong></p>
+                    <p>Accessed from <strong>Window/Asset Management/Collab History</strong></p>
 
                     <img height="400" src="images/Collab_History.png" alt="Collab History">
                 </section>
@@ -222,33 +222,62 @@
                 <section>
                     <h3>Custom Inspector</h3>
 
-                    <ul>
-						<li>TODO</li>
-						<li>You can write your own custom tools by extending the editor</li>
-						<li><a href="https://docs.unity3d.com/Manual/editor-CustomEditors.html">Documentation</a></li>
-                        <li><a href="https://youtu.be/491TSNwXTIg">Brackeys Custom Editor Window</a></li>
-                        <li><a href="https://youtu.be/RInUu1_8aGw">Brackeys Custom Inspector</a></li>
-                    </ul>
+                    <p>You can move over all the editor visualization logic to a separate script</p>
+
+<pre><code class="language-cs hljs">using UnityEditor;
+using UnityEngine;
+
+// Add the typo of script that you will 
+//     modify the inspector of
+// Extend UnityEditor.Editor and NOT MonoBehaviour
+[CustomEditor(typeof(MyScript))]
+public class MyCustomEditor : Editor {
+
+    // All the GUI logic should be in this method
+    public override void OnInspectorGUI() {
+        // You can use show the 
+        // automatically generated inspector
+        base.OnInspectorGUI();
+
+        // You can reference the target script 
+        // from the Editor.target property
+        MyScript myScript = (MyScript)target;
+
+        // GUILayout is used for displaying GUI elements 
+        //     that automatically fit in the inspector
+        // You can make a horizontally aligned 
+        //     group of GUI objects
+        GUILayout.BeginHorizontal();
+
+        // You can add a label
+        GUILayout.Label("Set Size");
+
+        // You can make buttons and call 
+        // methods of the target script
+        if (GUILayout.Button("Small"))  
+            myScript.SetSmallSize(); 
+        if (GUILayout.Button("Medium")) 
+            myScript.SetMediumSize();
+        if (GUILayout.Button("Large")) 
+            myScript.SetLargeSize(); 
+
+        GUILayout.EndHorizontal();
+    }
+}</code></pre>
                 </section>
                 
                 <section>
                     <h3>Custom Editor</h3>
 
-                    <ul>
-						<li>TODO</li>
-						<li>You can write your own custom tools by extending the editor</li>
-						<li><a href="https://docs.unity3d.com/Manual/editor-CustomEditors.html">Documentation</a></li>
-                        <li><a href="https://youtu.be/491TSNwXTIg">Brackeys Custom Editor Window</a></li>
-                        <li><a href="https://youtu.be/RInUu1_8aGw">Brackeys Custom Inspector</a></li>
-                    </ul>
+                    <p>You can write your own custom tools by extending the editor</p>
+
+                    <img height="400" src="images/Custom_Tool.gif" alt="Custom Tool">
                 </section>
 
                 <section>
-                    <h3>Unity Timeline</h3>
+                    <h3>Cutscenes with Unity Timeline</h3>
 
-                    <ul>
-						<li>Organise several animations/events over the course of a timeline</li>
-                    </ul>
+                    <p>Organise several animations/events over the course of a timeline to make awesome cutscenes</p>
                 </section>
                 
                 <section>
@@ -304,6 +333,11 @@
 						<li>
 							<a href="https://youtu.be/zIhtPSX8hqA">
 								How to use the New Unity Input System
+							</a>
+                        </li>
+                        <li>
+							<a href="https://youtu.be/Gx9gZ9cfrys">
+								Make even more awesome cutscenes with Cinemachine
 							</a>
 						</li>
 					</ul>
