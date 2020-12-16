@@ -1,14 +1,5 @@
-# Homework 4 - Crouch Kick Counter
+# Homework 4 - Two Phase Boss
 
-You have a scene with a player character and an AI that can both fight each other.
-You also have sprites for a crouch and crouch kick animation.
-You can find all these in Ivans AI exercise.
-(Sprites are at GothicVania Church/Sprites/Player)
+Assets are given - they make the boss logic and animations.
 
-The task is to  
-
-1) Implement the crouch state<br>
-2) Implement the crouch kick state<br>
-3) Make the AI sometimes dodge and counter a player punch by crouching + crouch kicking<br>
-
-Deadline **17.04.2020г**.
+Deadline **--.--.2021г**.

@@ -1,4 +1,4 @@
-# The slides and code for the 2020 Game Development Course in Sofia University
+# The slides and code for the 2021 Game Development Course in Sofia University
 
 ## Slides inspired by the [**Game Engine Architecture**](https://nikoladimitroff.github.io/Game-Engine-Architecture/) course slides ❤️
 
@@ -18,25 +18,20 @@
 | 2 | [Unity Basics](https://ivan-vankov.github.io/GameDevCourse/Slides/Unity%20Basics.html) | 05.03.2020 |
 | 3 | [C# Basics](https://ivan-vankov.github.io/GameDevCourse/Slides/C%23%20Basics.html) | 12.03.2020 |
 | 4 | [Physics](https://ivan-vankov.github.io/GameDevCourse/Slides/Physics.html) | 19.03.2020 |
-| 5 | ***Unity Test*** | 26.03.2020 |
-| 6 | [Animation](https://ivan-vankov.github.io/GameDevCourse/Slides/Animation.html) | 02.04.2020 |
-| 7 | [AI](https://ivan-vankov.github.io/GameDevCourse/Slides/AI.html) | 09.04.2020 |
-| 8 | [UI](https://ivan-vankov.github.io/GameDevCourse/Slides/UI.html) | 16.04.2020 |
-| 9 | [Shaders](https://ivan-vankov.github.io/GameDevCourse/Slides/Shaders.html) | 23.04.2020 |
-| 10 | [Coding Practice](https://ivan-vankov.github.io/GameDevCourse/Homework/Homework%207) | 30.04.2020 |
-| 11 | [VFX](https://ivan-vankov.github.io/GameDevCourse/Slides/VFX.html) | 07.05.2020 |
-| 12 | [Game Feel](https://ivan-vankov.github.io/GameDevCourse/Slides/Game%20Feel.html) | 14.05.2020 |
-| 13 | **Coding Practice** | 21.05.2020 |
-| 14 | [Testing](https://ivan-vankov.github.io/GameDevCourse/Slides/Testing.html) | 28.05.2020 |
-| 15 | [Tools](https://ivan-vankov.github.io/GameDevCourse/Slides/Tools.html) | 04.06.2020 |
+| 5 | [UI](https://ivan-vankov.github.io/GameDevCourse/Slides/UI.html) | 16.04.2020 |
+| 6 | [Shaders](https://ivan-vankov.github.io/GameDevCourse/Slides/Shaders.html) | 23.04.2020 |
+| 7 | [Animation](https://ivan-vankov.github.io/GameDevCourse/Slides/Animation.html) | 02.04.2020 |
+| 8 | [AI](https://ivan-vankov.github.io/GameDevCourse/Slides/AI.html) | 09.04.2020 |
+| 9 | [Coding Practice](https://ivan-vankov.github.io/GameDevCourse/Homework/Homework%207) | 30.04.2020 |
+| 10 | [VFX](https://ivan-vankov.github.io/GameDevCourse/Slides/VFX.html) | 07.05.2020 |
+| 11 | [Game Feel](https://ivan-vankov.github.io/GameDevCourse/Slides/Game%20Feel.html) | 14.05.2020 |
+| 12 | [Testing](https://ivan-vankov.github.io/GameDevCourse/Slides/Testing.html) | 28.05.2020 |
+| 13 | [Tools](https://ivan-vankov.github.io/GameDevCourse/Slides/Tools.html) | 04.06.2020 |
 
 | # | Homework | Deadline |
 |---| ---------------------------------------------------------------------------------------------------------------- |:----------:|
-| 1 | [Camera Follow](https://ivan-vankov.github.io/GameDevCourse/Homework/Homework%201) | 29.03.2020 |
-| 2 | [Ground Detection](https://ivan-vankov.github.io/GameDevCourse/Homework/Homework%202) | 29.03.2020 |
-| 3 | [Power-up Animation](https://ivan-vankov.github.io/GameDevCourse/Homework/Homework%203) | 10.04.2020 |
-| 4 | [Crouch Kick Counter](https://ivan-vankov.github.io/GameDevCourse/Homework/Homework%204) | 17.04.2020 |
-| 5 | [Healthbar](https://ivan-vankov.github.io/GameDevCourse/Homework/Homework%205) | 24.04.2020 |
-| 6 | [Pixelization Shader](https://ivan-vankov.github.io/GameDevCourse/Homework/Homework%206) | 01.05.2020 |
-| 7 | [Doom Coding Practice](https://ivan-vankov.github.io/GameDevCourse/Homework/Homework%207) | 22.05.2020 |
-| 8 | [Game Feel](https://ivan-vankov.github.io/GameDevCourse/Homework/Homework%208) | 22.05.2020 |
+| 1 | [Camera Follow + Scene Setup](https://ivan-vankov.github.io/GameDevCourse/Homework/Homework%201) | 29.03.2020 |
+| 2 | [Doodle Jump](https://ivan-vankov.github.io/GameDevCourse/Homework/Homework%202) | 29.03.2020 |
+| 3 | [Healthbar + Ripple Shader](https://ivan-vankov.github.io/GameDevCourse/Homework/Homework%203) | 10.04.2020 |
+| 4 | [Two Phase Boss](https://ivan-vankov.github.io/GameDevCourse/Homework/Homework%204) | 17.04.2020 |
+| 5 | [Contra](https://ivan-vankov.github.io/GameDevCourse/Homework/Homework%205) | 24.04.2020 |
