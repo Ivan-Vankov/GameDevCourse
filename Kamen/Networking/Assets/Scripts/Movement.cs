@@ -18,7 +18,7 @@ public class Movement : NetworkBehaviour
         {
             horizontal = Input.GetAxis("Horizontal");
             vertical = Input.GetAxis("Vertical");
-            transform.Translate(Time.deltaTime * new Vector3(horizontal, 0, vertical));
+            transform.Translate(Time.deltaTime * speed * new Vector3(horizontal, 0, vertical));
         }
     }
 }
