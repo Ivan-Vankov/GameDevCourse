@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+
+	<title id="page-title">Game Dev Presentation</title>
+	<link rel="icon" href="images/Unity-Icon.png">
+
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="RevealJS/css/reset.css">
+	<link rel="stylesheet" href="RevealJS/css/reveal.css">
+	<link rel="stylesheet" href="RevealJS/css/custom.css">
+	<link rel="stylesheet" href="RevealJS/css/theme/black.css" id="theme">
+
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="RevealJS/lib/css/vs2015.css">
+
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? 'RevealJS/css/print/pdf.css' : 'RevealJS/css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/default.min.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+	<!--[if lt IE 9]>
+		<script src="RevealJS/lib/js/html5shiv.js"></script>
+		<![endif]-->
+</head>
+
+<body>
+
+	<div class="reveal">
+
+		<a href="./Physics.html">
+			<i id="next-exercise" class="fas fa-arrow-circle-right navigation-button next-exercise"></i>
+		</a>
+		<a href="./Unity%20Basics.html">
+			<i id="previous-exercise" class="fas fa-arrow-circle-left navigation-button previous-exercise"></i>
+		</a>
+
+		<div class="slides">
+			<section>
+				<h2 id="slides-title">Networking</h2>
+				<img width="200" height="200" data-src="images/Unity-Logo.png" alt="Unity Logo">
+			</section>
+
+			<section>
+				<h2>Are we recording?</h2>
+				<img width="300" height="300" data-src="images/Cat-Cam.png" alt="Meow Cam">
+			</section>
+
+			<section>
+				<h3>Networking</h3>
+			</section>
+
+			<section>
+				<h3>Network architectures</h3>
+				<img src="images/peer+to+peer+1.png" alt="peer2peer vs clientserver">
+			</section>
+
+			<section>
+				<h3>MLAPI</h3>
+				<img src="images/mlapi.png" alt="mlapi logo">
+			</section>
+
+			<section>
+				<h3>Install networking library</h3>
+				<ol>
+					<li>Install git</li>
+					<li>Open Unity package manager</li>
+					<li>+ -> Add package from git URL</li>
+					<li>Add the following URL:</li>
+					<li><a
+							href="https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi?path=/com.unity.multiplayer.mlapi">
+							https://github.com/Unity-Technologies/com.unity.multiplayer.mlapi?path=/com.unity.multiplayer.mlapi</a>
+					</li>
+					<li>Click Add</li>
+				</ol>
+			</section>
+
+
+			<section>
+				<h3>NetworkManager</h3>
+				<ul>
+					<li>There must be only 1 NetworkManager(Singleton pattern)</li>
+					<li>Handles networking settings and connections</li>
+					<li>Can spawn a prefab(PlayerObject) for every connected player</li>
+					<li>Contains a list of all spawnable prefabs</li>
+					<li>Every player may own 1 PlayerObject and many NetworkObjects</li>
+				</ul>
+			</section>
+
+			<section>
+				<h3>NetworkObject</h3>
+				<ul>
+					<li>It is required if the object has networking functionality</li>
+					<li>Replicates the object in every instance of the game</li>
+					<li>Allows association of the object across instances by assigning it a NetworkId</li>
+					<li>Every NetworkObject has an owner</li>
+					<li>Must be added only once either in the object or in a parent object</li>
+				</ul>
+			</section>
+
+			<section>
+				<h3>Network Transform</h3>
+				<ul>
+					<li>Syncs the position and rotation of gameobject of the owner to all other clients</li>
+					<li>Doesn't work sync scaling</li>
+				</ul>
+			</section>
+
+			<section>
+				<h3>NetworkNavMeshAgent</h3>
+				<ul>
+					<li>Shares movement when using navmeshes</li>
+					<li>Only the owner should change NavMeshAgent</li>
+					<li>Changed settings at runtime aren't synced so you should use RPCs</li>
+				</ul>
+			</section>
+
+			<section>
+				<h3>NetworkAnimator</h3>
+				<ul>
+					<li>Syncs animations accross network</li>
+					<li>You must attach an animator component to it</li>
+					<li>Only the owner of the gameobject should update the state of the animator</li>
+					<li>Doesn't work with triggers, you should do that manually with RPCs</li>
+				</ul>
+			</section>
+
+			<section>
+				<h3>Spawning GameObjects</h3>
+				<p>Instantiate creates gameobject localy. Spawning creates it in the other clients as well. Only the
+					server can destroy or despawn.</p>
+				<pre><code class="csharp">GameObject go = Instantiate(myPrefab, Vector3.zero, Quaternion.identity);
+go.GetComponent&lt;NetworkObject&gt;().Spawn();</code></pre>
+			</section>
+
+			<section>
+				<h3>What is RPC?</h3>
+				<ul>
+					<li>A function call which is executed in another program or computer</li>
+					<li>It looks like a normal function call</li>
+					<li>Must have [ServerRpc] or [ClientRpc] attribute</li>
+				</ul>
+			</section>
+
+			<section>
+				<h3>RPC</h3>
+				<img src="images/remote-procedure-call.gif" alt="rpc image">
+			</section>
+
+			<section>
+				<h3>NetworkBehaviour</h3>
+				<ul>
+					<li>Used to create your custom netowrking scripts</li>
+					<li>Can contain RPCs and network variables</li>
+					<li>Is owned by the NetworkObject</li>
+				</ul>
+			</section>
+
+			<section>
+				<h3>NetworkVariable</h3>
+				<ul>
+					<li>Variables shared accross network</li>
+					<li>You can setup read and write permissions for the clients and the server</li>
+					<li>You can create your own types by implementing INetworkVariable</li>
+				</ul>
+			</section>
+
+
+			<section>
+				<h3>Changing scenes</h3>
+				<p>The server can change the current scene with NetworkSceneManager</p>
+				<pre><code>//This can only be called on the server
+NetworkSceneManager.SwitchScene(mySceneName);</code></pre>
+			</section>
+
+			<section>
+				<h3>Useful Links</h3>
+				<li><a href="https://docs-multiplayer.unity3d.com/docs/getting-started/about-mlapi">MLAPI
+						documentation</a></li>
+			</section>
+
+			<section>
+				<h3>Questions?</h3>
+				<img height="200" data-src="images/Question-Cat-3.png" alt="Question Cat">
+			</section>
+		</div>
+
+	</div>
+
+	<a href="https://github.com/Ivan-Vankov/GameDevCourse#readme"><i class="fa fa-home navigation-button home"></i></a>
+
+	<div id="slides-title-div">
+		<p id="slides-title-meta"></p>
+		<script>
+			var slides_title = document.getElementById("slides-title").innerHTML;
+			document.getElementById("slides-title-meta").innerHTML = slides_title;
+			document.getElementById("page-title").innerHTML = slides_title;
+		</script>
+	</div>
+
+	<script src="RevealJS/js/setup-exercise-navigation.js"></script>
+
+	<script src="RevealJS/js/reveal.js"></script>
+
+	<script>
+
+		// More info https://github.com/hakimel/reveal.js#configuration
+		Reveal.initialize({
+			controls: true,
+			progress: true,
+			center: true,
+			hash: true,
+			mouseWheel: true,
+
+			transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+			// More info https://github.com/hakimel/reveal.js#dependencies
+			dependencies: [
+				{ src: 'RevealJS/plugin/markdown/marked.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+				{ src: 'RevealJS/plugin/markdown/markdown.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+				{ src: 'RevealJS/plugin/highlight/highlight.js' },
+				{ src: 'RevealJS/plugin/search/search.js', async: true },
+				{ src: 'RevealJS/plugin/zoom-js/zoom.js', async: true },
+				{ src: 'RevealJS/plugin/notes/notes.js', async: true },
+				{ src: 'RevealJS/plugin/menu/menu.js', async: true }
+			]
+		});
+
+		Reveal.configure({ slideNumber: 'c/t' });
+
+		Reveal.addEventListener('hide-exercise-navigation-arrows', function () {
+			document.getElementById('next-exercise').style.visibility = 'hidden';
+			document.getElementById('previous-exercise').style.visibility = 'hidden';
+		});
+
+		Reveal.addEventListener('show-left-exercise-navigation-arrow', function () {
+			let previousExerciseButton = document.getElementById('previous-exercise');
+			previousExerciseButton.classList.add('fade-in');
+			setTimeout(() => {
+				previousExerciseButton.classList.remove('fade-in');
+			}, 500);
+			document.getElementById('next-exercise').style.visibility = 'hidden';
+			previousExerciseButton.style.visibility = 'visible';
+		});
+
+		Reveal.addEventListener('show-right-exercise-navigation-arrow', function () {
+			let nextExerciseButton = document.getElementById('next-exercise');
+			nextExerciseButton.classList.add('fade-in');
+			setTimeout(() => {
+				nextExerciseButton.classList.remove('fade-in');
+			}, 500);
+			nextExerciseButton.style.visibility = 'visible';
+			document.getElementById('previous-exercise').style.visibility = 'hidden';
+		});
+
+		// Set the theme to a combination of blood and black
+		document.getElementById('theme').setAttribute('href', 'RevealJS/css/theme/custom_theme.css');
+	</script>
+
+</body>
+
+</html>
