@@ -172,6 +172,23 @@ go.GetComponent&lt;NetworkObject&gt;().Spawn();</code></pre>
 				</ul>
 			</section>
 
+			<section>
+				<h3>Using network variables</h3>
+				<pre><code>
+NetworkVariable var = new NetworkVariable(permissions);
+//access value 
+var.Value = newValue;
+//setup subscribers
+private void OnEnable(){
+	var.OnValueChanged += subscribedCallback;
+}
+private void OnEnable()
+{
+	var.OnValueChanged -= subscribedCallback;
+}
+
+				</code></pre>
+			</section>
 
 			<section>
 				<h3>Changing scenes</h3>

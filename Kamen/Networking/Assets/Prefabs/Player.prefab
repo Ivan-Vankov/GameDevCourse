@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 459850018325284384}
   - component: {fileID: 555907300773444230}
   - component: {fileID: 6042151550327813492}
+  - component: {fileID: 3061278725524207664}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -207,3 +208,16 @@ MonoBehaviour:
     m_InternalValue:
       serializedVersion: 2
       rgba: 16777215
+--- !u!114 &3061278725524207664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3334232882549755121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c798eafd9b98b3a46b185034a6bd75d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  building: {fileID: 8991696420734009450, guid: 2805352ff3c214c4bb51d96badb1c528, type: 3}

@@ -295,6 +295,8 @@ MonoBehaviour:
     - SampleScene
     AllowRuntimeSceneChanges: 0
     NetworkPrefabs:
+    - Prefab: {fileID: 8991696420734009450, guid: 2805352ff3c214c4bb51d96badb1c528, type: 3}
+      PlayerPrefab: 0
     - Prefab: {fileID: 3334232882549755121, guid: 98295c2abdd54014db428b17110ecf66, type: 3}
       PlayerPrefab: 1
     PlayerPrefabHash:
