@@ -7,8 +7,8 @@
 | Socials for |  |  |  |
 |---|---|---|---|
 | The Repo | [![alt text](https://s.ytimg.com/yts/img/favicon_32-vflOogEID.png "youtube")](https://www.youtube.com/channel/UCsBZtgJpHY6mISHcyCXRnOA) | [![alt text](https://static.xx.fbcdn.net/rsrc.php/yD/r/d4ZIVX-5C-b.ico "facebook")](https://www.facebook.com/groups/1997840613675137/) |  |
-| Ivan Vankov | [![alt text](https://ssl.gstatic.com/ui/v1/icons/mail/images/favicon5.ico "mail")](mailto:ivanpvankov@gmail.com) | [![alt text](https://static.xx.fbcdn.net/rsrc.php/yD/r/d4ZIVX-5C-b.ico "facebook")](https://www.facebook.com/ivan.vankov.54) | [![alt text](https://github.githubassets.com/favicon.ico "github")](https://github.com/Ivan-Vankov) |
-| Kamen Vakavchiev | [![alt text](https://ssl.gstatic.com/ui/v1/icons/mail/images/favicon5.ico "mail")](mailto:kanitkameh@gmail.com) | [![alt text](https://static.xx.fbcdn.net/rsrc.php/yD/r/d4ZIVX-5C-b.ico "facebook")](https://www.facebook.com/kamen.vakavchiev) | [![alt text](https://github.githubassets.com/favicon.ico "github")](https://github.com/kanitkameh) |
+| Ivan Vankov | [![alt text](https://ssl.gstatic.com/ui/v1/icons/mail/images/favicon5.ico "mail")](mailto:ivanpvankov@gmail.com) | [![alt text](https://static.xx.fbcdn.net/rsrc.php/yD/r/d4ZIVX-5C-b.ico "facebook")](https://www.facebook.com/ivan.vankov.54) | [![alt text](https://github.githubassets.com/favicons/favicon-dark.png "github")](https://github.com/Ivan-Vankov) |
+| Kamen Vakavchiev | [![alt text](https://ssl.gstatic.com/ui/v1/icons/mail/images/favicon5.ico "mail")](mailto:kanitkameh@gmail.com) | [![alt text](https://static.xx.fbcdn.net/rsrc.php/yD/r/d4ZIVX-5C-b.ico "facebook")](https://www.facebook.com/kamen.vakavchiev) | [![alt text](https://github.githubassets.com/favicons/favicon-dark.png "github")](https://github.com/kanitkameh) |
 
 
 
